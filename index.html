@@ -8,18 +8,16 @@
 </head>
 <body class="bg-[#f7f7f7] text-slate-900">
 
-  <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+  <header class="sticky top-0 z-[100] border-b border-slate-200 bg-white/95 backdrop-blur">
   <div class="mx-auto flex max-w-[1280px] items-center justify-between px-4 py-3 sm:px-6">
-    <!-- Logo -->
     <a href="#home" class="shrink-0">
       <img src="./assets/logo/logo.png" alt="Phương Đông" class="h-10 w-auto sm:h-11" />
     </a>
 
-    <!-- Desktop menu -->
     <nav class="hidden items-center gap-6 xl:flex">
       <a href="#gioithieu" class="whitespace-nowrap text-[14px] font-medium text-slate-800 transition hover:text-sky-500">Giới thiệu</a>
       <a href="#doituong" class="whitespace-nowrap text-[14px] font-medium text-slate-800 transition hover:text-sky-500">Đối tượng khách hàng</a>
-      <a href="#quytrinh" class="relative whitespace-nowrap text-[14px] font-medium text-sky-500 after:absolute after:-bottom-[18px] after:left-0 after:h-[2px] after:w-full after:bg-sky-500 after:content-['']">Quy trình</a>
+      <a href="#quytrinh" class="whitespace-nowrap text-[14px] font-medium text-slate-800 transition hover:text-sky-500">Quy trình</a>
       <a href="#banggia" class="whitespace-nowrap text-[14px] font-medium text-slate-800 transition hover:text-sky-500">Bảng giá</a>
       <a href="#camnhan" class="whitespace-nowrap text-[14px] font-medium text-slate-800 transition hover:text-sky-500">Cảm nhận khách hàng</a>
       <a href="#doingu" class="whitespace-nowrap text-[14px] font-medium text-slate-800 transition hover:text-sky-500">Đội ngũ bác sĩ</a>
@@ -27,7 +25,6 @@
     </nav>
 
     <div class="flex items-center gap-3">
-      <!-- Hotline desktop -->
       <a
         href="tel:19001806"
         class="hidden rounded-full bg-[#F79433] px-5 py-3 text-[14px] font-semibold text-white shadow-md transition hover:bg-[#ee8621] sm:inline-flex"
@@ -35,11 +32,10 @@
         Gọi 1900 1806
       </a>
 
-      <!-- Mobile button -->
       <button
         id="menuBtn"
         type="button"
-        class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 text-slate-700 xl:hidden"
+        class="relative z-[110] inline-flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 text-slate-700 xl:hidden"
         aria-label="Mở menu"
         aria-expanded="false"
         aria-controls="mobileMenu"
@@ -51,13 +47,12 @@
     </div>
   </div>
 
-  <!-- Mobile menu -->
   <div id="mobileMenu" class="hidden border-t border-slate-200 bg-white xl:hidden">
     <div class="mx-auto max-w-[1280px] px-4 py-4 sm:px-6">
       <nav class="flex flex-col gap-1">
         <a href="#gioithieu" class="rounded-xl px-4 py-3 text-[15px] font-medium text-slate-800 hover:bg-slate-50">Giới thiệu</a>
         <a href="#doituong" class="rounded-xl px-4 py-3 text-[15px] font-medium text-slate-800 hover:bg-slate-50">Đối tượng khách hàng</a>
-        <a href="#quytrinh" class="rounded-xl bg-sky-50 px-4 py-3 text-[15px] font-medium text-sky-600">Quy trình</a>
+        <a href="#quytrinh" class="rounded-xl px-4 py-3 text-[15px] font-medium text-slate-800 hover:bg-slate-50">Quy trình</a>
         <a href="#banggia" class="rounded-xl px-4 py-3 text-[15px] font-medium text-slate-800 hover:bg-slate-50">Bảng giá</a>
         <a href="#camnhan" class="rounded-xl px-4 py-3 text-[15px] font-medium text-slate-800 hover:bg-slate-50">Cảm nhận khách hàng</a>
         <a href="#doingu" class="rounded-xl px-4 py-3 text-[15px] font-medium text-slate-800 hover:bg-slate-50">Đội ngũ bác sĩ</a>
@@ -76,53 +71,54 @@
 
   <main>
     <section id="home" class="overflow-hidden bg-white">
-      <div class="mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.02fr_0.98fr] lg:gap-12 lg:py-16">
-        <!-- Left -->
-        <div class="order-2 lg:order-1">
-          <h1 class="max-w-[620px] text-[34px] font-bold leading-[1.12] tracking-[-0.02em] text-slate-900 sm:text-[42px] lg:text-[56px]">
-            Dịch vụ Tiêm chủng Vắc-xin
-            <br />
-            Bảo vệ bản thân, bảo vệ mọi người
-          </h1>
+      <div class="mx-auto max-w-[1280px] px-4 sm:px-6">
+        <div class="grid grid-cols-1 items-start gap-6 lg:grid-cols-[1.08fr_0.92fr] lg:gap-0">
 
-          <p class="mt-5 max-w-[560px] text-[14px] leading-7 text-slate-600 sm:text-[15px]">
-            Vắc-xin ra đời được coi là một trong những thành tựu vĩ đại của nhân loại.
-            Nhờ có vắc-xin, hàng triệu người trên thế giới tránh được nguy cơ tử vong
-            vì những dịch bệnh nguy hiểm.
-          </p>
+          <!-- Left -->
+          <div class="relative z-10 order-2 pb-10 lg:order-1 lg:pt-[68px] lg:-mr-[120px]">
+            <h1 class="max-w-[820px] text-[49px] font-bold leading-[1.06] tracking-[-0.03em] text-slate-900 sm:text-[49px] lg:text-[49px]">
+              Dịch vụ Tiêm chủng Vắc-xin
+              <br />
+              Bảo vệ bản thân, bảo vệ mọi người
+            </h1>
 
-          <div class="mt-8 flex flex-wrap gap-4">
-            <a
-              href="#banggia"
-              class="inline-flex items-center justify-center rounded-full bg-[#F79433] px-6 py-3 text-[13px] font-semibold text-white shadow-md transition hover:bg-[#ee8621]"
-            >
-              ĐĂNG KÝ TƯ VẤN
-            </a>
+            <p class="mt-5 max-w-[560px] text-[13.5px] leading-7 text-slate-600 sm:text-[13.5px]">
+              Vắc-xin ra đời được coi là một trong những thành tựu vĩ đại của nhân loại. Nhờ có Vắc xin, hàng triệu người trên thế giới tránh được nguy cơ tử vong và những di chứng, dị tật suốt đời do các bệnh truyền nhiễm như sởi, quai bị, rubella, thủy đậu, uốn ván...
+            </p>
 
-            <a
-              href="#quytrinh"
-              class="inline-flex items-center justify-center rounded-full border border-[#F2A25C] px-6 py-3 text-[13px] font-semibold text-[#F79433] transition hover:bg-orange-50"
-            >
-              QUY TRÌNH TIÊM CHỦNG
-            </a>
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a
+                href="#banggia"
+                class="inline-flex items-center justify-center rounded-full bg-[#F79433] px-6 py-3 text-[13px] font-semibold text-white shadow-md transition hover:bg-[#ee8621]"
+              >
+                ĐĂNG KÝ TƯ VẤN
+              </a>
+
+              <a
+                href="#quytrinh"
+                class="inline-flex items-center justify-center rounded-full border border-[#F2A25C] px-6 py-3 text-[13px] font-semibold text-[#F79433] transition hover:bg-orange-50"
+              >
+                QUY TRÌNH TIÊM CHỦNG
+              </a>
+            </div>
           </div>
-        </div>
 
-        <!-- Right -->
-        <div class="relative order-1 mb-8 lg:order-2 lg:mb-0">
-          <div class="overflow-hidden rounded-[28px] bg-gradient-to-r from-sky-400 to-sky-500 sm:rounded-[36px] lg:rounded-tl-[96px] lg:rounded-bl-[96px] lg:rounded-tr-[24px] lg:rounded-br-[24px]">
+          <!-- Right -->
+          <div class="relative order-1 mb-8 lg:order-2 lg:mb-0 lg:-ml-24">
+            <div class="overflow-hidden rounded-[28px] bg-gradient-to-r from-sky-400 to-sky-500 sm:rounded-[36px] lg:-mt-px lg:rounded-tl-none lg:rounded-bl-[110px] lg:rounded-tr-none lg:rounded-br-none">
+              <img
+                src="./assets/images/hero-vaccine.png"
+                alt="Hero vaccine"
+                class="h-[320px] w-full object-cover sm:h-[420px] lg:h-[500px]"
+              />
+            </div>
+
             <img
-              src="./assets/images/hero-vaccine.png"
-              alt="Hero vaccine"
-              class="h-[280px] w-full object-cover sm:h-[360px] lg:h-[420px]"
+              src="./assets/images/card-95.png"
+              alt="95% hiệu quả, an toàn"
+              class="absolute left-4 bottom-[-18px] w-[168px] drop-shadow-xl sm:left-6 sm:w-[200px] lg:left-10 lg:bottom-[-22px] lg:w-[230px]"
             />
           </div>
-
-          <img
-            src="./assets/images/card-95.png"
-            alt="95% hiệu quả, an toàn"
-            class="absolute left-4 bottom-[-18px] w-[168px] drop-shadow-xl sm:left-6 sm:w-[200px] lg:left-10 lg:bottom-[-26px] lg:w-[225px]"
-          />
         </div>
       </div>
     </section>
@@ -673,23 +669,25 @@
   </footer>
 
   <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
 
-    if (menuBtn && mobileMenu) {
-      menuBtn.addEventListener('click', () => {
-        const isHidden = mobileMenu.classList.contains('hidden');
-        mobileMenu.classList.toggle('hidden');
-        menuBtn.setAttribute('aria-expanded', String(isHidden));
-      });
-
-      mobileMenu.querySelectorAll('a').forEach((link) => {
-        link.addEventListener('click', () => {
-          mobileMenu.classList.add('hidden');
-          menuBtn.setAttribute('aria-expanded', 'false');
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', function () {
+          mobileMenu.classList.toggle('hidden');
+          const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+          menuBtn.setAttribute('aria-expanded', String(!expanded));
         });
-      });
-    }
+
+        mobileMenu.querySelectorAll('a').forEach(function (link) {
+          link.addEventListener('click', function () {
+            mobileMenu.classList.add('hidden');
+            menuBtn.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+    });
   </script>
 
 </body>
