@@ -8,162 +8,258 @@
 </head>
 <body class="bg-[#f7f7f7] text-slate-900">
 
-  <header class="sticky top-0 z-50 bg-white shadow-sm">
-    <div class="mx-auto flex max-w-[1280px] items-center justify-between px-6 py-4">
-      <a href="#home" class="shrink-0">
-        <img src="./assets/logo/logo.png" alt="Phương Đông" class="h-12 w-auto" />
+  <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+  <div class="mx-auto flex max-w-[1280px] items-center justify-between px-4 py-3 sm:px-6">
+    <!-- Logo -->
+    <a href="#home" class="shrink-0">
+      <img src="./assets/logo/logo.png" alt="Phương Đông" class="h-10 w-auto sm:h-11" />
+    </a>
+
+    <!-- Desktop menu -->
+    <nav class="hidden items-center gap-6 xl:flex">
+      <a href="#gioithieu" class="whitespace-nowrap text-[14px] font-medium text-slate-800 transition hover:text-sky-500">Giới thiệu</a>
+      <a href="#doituong" class="whitespace-nowrap text-[14px] font-medium text-slate-800 transition hover:text-sky-500">Đối tượng khách hàng</a>
+      <a href="#quytrinh" class="relative whitespace-nowrap text-[14px] font-medium text-sky-500 after:absolute after:-bottom-[18px] after:left-0 after:h-[2px] after:w-full after:bg-sky-500 after:content-['']">Quy trình</a>
+      <a href="#banggia" class="whitespace-nowrap text-[14px] font-medium text-slate-800 transition hover:text-sky-500">Bảng giá</a>
+      <a href="#camnhan" class="whitespace-nowrap text-[14px] font-medium text-slate-800 transition hover:text-sky-500">Cảm nhận khách hàng</a>
+      <a href="#doingu" class="whitespace-nowrap text-[14px] font-medium text-slate-800 transition hover:text-sky-500">Đội ngũ bác sĩ</a>
+      <a href="#hinhanhvideo" class="whitespace-nowrap text-[14px] font-medium text-slate-800 transition hover:text-sky-500">Hình ảnh &amp; Video</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <!-- Hotline desktop -->
+      <a
+        href="tel:19001806"
+        class="hidden rounded-full bg-[#F79433] px-5 py-3 text-[14px] font-semibold text-white shadow-md transition hover:bg-[#ee8621] sm:inline-flex"
+      >
+        Gọi 1900 1806
       </a>
 
-      <nav class="hidden items-center gap-7 xl:flex">
-        <a href="#gioithieu" class="whitespace-nowrap text-[15px] font-medium text-slate-800 hover:text-sky-500">Giới thiệu</a>
-        <a href="#doituong" class="whitespace-nowrap text-[15px] font-medium text-slate-800 hover:text-sky-500">Đối tượng khách hàng</a>
-        <a href="#quytrinh" class="whitespace-nowrap text-[15px] font-medium text-slate-800 hover:text-sky-500">Quy trình</a>
-        <a href="#banggia" class="whitespace-nowrap text-[15px] font-medium text-slate-800 hover:text-sky-500">Bảng giá</a>
-        <a href="#camnhan" class="whitespace-nowrap text-[15px] font-medium text-slate-800 hover:text-sky-500">Cảm nhận khách hàng</a>
-        <a href="#doingu" class="whitespace-nowrap text-[15px] font-medium text-slate-800 hover:text-sky-500">Đội ngũ bác sĩ</a>
-        <a href="#hinhanhvideo" class="whitespace-nowrap text-[15px] font-medium text-slate-800 hover:text-sky-500">Hình ảnh & Video</a>
+      <!-- Mobile button -->
+      <button
+        id="menuBtn"
+        type="button"
+        class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 text-slate-700 xl:hidden"
+        aria-label="Mở menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="hidden border-t border-slate-200 bg-white xl:hidden">
+    <div class="mx-auto max-w-[1280px] px-4 py-4 sm:px-6">
+      <nav class="flex flex-col gap-1">
+        <a href="#gioithieu" class="rounded-xl px-4 py-3 text-[15px] font-medium text-slate-800 hover:bg-slate-50">Giới thiệu</a>
+        <a href="#doituong" class="rounded-xl px-4 py-3 text-[15px] font-medium text-slate-800 hover:bg-slate-50">Đối tượng khách hàng</a>
+        <a href="#quytrinh" class="rounded-xl bg-sky-50 px-4 py-3 text-[15px] font-medium text-sky-600">Quy trình</a>
+        <a href="#banggia" class="rounded-xl px-4 py-3 text-[15px] font-medium text-slate-800 hover:bg-slate-50">Bảng giá</a>
+        <a href="#camnhan" class="rounded-xl px-4 py-3 text-[15px] font-medium text-slate-800 hover:bg-slate-50">Cảm nhận khách hàng</a>
+        <a href="#doingu" class="rounded-xl px-4 py-3 text-[15px] font-medium text-slate-800 hover:bg-slate-50">Đội ngũ bác sĩ</a>
+        <a href="#hinhanhvideo" class="rounded-xl px-4 py-3 text-[15px] font-medium text-slate-800 hover:bg-slate-50">Hình ảnh &amp; Video</a>
       </nav>
 
-      <div class="flex items-center gap-4">
-        <a href="tel:19001806" class="hidden shrink-0 rounded-full bg-orange-400 px-6 py-3 text-sm font-semibold text-white shadow-lg hover:bg-orange-500 sm:block">
-          Gọi 1900 1806
-        </a>
-        <button id="mobile-menu-btn" class="block text-slate-800 focus:outline-none xl:hidden">
-          <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
-      </div>
+      <a
+        href="tel:19001806"
+        class="mt-4 inline-flex w-full items-center justify-center rounded-full bg-[#F79433] px-5 py-3 text-[14px] font-semibold text-white shadow-md"
+      >
+        Gọi 1900 1806
+      </a>
     </div>
-
-    <div id="mobile-menu" class="hidden bg-white px-6 py-4 shadow-md xl:hidden">
-      <nav class="flex flex-col gap-4">
-        <a href="#gioithieu" class="text-[15px] font-medium text-slate-800 hover:text-sky-500">Giới thiệu</a>
-        <a href="#doituong" class="text-[15px] font-medium text-slate-800 hover:text-sky-500">Đối tượng khách hàng</a>
-        <a href="#quytrinh" class="text-[15px] font-medium text-slate-800 hover:text-sky-500">Quy trình</a>
-        <a href="#banggia" class="text-[15px] font-medium text-slate-800 hover:text-sky-500">Bảng giá</a>
-        <a href="#camnhan" class="text-[15px] font-medium text-slate-800 hover:text-sky-500">Cảm nhận khách hàng</a>
-        <a href="#doingu" class="text-[15px] font-medium text-slate-800 hover:text-sky-500">Đội ngũ bác sĩ</a>
-        <a href="#hinhanhvideo" class="text-[15px] font-medium text-slate-800 hover:text-sky-500">Hình ảnh & Video</a>
-        <a href="tel:19001806" class="mt-2 inline-block rounded-full bg-orange-400 px-6 py-3 text-center text-sm font-semibold text-white shadow-lg sm:hidden">
-          Gọi 1900 1806
-        </a>
-      </nav>
-    </div>
-  </header>
+  </div>
+</header>
 
   <main>
-    <section id="home" class="bg-white">
-      <div class="mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-10 px-6 py-16 lg:grid-cols-2 lg:py-20">
-        <div>
-          <h1 class="max-w-[620px] text-4xl font-bold leading-tight text-slate-900 lg:text-6xl">
+    <section id="home" class="overflow-hidden bg-white">
+      <div class="mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.02fr_0.98fr] lg:gap-12 lg:py-16">
+        <!-- Left -->
+        <div class="order-2 lg:order-1">
+          <h1 class="max-w-[620px] text-[34px] font-bold leading-[1.12] tracking-[-0.02em] text-slate-900 sm:text-[42px] lg:text-[56px]">
             Dịch vụ Tiêm chủng Vắc-xin
             <br />
             Bảo vệ bản thân, bảo vệ mọi người
           </h1>
-          <p class="mt-5 max-w-[560px] text-base leading-7 text-slate-600">
+
+          <p class="mt-5 max-w-[560px] text-[14px] leading-7 text-slate-600 sm:text-[15px]">
             Vắc-xin ra đời được coi là một trong những thành tựu vĩ đại của nhân loại.
             Nhờ có vắc-xin, hàng triệu người trên thế giới tránh được nguy cơ tử vong
             vì những dịch bệnh nguy hiểm.
           </p>
+
           <div class="mt-8 flex flex-wrap gap-4">
-            <a href="#banggia" class="rounded-full bg-orange-400 px-6 py-3 text-sm font-semibold text-white shadow-lg hover:bg-orange-500">
+            <a
+              href="#banggia"
+              class="inline-flex items-center justify-center rounded-full bg-[#F79433] px-6 py-3 text-[13px] font-semibold text-white shadow-md transition hover:bg-[#ee8621]"
+            >
               ĐĂNG KÝ TƯ VẤN
             </a>
-            <a href="#quytrinh" class="rounded-full border border-orange-300 px-6 py-3 text-sm font-semibold text-orange-400 hover:bg-orange-50">
+
+            <a
+              href="#quytrinh"
+              class="inline-flex items-center justify-center rounded-full border border-[#F2A25C] px-6 py-3 text-[13px] font-semibold text-[#F79433] transition hover:bg-orange-50"
+            >
               QUY TRÌNH TIÊM CHỦNG
             </a>
           </div>
         </div>
 
-        <div class="relative">
-          <div class="rounded-bl-[90px] rounded-tl-[90px] rounded-br-[24px] rounded-tr-[24px] bg-gradient-to-r from-sky-400 to-sky-500">
-            <img src="./assets/images/hero-vaccine.png" alt="Hero vaccine" class="h-[420px] w-full object-cover" />
+        <!-- Right -->
+        <div class="relative order-1 mb-8 lg:order-2 lg:mb-0">
+          <div class="overflow-hidden rounded-[28px] bg-gradient-to-r from-sky-400 to-sky-500 sm:rounded-[36px] lg:rounded-tl-[96px] lg:rounded-bl-[96px] lg:rounded-tr-[24px] lg:rounded-br-[24px]">
+            <img
+              src="./assets/images/hero-vaccine.png"
+              alt="Hero vaccine"
+              class="h-[280px] w-full object-cover sm:h-[360px] lg:h-[420px]"
+            />
           </div>
-          <img src="./assets/images/card-95.png" alt="95% hiệu quả, an toàn" class="absolute left-4 sm:left-10 bottom-[-60px] w-[225px]" />
+
+          <img
+            src="./assets/images/card-95.png"
+            alt="95% hiệu quả, an toàn"
+            class="absolute left-4 bottom-[-18px] w-[168px] drop-shadow-xl sm:left-6 sm:w-[200px] lg:left-10 lg:bottom-[-26px] lg:w-[225px]"
+          />
         </div>
       </div>
     </section>
     
-    <section id="gioithieu" class="py-20">
-      <div class="mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2">
+
+    <!-- ================= GIỚI THIỆU ================= -->
+    <section id="gioithieu" class="py-16 sm:py-20">
+      <div class="mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr]">
+        <!-- Image block -->
         <div class="relative">
-          <div class="overflow-hidden rounded-[60px]">
-            <img src="./assets/images/about-doctor-patient.png" alt="About vaccine" class="w-full object-cover" />
+          <div class="overflow-hidden rounded-[36px] sm:rounded-[48px] lg:rounded-[60px]">
+            <img
+              src="./assets/images/about-doctor-patient.png"
+              alt="About vaccine"
+              class="w-full object-cover"
+            />
           </div>
-          <img src="./assets/images/card-900.png" alt="900+ Khách hàng đã tiêm" class="absolute left-[10px] top-1/2 w-[190px] -translate-x-1/2 -translate-y-1/2 hidden sm:block" />
-          <img src="./assets/images/card-100.png" alt="100% Khách hàng hài lòng" class="absolute left-[68%] bottom-0 w-[210px] -translate-x-1/2 translate-y-1/2 hidden sm:block" />
+
+          <img
+            src="./assets/images/card-900.png"
+            alt="900+ Khách hàng đã tiêm"
+            class="absolute left-0 top-1/2 w-[130px] -translate-x-[10%] -translate-y-1/2 drop-shadow-xl sm:w-[160px] lg:w-[190px]"
+          />
+
+          <img
+            src="./assets/images/card-100.png"
+            alt="100% Khách hàng hài lòng"
+            class="absolute bottom-0 left-[68%] w-[150px] -translate-x-1/2 translate-y-1/2 drop-shadow-xl sm:w-[180px] lg:w-[210px]"
+          />
         </div>
 
+        <!-- Text -->
         <div>
-          <h2 class="max-w-[560px] text-3xl font-bold leading-tight text-slate-900 lg:text-5xl">
+          <h2 class="max-w-[620px] text-[30px] font-bold leading-[1.2] text-slate-900 sm:text-[38px] lg:text-[52px]">
             Hiệu quả phòng bệnh tối ưu từ việc thực hiện Tiêm chủng Vắc-xin
           </h2>
-          <div class="mt-5 h-1 w-20 rounded-full bg-sky-500"></div>
-          <p class="mt-6 text-base leading-7 text-slate-600">
+
+          <div class="mt-5 h-[4px] w-[82px] rounded-full bg-sky-500"></div>
+
+          <p class="mt-6 text-[15px] leading-7 text-slate-600">
             Bệnh viện Đa khoa Phương Đông cung cấp dịch vụ tư vấn và tiêm chủng vắc-xin
             dành cho cả trẻ em và người lớn với nhiều gói tiêm đa dạng, chi phí hợp lý.
           </p>
-          <p class="mt-4 text-base leading-7 text-slate-600">
+
+          <p class="mt-4 text-[15px] leading-7 text-slate-600">
             Tiêm chủng là giải pháp giúp cơ thể tạo ra miễn dịch chủ động, từ đó phòng ngừa
             nhiều bệnh truyền nhiễm nguy hiểm.
           </p>
-          <a href="#banggia" class="mt-8 inline-block rounded-full bg-orange-400 px-6 py-3 text-sm font-semibold text-white shadow-lg hover:bg-orange-500">
+
+          <a
+            href="#banggia"
+            class="mt-8 inline-flex items-center justify-center rounded-full bg-[#F79433] px-6 py-3 text-[13px] font-semibold text-white shadow-md transition hover:bg-[#ee8621]"
+          >
             ĐĂNG KÝ TƯ VẤN
           </a>
         </div>
       </div>
     </section>
-
     <section class="bg-[#f5f5f5] py-16">
-      <div class="mx-auto max-w-[1200px] px-4">
-        <div class="grid grid-cols-1 gap-y-14 gap-x-10 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="mx-auto max-w-[1280px] px-4 sm:px-6">
+        <div class="grid grid-cols-1 gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Item 1 -->
           <div class="flex flex-col items-center text-center">
-            <img src="./assets/images/union-1.png" alt="Đội ngũ bác sĩ giàu y đức" class="h-[64px] w-auto" />
-            <h3 class="mt-4 text-[28px] font-bold leading-tight text-slate-800">Đội ngũ bác sĩ giàu y đức</h3>
-            <p class="mt-3 max-w-[290px] text-[18px] leading-[1.6] text-slate-500">
-              Đội ngũ bác sĩ khám sàng lọc và tư vấn có trình độ chuyên môn cao, giàu kinh nghiệm, tư vấn tận tình.
+            <img src="./assets/images/union-1.png" alt="Đội ngũ bác sĩ giàu y đức" class="h-[54px] w-auto" />
+            <h3 class="mt-4 text-[18px] font-bold leading-tight text-slate-800">
+              Đội ngũ bác sĩ giàu y đức
+            </h3>
+            <p class="mt-2 max-w-[290px] text-[13px] leading-6 text-slate-500">
+              Đội ngũ bác sĩ khám sàng lọc và tư vấn có trình độ chuyên môn cao,
+              giàu kinh nghiệm, tư vấn tận tình.
             </p>
           </div>
+
+          <!-- Item 2 -->
           <div class="flex flex-col items-center text-center">
-            <img src="./assets/images/union-2.png" alt="Cảm giác thư thái, bình yên" class="h-[64px] w-auto" />
-            <h3 class="mt-4 text-[28px] font-bold leading-tight text-slate-800">Cảm giác thư thái, bình yên</h3>
-            <p class="mt-3 max-w-[310px] text-[18px] leading-[1.6] text-slate-500">
-              Không gian bệnh viện theo mô hình khách sạn hiện đại, khuôn viên rộng gần 10ha với hàng vạn cây xanh.
+            <img src="./assets/images/union-2.png" alt="Cảm giác thư thái, bình yên" class="h-[54px] w-auto" />
+            <h3 class="mt-4 text-[18px] font-bold leading-tight text-slate-800">
+              Cảm giác thư thái, bình yên
+            </h3>
+            <p class="mt-2 max-w-[290px] text-[13px] leading-6 text-slate-500">
+              Không gian bệnh viện theo mô hình khách sạn hiện đại,
+              khuôn viên rộng gần 10ha với hàng vạn cây xanh.
             </p>
           </div>
+
+          <!-- Item 3 -->
           <div class="flex flex-col items-center text-center">
-            <img src="./assets/images/union-3.png" alt="Chất lượng dịch vụ hàng đầu" class="h-[64px] w-auto" />
-            <h3 class="mt-4 text-[28px] font-bold leading-tight text-slate-800">Chất lượng dịch vụ hàng đầu</h3>
-            <p class="mt-3 max-w-[310px] text-[18px] leading-[1.6] text-slate-500">
-              Trang bị đầy đủ phương tiện y tế cùng ekip cấp cứu luôn túc trực giúp theo dõi và xử trí kịp thời các trường hợp.
+            <img src="./assets/images/union-3.png" alt="Chất lượng dịch vụ hàng đầu" class="h-[54px] w-auto" />
+            <h3 class="mt-4 text-[18px] font-bold leading-tight text-slate-800">
+              Chất lượng dịch vụ hàng đầu
+            </h3>
+            <p class="mt-2 max-w-[300px] text-[13px] leading-6 text-slate-500">
+              Trang bị đầy đủ phương tiện y tế cùng ekip cấp cứu luôn túc trực
+              giúp theo dõi và xử trí kịp thời các trường hợp.
             </p>
           </div>
+
+          <!-- Item 4 -->
           <div class="flex flex-col items-center text-center">
-            <img src="./assets/images/union-4.png" alt="Chi phí hợp lý, tiết kiệm" class="h-[64px] w-auto" />
-            <h3 class="mt-4 text-[28px] font-bold leading-tight text-slate-800">Chi phí hợp lý, tiết kiệm</h3>
-            <p class="mt-3 max-w-[320px] text-[18px] leading-[1.6] text-slate-500">
-              Xây dựng đa dạng gói tiêm với chi phí hợp lý, hỗ trợ trả góp qua thẻ tín dụng 0% lãi suất khi mua trọn gói.
+            <img src="./assets/images/union-4.png" alt="Chi phí hợp lý, tiết kiệm" class="h-[54px] w-auto" />
+            <h3 class="mt-4 text-[18px] font-bold leading-tight text-slate-800">
+              Chi phí hợp lý, tiết kiệm
+            </h3>
+            <p class="mt-2 max-w-[300px] text-[13px] leading-6 text-slate-500">
+              Xây dựng đa dạng gói tiêm với chi phí hợp lý, hỗ trợ trả góp
+              qua thẻ tín dụng 0% lãi suất khi mua trọn gói.
             </p>
           </div>
+
+          <!-- Item 5 -->
           <div class="flex flex-col items-center text-center">
-            <img src="./assets/images/union-5.png" alt="Thủ tục đơn giản, nhanh gọn" class="h-[64px] w-auto" />
-            <h3 class="mt-4 text-[28px] font-bold leading-tight text-slate-800">Thủ tục đơn giản, nhanh gọn</h3>
-            <p class="mt-3 max-w-[310px] text-[18px] leading-[1.6] text-slate-500">
-              Thủ tục đặt lịch dễ dàng, nhanh gọn, tư vấn tận tình không mất nhiều thời gian của khách hàng.
+            <img src="./assets/images/union-5.png" alt="Thủ tục đơn giản, nhanh gọn" class="h-[54px] w-auto" />
+            <h3 class="mt-4 text-[18px] font-bold leading-tight text-slate-800">
+              Thủ tục đơn giản, nhanh gọn
+            </h3>
+            <p class="mt-2 max-w-[290px] text-[13px] leading-6 text-slate-500">
+              Thủ tục đặt lịch dễ dàng, nhanh gọn, tư vấn tận tình
+              không mất nhiều thời gian của khách hàng.
             </p>
           </div>
+
+          <!-- Item 6 -->
           <div class="flex flex-col items-center text-center">
-            <img src="./assets/images/union-6.png" alt="Chăm sóc khách hàng sau tiêm" class="h-[64px] w-auto" />
-            <h3 class="mt-4 text-[28px] font-bold leading-tight text-slate-800">Chăm sóc khách hàng sau tiêm</h3>
-            <p class="mt-3 max-w-[320px] text-[18px] leading-[1.6] text-slate-500">
-              Lưu giữ lịch sử tiêm online, nhắc lịch và thông báo cập nhật vắc xin thường xuyên.
+            <img src="./assets/images/union-6.png" alt="Chăm sóc khách hàng sau tiêm" class="h-[54px] w-auto" />
+            <h3 class="mt-4 text-[18px] font-bold leading-tight text-slate-800">
+              Chăm sóc khách hàng sau tiêm
+            </h3>
+            <p class="mt-2 max-w-[300px] text-[13px] leading-6 text-slate-500">
+              Lưu giữ lịch sử tiêm online, nhắc lịch và thông báo cập nhật
+              vắc-xin thường xuyên.
             </p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ================= ĐỐI TƯỢNG KHÁCH HÀNG ================= -->
     <section id="doituong" class="py-20">
       <div class="mx-auto max-w-[1280px] px-6">
         <h2 class="text-center text-3xl font-bold lg:text-4xl">Đối tượng khách hàng phù hợp</h2>
@@ -172,49 +268,150 @@
         <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           <div class="rounded-2xl bg-white p-6 shadow-md">
             <h3 class="text-xl font-semibold">Trẻ em</h3>
-            <p class="mt-3 leading-7 text-slate-600">Tư vấn lịch tiêm phù hợp theo độ tuổi và loại vắc-xin cần thiết.</p>
+            <p class="mt-3 leading-7 text-slate-600">
+              Tư vấn lịch tiêm phù hợp theo độ tuổi và loại vắc-xin cần thiết.
+            </p>
           </div>
+
           <div class="rounded-2xl bg-white p-6 shadow-md">
             <h3 class="text-xl font-semibold">Người trưởng thành</h3>
-            <p class="mt-3 leading-7 text-slate-600">Bổ sung các mũi tiêm nhắc lại và phòng bệnh theo nhu cầu cá nhân.</p>
+            <p class="mt-3 leading-7 text-slate-600">
+              Bổ sung các mũi tiêm nhắc lại và phòng bệnh theo nhu cầu cá nhân.
+            </p>
           </div>
+
           <div class="rounded-2xl bg-white p-6 shadow-md">
             <h3 class="text-xl font-semibold">Phụ nữ chuẩn bị mang thai</h3>
-            <p class="mt-3 leading-7 text-slate-600">Được tư vấn kỹ trước khi tiêm để đảm bảo an toàn và hiệu quả.</p>
+            <p class="mt-3 leading-7 text-slate-600">
+              Được tư vấn kỹ trước khi tiêm để đảm bảo an toàn và hiệu quả.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ================= QUY TRÌNH ================= -->
     <section id="quytrinh" class="bg-[#f5f5f5] py-14">
-      <div class="mx-auto max-w-[1500px] px-4">
-        
-        <div class="mb-10 text-center">
-          <h2 class="text-[24px] md:text-[28px] font-bold text-slate-800">
-            Quy trình dịch vụ Tiêm chủng Vắc-xin tại Bệnh viện Phương Đông
-          </h2>
-          <div class="mx-auto mt-4 h-[4px] w-[72px] rounded-full bg-sky-500"></div>
+      <div class="mx-auto max-w-[1500px] px-4 sm:px-6">
+
+        <!-- ================= MOBILE / TABLET ================= -->
+        <div class="overflow-hidden rounded-[32px] bg-gradient-to-r from-[#56B5ED] to-[#1689D8] px-4 py-8 text-white xl:hidden">
+          <div class="text-center">
+            <h2 class="text-[22px] font-bold leading-tight sm:text-[28px]">
+              Quy trình dịch vụ Tiêm chủng Vắc-xin tại Bệnh viện Phương Đông
+            </h2>
+            <div class="mx-auto mt-3 h-[4px] w-[70px] rounded-full bg-white/90"></div>
+          </div>
+
+          <div class="mt-8 space-y-4">
+            <div class="rounded-2xl bg-white/10 p-4 backdrop-blur">
+              <div class="flex items-center gap-4">
+                <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white text-[20px] font-bold text-sky-600">01</div>
+                <div>
+                  <h3 class="text-[16px] font-semibold">Đăng ký thông tin</h3>
+                  <p class="mt-1 text-[13px] leading-6 text-white/90">
+                    Khách hàng đăng ký thông tin tại quầy tiếp đón Trung tâm Tư vấn &amp; Tiêm chủng vắc-xin.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="rounded-2xl bg-white/10 p-4 backdrop-blur">
+              <div class="flex items-center gap-4">
+                <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white text-[20px] font-bold text-sky-600">02</div>
+                <div>
+                  <h3 class="text-[16px] font-semibold">Tư vấn &amp; Thăm khám</h3>
+                  <p class="mt-1 text-[13px] leading-6 text-white/90">
+                    Khách hàng được thăm khám và tư vấn kỹ trước khi tiêm tại phòng khám với bác sĩ.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="rounded-2xl bg-white/10 p-4 backdrop-blur">
+              <div class="flex items-center gap-4">
+                <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white text-[20px] font-bold text-sky-600">03</div>
+                <div>
+                  <h3 class="text-[16px] font-semibold">Thanh toán chi phí</h3>
+                  <p class="mt-1 text-[13px] leading-6 text-white/90">
+                    Khách hàng thanh toán chi phí tiêm tại quầy lễ tân và nhận phiếu thanh toán.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="rounded-2xl bg-white/10 p-4 backdrop-blur">
+              <div class="flex items-center gap-4">
+                <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white text-[20px] font-bold text-sky-600">04</div>
+                <div>
+                  <h3 class="text-[16px] font-semibold">Thực hiện tiêm chủng</h3>
+                  <p class="mt-1 text-[13px] leading-6 text-white/90">
+                    Cầm theo phiếu thanh toán tới tiêm Vắc-xin tại phòng tiêm theo chỉ dẫn của nhân viên y tế.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="rounded-2xl bg-white/10 p-4 backdrop-blur">
+              <div class="flex items-center gap-4">
+                <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white text-[20px] font-bold text-sky-600">05</div>
+                <div>
+                  <h3 class="text-[16px] font-semibold">Theo dõi sức khỏe</h3>
+                  <p class="mt-1 text-[13px] leading-6 text-white/90">
+                    Theo dõi 30 phút sau tiêm, kiểm tra sức khỏe trước khi ra về và hướng dẫn theo dõi tại nhà.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="hidden xl:block relative mx-auto h-[560px] w-full max-w-[1380px] overflow-visible rounded-[84px] bg-gradient-to-r from-[#56B5ED] to-[#1689D8]">
-          <img src="./assets/images/process-top-decor.png" alt="" class="absolute right-[-14px] top-[-106px] w-[202px]" />
-          <img src="./assets/images/process-bottom-decor.png" alt="" class="absolute bottom-[-72px] left-[24px] w-[172px]" />
+        <!-- ================= DESKTOP ================= -->
+        <div class="relative mx-auto hidden h-[560px] w-full max-w-[1380px] overflow-visible rounded-[84px] bg-gradient-to-r from-[#56B5ED] to-[#1689D8] xl:block">
 
+          <!-- decor -->
+          <img
+            src="./assets/images/process-top-decor.png"
+            alt=""
+            class="absolute right-[34px] top-[-16px] w-[82px]"
+          />
+          <img
+            src="./assets/images/process-bottom-decor.png"
+            alt=""
+            class="absolute bottom-[-32px] left-[34px] w-[72px]"
+          />
+
+          <!-- title -->
+          <div class="absolute left-1/2 top-[42px] -translate-x-1/2 text-center">
+            <h2 class="whitespace-nowrap text-[28px] font-bold text-white">
+              Quy trình dịch vụ Tiêm chủng Vắc-xin tại Bệnh viện Phương Đông
+            </h2>
+            <div class="mx-auto mt-4 h-[4px] w-[72px] rounded-full bg-white/90"></div>
+          </div>
+
+          <!-- vertical lines + dots -->
           <div class="absolute left-[237px] top-[316px] h-[58px] border-l border-dashed border-white/80"></div>
           <div class="absolute left-[232px] top-[370px] h-[12px] w-[12px] rounded-full bg-white"></div>
-          <div class="absolute left-[433px] top-[214px] h-[72px] border-l border-dashed border-white/80"></div>
+
+          <div class="absolute left-[433px] top-[214px] h-[56px] border-l border-dashed border-white/80"></div>
           <div class="absolute left-[428px] top-[204px] h-[12px] w-[12px] rounded-full bg-white"></div>
+
           <div class="absolute left-[672px] top-[316px] h-[58px] border-l border-dashed border-white/80"></div>
           <div class="absolute left-[667px] top-[370px] h-[12px] w-[12px] rounded-full bg-white"></div>
-          <div class="absolute left-[868px] top-[214px] h-[72px] border-l border-dashed border-white/80"></div>
+
+          <div class="absolute left-[868px] top-[214px] h-[56px] border-l border-dashed border-white/80"></div>
           <div class="absolute left-[863px] top-[204px] h-[12px] w-[12px] rounded-full bg-white"></div>
+
           <div class="absolute left-[1108px] top-[316px] h-[58px] border-l border-dashed border-white/80"></div>
           <div class="absolute left-[1103px] top-[370px] h-[12px] w-[12px] rounded-full bg-white"></div>
-          <div class="absolute left-[296px] top-[288px] h-0 w-[83px] rotate-[34deg] origin-left border-t border-dashed border-white/80"></div>
-          <div class="absolute left-[480px] top-[356px] h-0 w-[150px] -rotate-[34deg] border-t border-dashed border-white/80 origin-left"></div>
-          <div class="absolute left-[730px] top-[288px] h-0 w-[83px] rotate-[34deg] border-t border-dashed border-white/80 origin-left"></div>
+
+          <!-- diagonals -->
+          <div class="absolute left-[276px] top-[306px] h-0 w-[144px] rotate-[34deg] border-t border-dashed border-white/80 origin-left"></div>
+          <div class="absolute left-[480px] top-[336px] h-0 w-[150px] -rotate-[34deg] border-t border-dashed border-white/80 origin-left"></div>
+          <div class="absolute left-[710px] top-[306px] h-0 w-[144px] rotate-[34deg] border-t border-dashed border-white/80 origin-left"></div>
           <div class="absolute left-[915px] top-[336px] h-0 w-[150px] -rotate-[34deg] border-t border-dashed border-white/80 origin-left"></div>
 
+          <!-- STEP 1 -->
           <div class="absolute left-[165px] top-[172px]">
             <div class="relative h-[146px] w-[146px]">
               <img src="./assets/images/process-dashed-circle.png" alt="" class="absolute inset-0 h-full w-full" />
@@ -227,12 +424,16 @@
                 </div>
               </div>
             </div>
+
             <div class="mt-16 w-[182px] -translate-x-[18px] text-center">
               <h3 class="text-[16px] font-semibold text-white">Đăng ký thông tin</h3>
-              <p class="mt-2 text-[12px] leading-[1.6] text-white/90">Khách hàng đăng ký thông tin tại quầy tiếp đón Trung tâm Tư vấn &amp; Tiêm chủng vắc-xin.</p>
+              <p class="mt-2 text-[12px] leading-[1.6] text-white/90">
+                Khách hàng đăng ký thông tin tại quầy tiếp đón Trung tâm Tư vấn &amp; Tiêm chủng vắc-xin.
+              </p>
             </div>
           </div>
 
+          <!-- STEP 2 -->
           <div class="absolute left-[360px] top-[286px]">
             <div class="relative h-[146px] w-[146px]">
               <img src="./assets/images/process-dashed-circle.png" alt="" class="absolute inset-0 h-full w-full" />
@@ -245,12 +446,16 @@
                 </div>
               </div>
             </div>
-            <div class="absolute left-1/2 top-[-172px] w-[190px] -translate-x-1/2 text-center">
+
+            <div class="absolute left-1/2 top-[-112px] w-[190px] -translate-x-1/2 text-center">
               <h3 class="text-[15px] font-semibold text-white">Tư vấn &amp; Thăm khám</h3>
-              <p class="mt-2 text-[11px] leading-[1.5] text-white/90">Khách hàng được thăm khám và tư vấn kỹ trước khi tiêm tại phòng khám với bác sĩ.</p>
+              <p class="mt-2 text-[11px] leading-[1.5] text-white/90">
+                Khách hàng được thăm khám và tư vấn kỹ trước khi tiêm tại phòng khám với bác sĩ.
+              </p>
             </div>
           </div>
 
+          <!-- STEP 3 -->
           <div class="absolute left-[600px] top-[172px]">
             <div class="relative h-[146px] w-[146px]">
               <img src="./assets/images/process-dashed-circle.png" alt="" class="absolute inset-0 h-full w-full" />
@@ -263,12 +468,16 @@
                 </div>
               </div>
             </div>
+
             <div class="mt-16 w-[182px] -translate-x-[18px] text-center">
               <h3 class="text-[16px] font-semibold text-white">Thanh toán chi phí</h3>
-              <p class="mt-2 text-[12px] leading-[1.6] text-white/90">Khách hàng thanh toán chi phí tiêm tại quầy lễ tân và nhận phiếu thanh toán.</p>
+              <p class="mt-2 text-[12px] leading-[1.6] text-white/90">
+                Khách hàng thanh toán chi phí tiêm tại quầy lễ tân và nhận phiếu thanh toán.
+              </p>
             </div>
           </div>
 
+          <!-- STEP 4 -->
           <div class="absolute left-[795px] top-[286px]">
             <div class="relative h-[146px] w-[146px]">
               <img src="./assets/images/process-dashed-circle.png" alt="" class="absolute inset-0 h-full w-full" />
@@ -281,12 +490,16 @@
                 </div>
               </div>
             </div>
-            <div class="absolute left-1/2 top-[-172px] w-[196px] -translate-x-1/2 text-center">
+
+            <div class="absolute left-1/2 top-[-112px] w-[196px] -translate-x-1/2 text-center">
               <h3 class="text-[15px] font-semibold text-white">Thực hiện tiêm chủng</h3>
-              <p class="mt-2 text-[11px] leading-[1.5] text-white/90">Cầm theo phiếu thanh toán tới tiêm Vắc-xin tại phòng tiêm theo chỉ dẫn của nhân viên y tế.</p>
+              <p class="mt-2 text-[11px] leading-[1.5] text-white/90">
+                Cầm theo phiếu thanh toán tới tiêm Vắc-xin tại phòng tiêm theo chỉ dẫn của nhân viên y tế.
+              </p>
             </div>
           </div>
 
+          <!-- STEP 5 -->
           <div class="absolute left-[1035px] top-[172px]">
             <div class="relative h-[146px] w-[146px]">
               <img src="./assets/images/process-dashed-circle.png" alt="" class="absolute inset-0 h-full w-full" />
@@ -299,73 +512,18 @@
                 </div>
               </div>
             </div>
+
             <div class="mt-16 w-[182px] -translate-x-[18px] text-center">
               <h3 class="text-[16px] font-semibold text-white">Theo dõi sức khỏe</h3>
-              <p class="mt-2 text-[12px] leading-[1.6] text-white/90">Theo dõi 30 phút sau tiêm, kiểm tra sức khỏe trước khi ra về và hướng dẫn theo dõi tại nhà.</p>
+              <p class="mt-2 text-[12px] leading-[1.6] text-white/90">
+                Theo dõi 30 phút sau tiêm, kiểm tra sức khỏe trước khi ra về và hướng dẫn theo dõi tại nhà.
+              </p>
             </div>
           </div>
         </div>
-
-        <div class="xl:hidden flex flex-col gap-6 rounded-3xl bg-gradient-to-r from-[#56B5ED] to-[#1689D8] p-6 shadow-lg">
-          <div class="flex items-center gap-4 rounded-xl bg-white/10 p-4">
-            <div class="flex h-16 w-16 shrink-0 flex-col items-center justify-center rounded-full bg-white shadow-md">
-              <span class="text-[10px] font-medium text-[#1B90E5]">Bước</span>
-              <span class="text-[20px] font-bold leading-tight text-[#0AA28A]">01</span>
-            </div>
-            <div>
-              <h3 class="text-[16px] font-semibold text-white">Đăng ký thông tin</h3>
-              <p class="mt-1 text-[13px] text-white/90">Đăng ký tại quầy tiếp đón Trung tâm Tiêm chủng.</p>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-4 rounded-xl bg-white/10 p-4">
-            <div class="flex h-16 w-16 shrink-0 flex-col items-center justify-center rounded-full bg-white shadow-md">
-              <span class="text-[10px] font-medium text-[#1B90E5]">Bước</span>
-              <span class="text-[20px] font-bold leading-tight text-[#0AA28A]">02</span>
-            </div>
-            <div>
-              <h3 class="text-[16px] font-semibold text-white">Tư vấn & Thăm khám</h3>
-              <p class="mt-1 text-[13px] text-white/90">Thăm khám và tư vấn kỹ trước khi tiêm với bác sĩ.</p>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-4 rounded-xl bg-white/10 p-4">
-            <div class="flex h-16 w-16 shrink-0 flex-col items-center justify-center rounded-full bg-white shadow-md">
-              <span class="text-[10px] font-medium text-[#1B90E5]">Bước</span>
-              <span class="text-[20px] font-bold leading-tight text-[#0AA28A]">03</span>
-            </div>
-            <div>
-              <h3 class="text-[16px] font-semibold text-white">Thanh toán chi phí</h3>
-              <p class="mt-1 text-[13px] text-white/90">Thanh toán tại quầy lễ tân và nhận phiếu.</p>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-4 rounded-xl bg-white/10 p-4">
-            <div class="flex h-16 w-16 shrink-0 flex-col items-center justify-center rounded-full bg-white shadow-md">
-              <span class="text-[10px] font-medium text-[#1B90E5]">Bước</span>
-              <span class="text-[20px] font-bold leading-tight text-[#0AA28A]">04</span>
-            </div>
-            <div>
-              <h3 class="text-[16px] font-semibold text-white">Thực hiện tiêm chủng</h3>
-              <p class="mt-1 text-[13px] text-white/90">Tiêm Vắc-xin tại phòng tiêm theo chỉ dẫn.</p>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-4 rounded-xl bg-white/10 p-4">
-            <div class="flex h-16 w-16 shrink-0 flex-col items-center justify-center rounded-full bg-white shadow-md">
-              <span class="text-[10px] font-medium text-[#1B90E5]">Bước</span>
-              <span class="text-[20px] font-bold leading-tight text-[#0AA28A]">05</span>
-            </div>
-            <div>
-              <h3 class="text-[16px] font-semibold text-white">Theo dõi sức khỏe</h3>
-              <p class="mt-1 text-[13px] text-white/90">Theo dõi 30 phút sau tiêm trước khi ra về.</p>
-            </div>
-          </div>
-        </div>
-
       </div>
     </section>
-
+    <!-- ================= BẢNG GIÁ ================= -->
     <section id="banggia" class="py-20">
       <div class="mx-auto max-w-[1280px] px-6">
         <h2 class="text-center text-3xl font-bold lg:text-4xl">Bảng giá và gói ưu đãi</h2>
@@ -377,11 +535,13 @@
             <p class="mt-4 text-center text-4xl font-bold text-sky-500">999k</p>
             <button class="mt-6 w-full rounded-full bg-sky-500 px-6 py-3 text-white">ĐĂNG KÝ NGAY</button>
           </div>
+
           <div class="rounded-3xl bg-sky-500 p-6 text-white shadow-xl">
             <h3 class="text-center text-xl font-bold">Gói gia đình</h3>
             <p class="mt-4 text-center text-4xl font-bold">999k</p>
             <button class="mt-6 w-full rounded-full bg-white px-6 py-3 font-semibold text-sky-500">ĐĂNG KÝ NGAY</button>
           </div>
+
           <div class="rounded-3xl bg-white p-6 shadow-lg">
             <h3 class="text-center text-xl font-bold">Gói doanh nghiệp</h3>
             <p class="mt-4 text-center text-4xl font-bold text-sky-500">999k</p>
@@ -391,6 +551,7 @@
       </div>
     </section>
 
+    <!-- ================= CẢM NHẬN ================= -->
     <section id="camnhan" class="py-20">
       <div class="mx-auto max-w-[1280px] px-6">
         <h2 class="text-center text-3xl font-bold lg:text-4xl">Cảm nhận của khách hàng</h2>
@@ -398,21 +559,30 @@
 
         <div class="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-3">
           <div class="rounded-2xl bg-white p-6 shadow-md">
-            <p class="leading-7 text-slate-600">Dịch vụ tốt, bác sĩ tư vấn kỹ, không gian sạch sẽ và chuyên nghiệp.</p>
+            <p class="leading-7 text-slate-600">
+              Dịch vụ tốt, bác sĩ tư vấn kỹ, không gian sạch sẽ và chuyên nghiệp.
+            </p>
             <p class="mt-4 font-semibold">Nguyễn Quỳnh Trang</p>
           </div>
+
           <div class="rounded-2xl bg-white p-6 shadow-md">
-            <p class="leading-7 text-slate-600">Tôi cảm thấy yên tâm khi sử dụng dịch vụ tại bệnh viện.</p>
+            <p class="leading-7 text-slate-600">
+              Tôi cảm thấy yên tâm khi sử dụng dịch vụ tại bệnh viện.
+            </p>
             <p class="mt-4 font-semibold">Nguyễn Minh Anh</p>
           </div>
+
           <div class="rounded-2xl bg-white p-6 shadow-md">
-            <p class="leading-7 text-slate-600">Nhân viên hỗ trợ nhiệt tình, quy trình rõ ràng và nhanh chóng.</p>
+            <p class="leading-7 text-slate-600">
+              Nhân viên hỗ trợ nhiệt tình, quy trình rõ ràng và nhanh chóng.
+            </p>
             <p class="mt-4 font-semibold">Bác sĩ Huy Bảo</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ================= ĐỘI NGŨ ================= -->
     <section id="doingu" class="py-20">
       <div class="mx-auto max-w-[1280px] px-6">
         <h2 class="text-center text-3xl font-bold lg:text-4xl">Đội ngũ bác sĩ</h2>
@@ -424,16 +594,19 @@
             <h3 class="mt-5 font-bold">NGUYỄN TRUNG CHÍNH</h3>
             <p class="mt-2 text-sm text-sky-600">PGS.TS. Bác sĩ Ung bướu</p>
           </div>
+
           <div class="rounded-2xl bg-white p-6 shadow-md text-center">
             <div class="mx-auto h-40 w-full rounded-xl bg-slate-200"></div>
             <h3 class="mt-5 font-bold">NGUYỄN HUY BẢO</h3>
             <p class="mt-2 text-sm text-sky-600">PGĐ.TS.BS. CKII Sản phụ khoa</p>
           </div>
+
           <div class="rounded-2xl bg-white p-6 shadow-md text-center">
             <div class="mx-auto h-40 w-full rounded-xl bg-slate-200"></div>
             <h3 class="mt-5 font-bold">TRẦN KINH TRANG</h3>
             <p class="mt-2 text-sm text-sky-600">Bác sĩ CKII Nội khoa</p>
           </div>
+
           <div class="rounded-2xl bg-white p-6 shadow-md text-center">
             <div class="mx-auto h-40 w-full rounded-xl bg-slate-200"></div>
             <h3 class="mt-5 font-bold">NGUYỄN THỊ KIM YẾN</h3>
@@ -443,6 +616,7 @@
       </div>
     </section>
 
+    <!-- ================= HÌNH ẢNH & VIDEO ================= -->
     <section id="hinhanhvideo" class="py-20">
       <div class="mx-auto max-w-[1280px] px-6">
         <h2 class="text-center text-3xl font-bold lg:text-4xl">Hình ảnh & Video</h2>
@@ -454,6 +628,7 @@
               Gallery Image
             </div>
           </div>
+
           <div class="rounded-3xl bg-white p-6 shadow-lg">
             <div class="flex h-[280px] items-center justify-center rounded-2xl bg-slate-200 text-slate-500">
               Video Thumbnail
@@ -464,6 +639,7 @@
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="bg-gradient-to-r from-sky-400 to-sky-500 py-12 text-white">
     <div class="mx-auto grid max-w-[1280px] grid-cols-1 gap-10 px-6 md:grid-cols-2 lg:grid-cols-4">
       <div>
@@ -472,16 +648,19 @@
           BỆNH VIỆN ĐA KHOA PHƯƠNG ĐÔNG
         </p>
       </div>
+
       <div>
         <h3 class="text-lg font-semibold">Liên hệ</h3>
         <p class="mt-4 text-sm text-white/90">Hotline: 1900 1806</p>
         <p class="mt-2 text-sm text-white/90">Email: contact@example.com</p>
       </div>
+
       <div>
         <h3 class="text-lg font-semibold">Thời gian làm việc</h3>
         <p class="mt-4 text-sm text-white/90">Thứ 2 - Chủ nhật</p>
         <p class="mt-2 text-sm text-white/90">07:30 - 19:00</p>
       </div>
+
       <div>
         <h3 class="text-lg font-semibold">Mạng xã hội</h3>
         <div class="mt-4 flex gap-3">
@@ -492,14 +671,6 @@
       </div>
     </div>
   </footer>
-
-  <script>
-    const btn = document.getElementById('mobile-menu-btn');
-    const menu = document.getElementById('mobile-menu');
-    btn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-    });
-  </script>
 
 </body>
 </html>
