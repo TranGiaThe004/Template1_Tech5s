@@ -5,124 +5,258 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Template 1 - Phương Đông</title>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+  .nav-link {
+    position: relative;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -1px;
+    width: 0;
+    height: 3px;
+    border-radius: 9999px;
+    background: #2497e3;
+    transform: translateX(-50%);
+    transition: width 0.25s ease;
+  }
+
+  .nav-link-active {
+    color: #2497e3 !important;
+  }
+
+  .nav-link-active::after {
+    width: 28px;
+  }
+
+  .phone-shadow {
+    box-shadow: 0 8px 18px rgba(247, 148, 51, 0.22);
+  }
+
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  #mobileBackdrop {
+    transition: opacity 0.3s ease;
+  }
+
+  #mobileMenu {
+    transition: transform 0.3s ease;
+  }
+</style>
 </head>
 <body class="bg-[#f7f7f7] text-slate-900">
-
-  <header class="sticky top-0 z-[100] border-b border-slate-200 bg-white/95 backdrop-blur">
-  <div class="mx-auto flex max-w-[1280px] items-center justify-between px-4 py-3 sm:px-6">
-    <a href="#home" class="shrink-0">
-      <img src="./assets/logo/logo.png" alt="Phương Đông" class="h-10 w-auto sm:h-11" />
+  
+  <header class="sticky top-0 z-[100] border-b border-[#e7edf3] bg-white">
+  <div class="mx-auto flex h-[81px] max-w-[1920px] items-center justify-between px-4 sm:px-6 lg:px-8 xl:px-[42px]">
+    <!-- Logo -->
+    <a href="#home" class="absolute top-[21px] left-[80px] block h-[39px] w-[175px] rotate-0 opacity-100">
+      <img
+        src="./assets/logo/logo.png"
+        alt="Phương Đông"
+        class="h-[39px] w-[175px] object-contain"
+      />
     </a>
 
-    <nav class="hidden items-center gap-6 xl:flex">
-      <a href="#gioithieu" class="whitespace-nowrap text-[14px] font-medium text-slate-800 transition hover:text-sky-500">Giới thiệu</a>
-      <a href="#doituong" class="whitespace-nowrap text-[14px] font-medium text-slate-800 transition hover:text-sky-500">Đối tượng khách hàng</a>
-      <a href="#quytrinh" class="whitespace-nowrap text-[14px] font-medium text-slate-800 transition hover:text-sky-500">Quy trình</a>
-      <a href="#banggia" class="whitespace-nowrap text-[14px] font-medium text-slate-800 transition hover:text-sky-500">Bảng giá</a>
-      <a href="#camnhan" class="whitespace-nowrap text-[14px] font-medium text-slate-800 transition hover:text-sky-500">Cảm nhận khách hàng</a>
-      <a href="#doingu" class="whitespace-nowrap text-[14px] font-medium text-slate-800 transition hover:text-sky-500">Đội ngũ bác sĩ</a>
-      <a href="#hinhanhvideo" class="whitespace-nowrap text-[14px] font-medium text-slate-800 transition hover:text-sky-500">Hình ảnh &amp; Video</a>
-    </nav>
-
-    <div class="flex items-center gap-3">
+    <!-- Desktop nav -->
+    <nav class="hidden xl:ml-[250px] xl:flex xl:items-center xl:gap-[30px]">
+      <a href="#gioithieu" class="nav-link flex h-[80px] items-center whitespace-nowrap text-[16x] font-semibold text-[#1f2937] transition hover:text-[#2497e3]">Giới thiệu</a>
+      <a href="#doituong" class="nav-link flex h-[80px] items-center whitespace-nowrap text-[16x] font-semibold text-[#1f2937] transition hover:text-[#2497e3]">Đối tượng khách hàng</a>
+      <a href="#quytrinh" class="nav-link flex h-[80px] items-center whitespace-nowrap text-[16x] font-semibold text-[#1f2937] transition hover:text-[#2497e3]">Quy trình</a>
+      <a href="#banggia" class="nav-link flex h-[80px] items-center whitespace-nowrap text-[16x] font-semibold text-[#1f2937] transition hover:text-[#2497e3]">Bảng giá</a>
+      <a href="#camnhan" class="nav-link flex h-[80px] items-center whitespace-nowrap text-[16x] font-semibold text-[#1f2937] transition hover:text-[#2497e3]">Cảm nhận của khách hàng</a>
+      <a href="#doingu" class="nav-link flex h-[80px] items-center whitespace-nowrap text-[16x] font-semibold text-[#1f2937] transition hover:text-[#2497e3]">Đội ngũ bác sĩ</a>
+      <a href="#hinhanhvideo" class="nav-link flex h-[80px] items-center whitespace-nowrap text-[16x] font-semibold text-[#1f2937] transition hover:text-[#2497e3]">Hình ảnh &amp; Video</a>
       <a
         href="tel:19001806"
-        class="hidden rounded-full bg-[#F79433] px-5 py-3 text-[14px] font-semibold text-white shadow-md transition hover:bg-[#ee8621] sm:inline-flex"
+        class="inline-flex h-[40px] w-[161px] items-center gap-[4px] rounded-[20px] bg-[linear-gradient(180deg,#FFB469_0%,#E57709_100%)] pl-[7px] pr-[7px] text-[15px] font-bold text-white opacity-100 shadow-[0px_8px_16px_0px_#E5770959] transition hover:brightness-105"
       >
-        Gọi 1900 1806
+        <span class="flex h-[14px] w-[24px] items-center justify-center">
+          <img
+            src="./assets/images/home_kytugoi.png"
+            alt="Phone"
+            class="h-[28px] w-[28px] object-contain"
+          />
+        </span>
+        <span class="block font-['Lato'] text-[16px] w-[700] font-bold leading-[100%] tracking-[0px] text-justify">
+          Gọi 1900 1806
+        </span>
       </a>
+    </nav>
+
+    <!-- Actions -->
+    <div class="flex items-center">
+      
 
       <button
         id="menuBtn"
         type="button"
-        class="relative z-[110] inline-flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 text-slate-700 xl:hidden"
+        class="inline-flex h-[52px] w-[52px] items-center justify-center rounded-[16px] border border-[#d9e2ec] text-[#334155] xl:hidden"
         aria-label="Mở menu"
         aria-expanded="false"
         aria-controls="mobileMenu"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16" />
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
         </svg>
       </button>
     </div>
   </div>
 
-  <div id="mobileMenu" class="hidden border-t border-slate-200 bg-white xl:hidden">
-    <div class="mx-auto max-w-[1280px] px-4 py-4 sm:px-6">
-      <nav class="flex flex-col gap-1">
-        <a href="#gioithieu" class="rounded-xl px-4 py-3 text-[15px] font-medium text-slate-800 hover:bg-slate-50">Giới thiệu</a>
-        <a href="#doituong" class="rounded-xl px-4 py-3 text-[15px] font-medium text-slate-800 hover:bg-slate-50">Đối tượng khách hàng</a>
-        <a href="#quytrinh" class="rounded-xl px-4 py-3 text-[15px] font-medium text-slate-800 hover:bg-slate-50">Quy trình</a>
-        <a href="#banggia" class="rounded-xl px-4 py-3 text-[15px] font-medium text-slate-800 hover:bg-slate-50">Bảng giá</a>
-        <a href="#camnhan" class="rounded-xl px-4 py-3 text-[15px] font-medium text-slate-800 hover:bg-slate-50">Cảm nhận khách hàng</a>
-        <a href="#doingu" class="rounded-xl px-4 py-3 text-[15px] font-medium text-slate-800 hover:bg-slate-50">Đội ngũ bác sĩ</a>
-        <a href="#hinhanhvideo" class="rounded-xl px-4 py-3 text-[15px] font-medium text-slate-800 hover:bg-slate-50">Hình ảnh &amp; Video</a>
-      </nav>
+  <!-- Mobile overlay -->
+<div
+  id="mobileBackdrop"
+  class="pointer-events-none fixed inset-0 z-[120] bg-slate-900/35 opacity-0 transition-opacity duration-300 xl:hidden"
+></div>
 
-      <a
-        href="tel:19001806"
-        class="mt-4 inline-flex w-full items-center justify-center rounded-full bg-[#F79433] px-5 py-3 text-[14px] font-semibold text-white shadow-md"
-      >
-        Gọi 1900 1806
-      </a>
-    </div>
+<!-- Mobile drawer -->
+<aside
+  id="mobileMenu"
+  class="fixed inset-y-0 left-0 z-[130] w-[86%] max-w-[340px] -translate-x-full bg-white shadow-xl transition-transform duration-300 xl:hidden"
+>
+  <div class="flex items-center justify-between border-b border-slate-200 px-4 py-4">
+    <img
+      src="./assets/logo/logo.png"
+      alt="Phương Đông"
+      class="h-[38px] w-auto"
+    />
+
+    <button
+      id="closeMenuBtn"
+      type="button"
+      class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 text-slate-700"
+      aria-label="Đóng menu"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18" />
+      </svg>
+    </button>
   </div>
+
+  <div class="px-5 py-5">
+    <nav class="flex flex-col">
+      <a href="#gioithieu" class="mobile-nav-link border-b border-slate-100 py-4 text-[15px] font-semibold text-slate-800">Giới thiệu</a>
+      <a href="#doituong" class="mobile-nav-link border-b border-slate-100 py-4 text-[15px] font-semibold text-slate-800">Đối tượng khách hàng</a>
+      <a href="#quytrinh" class="mobile-nav-link border-b border-slate-100 py-4 text-[15px] font-semibold text-slate-800">Quy trình</a>
+      <a href="#banggia" class="mobile-nav-link border-b border-slate-100 py-4 text-[15px] font-semibold text-slate-800">Bảng giá</a>
+      <a href="#camnhan" class="mobile-nav-link border-b border-slate-100 py-4 text-[15px] font-semibold text-slate-800">Cảm nhận khách hàng</a>
+      <a href="#doingu" class="mobile-nav-link border-b border-slate-100 py-4 text-[15px] font-semibold text-slate-800">Đội ngũ bác sĩ</a>
+      <a href="#hinhanhvideo" class="mobile-nav-link py-4 text-[15px] font-semibold text-slate-800">Hình ảnh &amp; Video</a>
+    </nav>
+
+    <a
+      href="tel:19001806"
+      class="mt-6 inline-flex h-[54px] w-full items-center justify-center gap-[10px] rounded-full bg-[#F79433] px-5 text-[16px] font-bold text-white"
+    >
+      <img
+        src="./assets/images/home_kytugoi.png"
+        alt="Phone"
+        class="h-[22px] w-[22px] object-contain"
+      />
+      <span class="leading-none">Gọi 1900 1806</span>
+    </a>
+  </div>
+</aside>
 </header>
 
   <main>
-    <section id="home" class="bg-white py-16 sm:py-20">
-      <div class="mx-auto max-w-[1280px] px-4 sm:px-6">
-        <div class="grid grid-cols-1 items-start gap-6 lg:grid-cols-[1.08fr_0.92fr] lg:gap-0">
+    <section id="home" class="relative overflow-x-hidden bg-white">
+      <!-- Desktop right image block -->
+      <div class="pointer-events-none absolute right-0 top-0 z-0 hidden lg:block lg:w-[51vw] lg:min-w-[860px] lg:max-w-[976px]">
+        <div class="relative h-[607px] w-full overflow-hidden rounded-bl-[130px] bg-[#1ea7ef]">
+          <img
+            src="./assets/images/hero-vaccine.png"
+            alt="Hero vaccine"
+            class="h-full w-full object-cover object-right"
+          />
+        </div>
 
-          <!-- Left -->
-          <div class="relative z-10 order-2 pb-10 lg:order-1 lg:pt-[68px] lg:-mr-[120px]">
-            <h1 class="max-w-[820px] text-[49px] font-bold leading-[1.06] tracking-[-0.03em] text-slate-900 sm:text-[49px] lg:text-[49px]">
-              Dịch vụ Tiêm chủng Vắc-xin
-              <br />
-              Bảo vệ bản thân, bảo vệ mọi người
-            </h1>
+        <img
+          src="./assets/images/card-95.png"
+          alt="95% hiệu quả, an toàn"
+          class="absolute bottom-[-72px] left-[120px] w-[250px]"
+        />
+        
+      </div>
+      
+      <div class="relative z-10 mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8 xl:px-[42px]">
+        <div class="py-8 sm:py-10 lg:min-h-[720px] lg:py-0">
+          <div class="grid grid-cols-1 gap-8 lg:grid-cols-[780px_1fr] lg:gap-0">
 
-            <p class="mt-5 max-w-[560px] text-[13.5px] leading-7 text-slate-600 sm:text-[13.5px]">
-              Vắc-xin ra đời được coi là một trong những thành tựu vĩ đại của nhân loại. Nhờ có Vắc xin, hàng triệu người trên thế giới tránh được nguy cơ tử vong và những di chứng, dị tật suốt đời do các bệnh truyền nhiễm như sởi, quai bị, rubella, thủy đậu, uốn ván...
-            </p>
-
-            <div class="mt-8 flex flex-wrap gap-4">
-              <a
-                href="#banggia"
-                class="inline-flex items-center justify-center gap-2 rounded-full bg-[#F79433] px-6 py-3 text-[13px] font-semibold text-white shadow-md transition hover:bg-[#ee8621]"
+            <!-- Left -->
+            <div class="order-2 lg:order-1 lg:pt-[150px]">
+              <h1
+                class="max-w-[780px] text-[50px] font-bold leading-[1.2] tracking-[-0.02em] text-[#252525]"
+                style="font-family: 'Lato', sans-serif;"
               >
+                Dịch vụ Tiêm chủng Vắc-xin
+                <br />
+                Bảo vệ bản thân, bảo vệ
+                mọi người
+              </h1>
+
+              <p class="mt-8 max-w-[529px] text-[13.5px] leading-[2.3] text-[#454545]"
+              style="font-family: 'Lato', sans-serif;"
+              >
+                Vắc-xin ra đời được coi là một trong những thành tựu vĩ đại của nhân loại.
+                Nhờ có Vắc xin, hàng triệu người trên thế giới tránh được nguy cơ tử vong
+                và những di chứng, dị tật suốt đời do các bệnh truyền nhiễm như sởi,
+                quai bị, rubella, thủy đậu, uốn ván...
+              </p>
+
+              <div class="mt-10 flex flex-wrap gap-5">
+                <a
+                  href="#banggia"
+                  class="inline-flex h-[44px] items-center justify-center gap-2 rounded-full bg-[linear-gradient(180deg,#FFB469_0%,#E57709_100%)] px-[24px] text-[13px] font-extrabold tracking-[0.01em] text-white shadow-[0px_8px_16px_0px_rgba(229,119,9,0.35)] transition hover:brightness-105"
+                >
+                  <img
+                    src="./assets/images/dangki.png"
+                    alt="Icon tư vấn"
+                    class="h-[16px] w-[16px] object-contain"
+                  />
+                  <span class="font-lato text-[16px] font-bold leading-none tracking-[0px] text-white">
+                    ĐĂNG KÝ TƯ VẤN
+                  </span>
+                </a>
+
+                <a
+                  href="#quytrinh"
+                  class="inline-flex h-[44px] items-center justify-center rounded-full border border-[#F2A25C] bg-white px-[24px] font-lato text-[16px] font-bold leading-none tracking-[0px] text-[#E57709] transition hover:bg-orange-50"
+                >
+                  QUY TRÌNH TIÊM CHỦNG
+                </a>
+              </div>
+            </div>
+
+            <!-- Mobile / tablet image -->
+            <div class="relative order-1 pb-[42px] lg:hidden">
+              <div class="relative h-[280px] overflow-visible sm:h-[360px]">
+                <div class="h-full overflow-hidden rounded-[28px] bg-[#1ea7ef]">
+                  <img
+                    src="./assets/images/hero-vaccine.png"
+                    alt="Hero vaccine"
+                    class="h-full w-full object-cover object-right"
+                  />
+                </div>
+
                 <img
-                  src="./assets/images/dangki.png"
-                  alt="Icon tư vấn"
-                  class="h-4 w-4 object-contain"
+                  src="./assets/images/card-95.png"
+                  alt="95% hiệu quả, an toàn"
+                  class="absolute bottom-[-52px] left-[16px] w-[180px] sm:left-[24px] sm:w-[210px]"
                 />
-                <span>ĐĂNG KÝ TƯ VẤN</span>
-              </a>
-
-              <a
-                href="#quytrinh"
-                class="inline-flex items-center justify-center rounded-full border border-[#F2A25C] px-6 py-3 text-[13px] font-semibold text-[#F79433] transition hover:bg-orange-50"
-              >
-                QUY TRÌNH TIÊM CHỦNG
-              </a>
-            </div>
-          </div>
-
-          <!-- Right -->
-          <div class="relative order-1 mb-8 lg:order-2 lg:mb-0 lg:-ml-24 lg:-mt-20">
-            <div class="overflow-hidden rounded-[28px] bg-gradient-to-r from-sky-400 to-sky-500 sm:rounded-[36px] lg:-mt-px lg:rounded-tl-none lg:rounded-bl-[110px] lg:rounded-tr-none lg:rounded-br-none">
-              <img
-                src="./assets/images/hero-vaccine.png"
-                alt="Hero vaccine"
-                class="h-[320px] w-full object-cover sm:h-[420px] lg:h-[500px]"
-              />
+              </div>
             </div>
 
-            <img
-              src="./assets/images/card-95.png"
-              alt="95% hiệu quả, an toàn"
-              class="absolute left-4 bottom-0 translate-y-1/2 w-[168px] drop-shadow-xl sm:left-6 sm:w-[200px] lg:left-10 lg:w-[230px]"
-            />
           </div>
         </div>
       </div>
@@ -133,7 +267,7 @@
     <section id="gioithieu" class="bg-white py-16 sm:py-20">
       <div class="mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr]">
         <!-- Image block -->
-        <div class="relative">
+        <div class="relative ml-[30px] overflow-visible sm:ml-0">
           <div class="overflow-hidden rounded-[36px] sm:rounded-[48px] lg:rounded-[60px]">
             <img
               src="./assets/images/about-doctor-patient.png"
@@ -143,9 +277,15 @@
           </div>
 
           <img
+            src="./assets/icons/hinhvuong.svg"
+            alt="900+ Khách hàng đã tiêm"
+            class="absolute left-[-90px] top-[190px] z-10 w-[80px] -translate-x-1/2 -translate-y-1/2 drop-shadow-xl sm:w-[160px] lg:w-[100px]"
+          />
+
+          <img
             src="./assets/images/card-900.png"
             alt="900+ Khách hàng đã tiêm"
-            class="absolute left-0 top-1/2 w-[130px] -translate-x-[45%] -translate-y-1/2 drop-shadow-xl sm:w-[160px] lg:w-[190px]"
+            class="absolute left-0 top-1/2 z-10 w-[110px] -translate-x-1/2 -translate-y-1/2 drop-shadow-xl sm:w-[160px] lg:w-[190px]"
           />
 
           <img
@@ -157,6 +297,11 @@
 
         <!-- Text -->
         <div>
+          <img
+            src="./assets/images/gioithieu_banhtron.png"
+            alt="Bánh tròn trang trí"
+            class="pointer-events-none absolute right-[4%] bottom-[-120px] w-[120px] sm:w-[170px] lg:bottom-[-182px] lg:w-[250px]"
+          />
           <h2 class="max-w-[620px] text-[30px] font-bold leading-[1.2] text-slate-900 sm:text-[38px] lg:text-[35px]">
             Hiệu quả phòng bệnh tối ưu
             <br>
@@ -192,11 +337,11 @@
         <div class="grid grid-cols-1 gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
           <!-- Item 1 -->
           <div class="flex flex-col items-center text-center">
-            <img src="./assets/images/union-1.png" alt="Đội ngũ bác sĩ giàu y đức" class="h-[54px] w-auto" />
-            <h3 class="mt-4 text-[18px] font-bold leading-tight text-slate-800">
+            <img src="./assets/images/union-1.png" alt="Đội ngũ bác sĩ giàu y đức" class="h-[100px] w-auto" />
+            <h3 class="mt-4 text-[22px] font-bold leading-tight text-slate-800">
               Đội ngũ bác sĩ giàu y đức
             </h3>
-            <p class="mt-2 max-w-[290px] text-[13px] leading-6 text-slate-500">
+            <p class="mt-2 max-w-[290px] text-[16px] leading-6 text-slate-500">
               Đội ngũ bác sĩ khám sàng lọc và tư vấn có trình độ chuyên môn cao,
               giàu kinh nghiệm, tư vấn tận tình.
             </p>
@@ -204,11 +349,11 @@
 
           <!-- Item 2 -->
           <div class="flex flex-col items-center text-center">
-            <img src="./assets/images/union-2.png" alt="Cảm giác thư thái, bình yên" class="h-[54px] w-auto" />
-            <h3 class="mt-4 text-[18px] font-bold leading-tight text-slate-800">
+            <img src="./assets/images/union-2.png" alt="Cảm giác thư thái, bình yên" class="h-[100px] w-auto" />
+            <h3 class="mt-4 text-[22px] font-bold leading-tight text-slate-800">
               Cảm giác thư thái, bình yên
             </h3>
-            <p class="mt-2 max-w-[290px] text-[13px] leading-6 text-slate-500">
+            <p class="mt-2 max-w-[290px] text-[16px] leading-6 text-slate-500">
               Không gian bệnh viện theo mô hình khách sạn hiện đại,
               khuôn viên rộng gần 10ha với hàng vạn cây xanh.
             </p>
@@ -216,11 +361,11 @@
 
           <!-- Item 3 -->
           <div class="flex flex-col items-center text-center">
-            <img src="./assets/images/union-3.png" alt="Chất lượng dịch vụ hàng đầu" class="h-[54px] w-auto" />
-            <h3 class="mt-4 text-[18px] font-bold leading-tight text-slate-800">
+            <img src="./assets/images/union-3.png" alt="Chất lượng dịch vụ hàng đầu" class="h-[100px] w-auto" />
+            <h3 class="mt-4 text-[22px] font-bold leading-tight text-slate-800">
               Chất lượng dịch vụ hàng đầu
             </h3>
-            <p class="mt-2 max-w-[300px] text-[13px] leading-6 text-slate-500">
+            <p class="mt-2 max-w-[300px] text-[16px] leading-6 text-slate-500">
               Trang bị đầy đủ phương tiện y tế cùng ekip cấp cứu luôn túc trực
               giúp theo dõi và xử trí kịp thời các trường hợp.
             </p>
@@ -228,11 +373,11 @@
 
           <!-- Item 4 -->
           <div class="flex flex-col items-center text-center">
-            <img src="./assets/images/union-4.png" alt="Chi phí hợp lý, tiết kiệm" class="h-[54px] w-auto" />
-            <h3 class="mt-4 text-[18px] font-bold leading-tight text-slate-800">
+            <img src="./assets/images/union-4.png" alt="Chi phí hợp lý, tiết kiệm" class="h-[100px] w-auto" />
+            <h3 class="mt-4 text-[22px] font-bold leading-tight text-slate-800">
               Chi phí hợp lý, tiết kiệm
             </h3>
-            <p class="mt-2 max-w-[300px] text-[13px] leading-6 text-slate-500">
+            <p class="mt-2 max-w-[300px] text-[16px] leading-6 text-slate-500">
               Xây dựng đa dạng gói tiêm với chi phí hợp lý, hỗ trợ trả góp
               qua thẻ tín dụng 0% lãi suất khi mua trọn gói.
             </p>
@@ -240,11 +385,11 @@
 
           <!-- Item 5 -->
           <div class="flex flex-col items-center text-center">
-            <img src="./assets/images/union-5.png" alt="Thủ tục đơn giản, nhanh gọn" class="h-[54px] w-auto" />
-            <h3 class="mt-4 text-[18px] font-bold leading-tight text-slate-800">
+            <img src="./assets/images/union-5.png" alt="Thủ tục đơn giản, nhanh gọn" class="h-[100px] w-auto" />
+            <h3 class="mt-4 text-[22px] font-bold leading-tight text-slate-800">
               Thủ tục đơn giản, nhanh gọn
             </h3>
-            <p class="mt-2 max-w-[290px] text-[13px] leading-6 text-slate-500">
+            <p class="mt-2 max-w-[290px] text-[16px] leading-6 text-slate-500">
               Thủ tục đặt lịch dễ dàng, nhanh gọn, tư vấn tận tình
               không mất nhiều thời gian của khách hàng.
             </p>
@@ -252,11 +397,11 @@
 
           <!-- Item 6 -->
           <div class="flex flex-col items-center text-center">
-            <img src="./assets/images/union-6.png" alt="Chăm sóc khách hàng sau tiêm" class="h-[54px] w-auto" />
-            <h3 class="mt-4 text-[18px] font-bold leading-tight text-slate-800">
+            <img src="./assets/images/union-6.png" alt="Chăm sóc khách hàng sau tiêm" class="h-[100px] w-auto" />
+            <h3 class="mt-4 text-[22px] font-bold leading-tight text-slate-800">
               Chăm sóc khách hàng sau tiêm
             </h3>
-            <p class="mt-2 max-w-[300px] text-[13px] leading-6 text-slate-500">
+            <p class="mt-2 max-w-[300px] text-[16px] leading-6 text-slate-500">
               Lưu giữ lịch sử tiêm online, nhắc lịch và thông báo cập nhật
               vắc-xin thường xuyên.
             </p>
@@ -265,270 +410,399 @@
       </div>
     </section>
 
-    <!-- ================= ĐỐI TƯỢNG KHÁCH HÀNG ================= -->
-    <section id="doituong" class="py-20">
-      <div class="mx-auto max-w-[1280px] px-6">
-        <h2 class="text-center text-3xl font-bold lg:text-4xl">Đối tượng khách hàng phù hợp</h2>
-        <div class="mx-auto mt-4 h-1 w-20 rounded-full bg-sky-500"></div>
-
-        <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <div class="rounded-2xl bg-white p-6 shadow-md">
-            <h3 class="text-xl font-semibold">Trẻ em</h3>
-            <p class="mt-3 leading-7 text-slate-600">
-              Tư vấn lịch tiêm phù hợp theo độ tuổi và loại vắc-xin cần thiết.
-            </p>
-          </div>
-
-          <div class="rounded-2xl bg-white p-6 shadow-md">
-            <h3 class="text-xl font-semibold">Người trưởng thành</h3>
-            <p class="mt-3 leading-7 text-slate-600">
-              Bổ sung các mũi tiêm nhắc lại và phòng bệnh theo nhu cầu cá nhân.
-            </p>
-          </div>
-
-          <div class="rounded-2xl bg-white p-6 shadow-md">
-            <h3 class="text-xl font-semibold">Phụ nữ chuẩn bị mang thai</h3>
-            <p class="mt-3 leading-7 text-slate-600">
-              Được tư vấn kỹ trước khi tiêm để đảm bảo an toàn và hiệu quả.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+    
 
     <!-- ================= QUY TRÌNH ================= -->
-    <section id="quytrinh" class="bg-[#f5f5f5] py-14">
-      <div class="mx-auto max-w-[1500px] px-4 sm:px-6">
+    <section id="quytrinh" class="bg-[#f5f5f5] py-14 font-lato">
+  <div class="mx-auto max-w-[1740px] px-4 sm:px-6">
 
-        <!-- ================= MOBILE / TABLET ================= -->
-        <div class="overflow-hidden rounded-[32px] bg-gradient-to-r from-[#56B5ED] to-[#1689D8] px-4 py-8 text-white xl:hidden">
-          <div class="text-center">
-            <h2 class="text-[22px] font-bold leading-tight sm:text-[28px]">
-              Quy trình dịch vụ Tiêm chủng Vắc-xin tại Bệnh viện Phương Đông
-            </h2>
-            <div class="mx-auto mt-3 h-[4px] w-[70px] rounded-full bg-white/90"></div>
-          </div>
+    <!-- ================= MOBILE / TABLET ================= -->
+    <div class="overflow-hidden rounded-[32px] bg-gradient-to-r from-[#56B5ED] to-[#1689D8] px-4 py-8 text-white xl:hidden">
+      <div class="text-center">
+        <h2 class="text-[22px] font-bold leading-tight sm:text-[28px]">
+          Quy trình dịch vụ Tiêm chủng Vắc-xin tại Bệnh viện Phương Đông
+        </h2>
+        <div class="mx-auto mt-3 h-[4px] w-[70px] rounded-full bg-white/90"></div>
+      </div>
 
-          <div class="mt-8 space-y-4">
-            <div class="rounded-2xl bg-white/10 p-4 backdrop-blur">
-              <div class="flex items-center gap-4">
-                <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white text-[20px] font-bold text-sky-600">01</div>
-                <div>
-                  <h3 class="text-[16px] font-semibold">Đăng ký thông tin</h3>
-                  <p class="mt-1 text-[13px] leading-6 text-white/90">
-                    Khách hàng đăng ký thông tin tại quầy tiếp đón Trung tâm Tư vấn &amp; Tiêm chủng vắc-xin.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="rounded-2xl bg-white/10 p-4 backdrop-blur">
-              <div class="flex items-center gap-4">
-                <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white text-[20px] font-bold text-sky-600">02</div>
-                <div>
-                  <h3 class="text-[16px] font-semibold">Tư vấn &amp; Thăm khám</h3>
-                  <p class="mt-1 text-[13px] leading-6 text-white/90">
-                    Khách hàng được thăm khám và tư vấn kỹ trước khi tiêm tại phòng khám với bác sĩ.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="rounded-2xl bg-white/10 p-4 backdrop-blur">
-              <div class="flex items-center gap-4">
-                <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white text-[20px] font-bold text-sky-600">03</div>
-                <div>
-                  <h3 class="text-[16px] font-semibold">Thanh toán chi phí</h3>
-                  <p class="mt-1 text-[13px] leading-6 text-white/90">
-                    Khách hàng thanh toán chi phí tiêm tại quầy lễ tân và nhận phiếu thanh toán.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="rounded-2xl bg-white/10 p-4 backdrop-blur">
-              <div class="flex items-center gap-4">
-                <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white text-[20px] font-bold text-sky-600">04</div>
-                <div>
-                  <h3 class="text-[16px] font-semibold">Thực hiện tiêm chủng</h3>
-                  <p class="mt-1 text-[13px] leading-6 text-white/90">
-                    Cầm theo phiếu thanh toán tới tiêm Vắc-xin tại phòng tiêm theo chỉ dẫn của nhân viên y tế.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="rounded-2xl bg-white/10 p-4 backdrop-blur">
-              <div class="flex items-center gap-4">
-                <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white text-[20px] font-bold text-sky-600">05</div>
-                <div>
-                  <h3 class="text-[16px] font-semibold">Theo dõi sức khỏe</h3>
-                  <p class="mt-1 text-[13px] leading-6 text-white/90">
-                    Theo dõi 30 phút sau tiêm, kiểm tra sức khỏe trước khi ra về và hướng dẫn theo dõi tại nhà.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ================= DESKTOP ================= -->
-        <div class="relative mx-auto hidden h-[560px] w-full max-w-[1380px] overflow-visible rounded-[84px] bg-gradient-to-r from-[#56B5ED] to-[#1689D8] xl:block">
-
-          <!-- decor -->
-          <img
-            src="./assets/images/process-top-decor.png"
-            alt=""
-            class="absolute right-[4px] top-[-86px] w-[172px]"
-          />
-          <img
-            src="./assets/images/process-bottom-decor.png"
-            alt=""
-            class="absolute bottom-[-62px] left-[25px] w-[142px]"
-          />
-
-          <!-- title -->
-          <div class="absolute left-1/2 top-[42px] -translate-x-1/2 text-center">
-            <h2 class="whitespace-nowrap text-[28px] font-bold text-white">
-              Quy trình dịch vụ Tiêm chủng Vắc-xin tại Bệnh viện Phương Đông
-            </h2>
-            <div class="mx-auto mt-4 h-[4px] w-[72px] rounded-full bg-white/90"></div>
-          </div>
-
-          <!-- vertical lines + dots -->
-          <div class="absolute left-[237px] top-[317px] h-[58px] border-l border-dashed border-white/80"></div>
-          <div class="absolute left-[231px] top-[370px] h-[12px] w-[12px] rounded-full bg-white"></div>
-
-          <div class="absolute left-[433px] top-[207px] h-[80px] border-l border-dashed border-white/80"></div>
-          <div class="absolute left-[428px] top-[204px] h-[12px] w-[12px] rounded-full bg-white"></div>
-
-          <div class="absolute left-[672px] top-[316px] h-[58px] border-l border-dashed border-white/80"></div>
-          <div class="absolute left-[667px] top-[370px] h-[12px] w-[12px] rounded-full bg-white"></div>
-
-          <div class="absolute left-[868px] top-[207px] h-[80px] border-l border-dashed border-white/80"></div>
-          <div class="absolute left-[862px] top-[204px] h-[12px] w-[12px] rounded-full bg-white"></div>
-
-          <div class="absolute left-[1108px] top-[316px] h-[58px] border-l border-dashed border-white/80"></div>
-          <div class="absolute left-[1103px] top-[370px] h-[12px] w-[12px] rounded-full bg-white"></div>
-
-          <!-- diagonals -->
-          <div class="absolute left-[276px] top-[306px] h-0 w-[102px] rotate-[34deg] border-t border-dashed border-white/80 origin-left"></div>
-          <div class="absolute left-[480px] top-[300px] h-0 w-[150px] -rotate-[34deg] border-t border-dashed border-white/80 origin-left"></div>
-          <div class="absolute left-[710px] top-[306px] h-0 w-[102px] rotate-[34deg] border-t border-dashed border-white/80 origin-left"></div>
-          <div class="absolute left-[915px] top-[300px] h-0 w-[150px] -rotate-[34deg] border-t border-dashed border-white/80 origin-left"></div>
-
-          <!-- STEP 1 -->
-          <div class="absolute left-[165px] top-[172px]">
-            <div class="relative h-[146px] w-[146px]">
-              <img src="./assets/images/process-dashed-circle.png" alt="" class="absolute inset-0 h-full w-full" />
-              <img src="./assets/images/process-blue-circle.png" alt="" class="absolute left-[12px] top-[12px] h-[122px] w-[122px]" />
-              <img src="./assets/images/process-white-circle.png" alt="" class="absolute left-[26px] top-[26px] h-[94px] w-[94px]" />
-              <div class="absolute inset-0 flex items-center justify-center">
-                <div class="text-center leading-none">
-                  <p class="text-[15px] font-medium text-[#1B90E5]">Bước</p>
-                  <p class="mt-1 text-[30px] font-bold text-[#0AA28A]">01</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="mt-16 w-[182px] -translate-x-[18px] text-center">
-              <h3 class="text-[16px] font-semibold text-white">Đăng ký thông tin</h3>
-              <p class="mt-2 text-[12px] leading-[1.6] text-white/90">
+      <div class="mt-8 space-y-4">
+        <div class="rounded-2xl bg-white/10 p-4 backdrop-blur">
+          <div class="flex items-center gap-4">
+            <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white text-[20px] font-bold text-sky-600">01</div>
+            <div>
+              <h3 class="text-[16px] font-semibold">Đăng ký thông tin</h3>
+              <p class="mt-1 text-[13px] leading-6 text-white/90">
                 Khách hàng đăng ký thông tin tại quầy tiếp đón Trung tâm Tư vấn &amp; Tiêm chủng vắc-xin.
               </p>
             </div>
           </div>
+        </div>
 
-          <!-- STEP 2 -->
-          <div class="absolute left-[360px] top-[286px]">
-            <div class="relative h-[146px] w-[146px]">
-              <img src="./assets/images/process-dashed-circle.png" alt="" class="absolute inset-0 h-full w-full" />
-              <img src="./assets/images/process-blue-circle.png" alt="" class="absolute left-[12px] top-[12px] h-[122px] w-[122px]" />
-              <img src="./assets/images/process-white-circle.png" alt="" class="absolute left-[26px] top-[26px] h-[94px] w-[94px]" />
-              <div class="absolute inset-0 flex items-center justify-center">
-                <div class="text-center leading-none">
-                  <p class="text-[15px] font-medium text-[#1B90E5]">Bước</p>
-                  <p class="mt-1 text-[30px] font-bold text-[#0AA28A]">02</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="absolute left-1/2 top-[-162px] w-[190px] -translate-x-1/2 text-center">
-              <h3 class="text-[15px] font-semibold text-white">Tư vấn &amp; Thăm khám</h3>
-              <p class="mt-2 text-[11px] leading-[1.5] text-white/90">
+        <div class="rounded-2xl bg-white/10 p-4 backdrop-blur">
+          <div class="flex items-center gap-4">
+            <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white text-[20px] font-bold text-sky-600">02</div>
+            <div>
+              <h3 class="text-[16px] font-semibold">Tư vấn &amp; Thăm khám</h3>
+              <p class="mt-1 text-[13px] leading-6 text-white/90">
                 Khách hàng được thăm khám và tư vấn kỹ trước khi tiêm tại phòng khám với bác sĩ.
               </p>
             </div>
           </div>
+        </div>
 
-          <!-- STEP 3 -->
-          <div class="absolute left-[600px] top-[172px]">
-            <div class="relative h-[146px] w-[146px]">
-              <img src="./assets/images/process-dashed-circle.png" alt="" class="absolute inset-0 h-full w-full" />
-              <img src="./assets/images/process-blue-circle.png" alt="" class="absolute left-[12px] top-[12px] h-[122px] w-[122px]" />
-              <img src="./assets/images/process-white-circle.png" alt="" class="absolute left-[26px] top-[26px] h-[94px] w-[94px]" />
-              <div class="absolute inset-0 flex items-center justify-center">
-                <div class="text-center leading-none">
-                  <p class="text-[15px] font-medium text-[#1B90E5]">Bước</p>
-                  <p class="mt-1 text-[30px] font-bold text-[#0AA28A]">03</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="mt-16 w-[182px] -translate-x-[18px] text-center">
-              <h3 class="text-[16px] font-semibold text-white">Thanh toán chi phí</h3>
-              <p class="mt-2 text-[12px] leading-[1.6] text-white/90">
+        <div class="rounded-2xl bg-white/10 p-4 backdrop-blur">
+          <div class="flex items-center gap-4">
+            <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white text-[20px] font-bold text-sky-600">03</div>
+            <div>
+              <h3 class="text-[16px] font-semibold">Thanh toán chi phí</h3>
+              <p class="mt-1 text-[13px] leading-6 text-white/90">
                 Khách hàng thanh toán chi phí tiêm tại quầy lễ tân và nhận phiếu thanh toán.
               </p>
             </div>
           </div>
+        </div>
 
-          <!-- STEP 4 -->
-          <div class="absolute left-[795px] top-[286px]">
-            <div class="relative h-[146px] w-[146px]">
-              <img src="./assets/images/process-dashed-circle.png" alt="" class="absolute inset-0 h-full w-full" />
-              <img src="./assets/images/process-blue-circle.png" alt="" class="absolute left-[12px] top-[12px] h-[122px] w-[122px]" />
-              <img src="./assets/images/process-white-circle.png" alt="" class="absolute left-[26px] top-[26px] h-[94px] w-[94px]" />
-              <div class="absolute inset-0 flex items-center justify-center">
-                <div class="text-center leading-none">
-                  <p class="text-[15px] font-medium text-[#1B90E5]">Bước</p>
-                  <p class="mt-1 text-[30px] font-bold text-[#0AA28A]">04</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="absolute left-1/2 top-[-162px] w-[196px] -translate-x-1/2 text-center">
-              <h3 class="text-[15px] font-semibold text-white">Thực hiện tiêm chủng</h3>
-              <p class="mt-2 text-[11px] leading-[1.5] text-white/90">
+        <div class="rounded-2xl bg-white/10 p-4 backdrop-blur">
+          <div class="flex items-center gap-4">
+            <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white text-[20px] font-bold text-sky-600">04</div>
+            <div>
+              <h3 class="text-[16px] font-semibold">Thực hiện tiêm chủng</h3>
+              <p class="mt-1 text-[13px] leading-6 text-white/90">
                 Cầm theo phiếu thanh toán tới tiêm Vắc-xin tại phòng tiêm theo chỉ dẫn của nhân viên y tế.
               </p>
             </div>
           </div>
+        </div>
 
-          <!-- STEP 5 -->
-          <div class="absolute left-[1035px] top-[172px]">
-            <div class="relative h-[146px] w-[146px]">
-              <img src="./assets/images/process-dashed-circle.png" alt="" class="absolute inset-0 h-full w-full" />
-              <img src="./assets/images/process-blue-circle.png" alt="" class="absolute left-[12px] top-[12px] h-[122px] w-[122px]" />
-              <img src="./assets/images/process-white-circle.png" alt="" class="absolute left-[26px] top-[26px] h-[94px] w-[94px]" />
-              <div class="absolute inset-0 flex items-center justify-center">
-                <div class="text-center leading-none">
-                  <p class="text-[15px] font-medium text-[#1B90E5]">Bước</p>
-                  <p class="mt-1 text-[30px] font-bold text-[#0AA28A]">05</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="mt-16 w-[182px] -translate-x-[18px] text-center">
-              <h3 class="text-[16px] font-semibold text-white">Theo dõi sức khỏe</h3>
-              <p class="mt-2 text-[12px] leading-[1.6] text-white/90">
+        <div class="rounded-2xl bg-white/10 p-4 backdrop-blur">
+          <div class="flex items-center gap-4">
+            <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white text-[20px] font-bold text-sky-600">05</div>
+            <div>
+              <h3 class="text-[16px] font-semibold">Theo dõi sức khỏe</h3>
+              <p class="mt-1 text-[13px] leading-6 text-white/90">
                 Theo dõi 30 phút sau tiêm, kiểm tra sức khỏe trước khi ra về và hướng dẫn theo dõi tại nhà.
               </p>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+
+    <!-- ================= DESKTOP ================= -->
+    <div
+      id="processDesktop"
+      class="relative mx-auto hidden min-h-[710px] w-full overflow-hidden rounded-[88px] bg-gradient-to-r from-[#57B6EE] to-[#1689D8] px-[58px] pt-[48px] pb-[44px] xl:block"
+    >
+      <!-- decor -->
+      <img
+        src="./assets/images/process-top-decor.png"
+        alt=""
+        class="pointer-events-none absolute right-[52px] top-[-18px] w-[118px]"
+      />
+      <img
+        src="./assets/images/process-bottom-decor.png"
+        alt=""
+        class="pointer-events-none absolute bottom-[-28px] left-[46px] w-[104px]"
+      />
+
+      <!-- title -->
+      <div class="text-center">
+        <h2 class="text-[31px] font-bold leading-none tracking-[0px] text-white">
+          Quy trình dịch vụ Tiêm chủng Vắc-xin tại Bệnh viện Phương Đông
+        </h2>
+        <div class="mx-auto mt-5 h-[4px] w-[92px] rounded-full bg-white/95"></div>
+      </div>
+
+      <!-- svg lines -->
+      <svg
+        id="processLines"
+        class="pointer-events-none absolute inset-0 h-full w-full"
+        preserveAspectRatio="none"
+      ></svg>
+
+      <!-- steps -->
+      <div
+        id="processSteps"
+        class="relative mt-[54px] grid min-h-[520px] items-start gap-0"
+      ></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #processDesktop .process-step {
+    position: relative;
+    min-height: 520px;
+  }
+
+  /* giảm chênh lệch lên xuống để giống ảnh mẫu hơn */
+  #processDesktop .process-step.top {
+    --circle-y: 14px;
+  }
+
+  #processDesktop .process-step.bottom {
+    --circle-y: 218px;
+  }
+
+  #processDesktop .process-circle-wrap {
+    position: absolute;
+    top: var(--circle-y);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 194px;
+    height: 194px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+
+  #processDesktop .process-circle-dashed {
+    position: absolute;
+    inset: 0;
+    border: 2px dashed rgba(255, 255, 255, 0.82);
+    border-radius: 9999px;
+  }
+
+  #processDesktop .process-circle-blue {
+    position: absolute;
+    inset: 18px;
+    border-radius: 9999px;
+    background: radial-gradient(circle at 35% 30%, #58c4ff 0%, #1d9bea 46%, #0a79d2 100%);
+    box-shadow:
+      inset 0 10px 16px rgba(255, 255, 255, 0.18),
+      0 8px 18px rgba(0, 95, 176, 0.24);
+  }
+
+  #processDesktop .process-circle-white {
+    position: absolute;
+    inset: 38px;
+    border-radius: 9999px;
+    background: #ffffff;
+    box-shadow: 0 6px 16px rgba(0, 79, 148, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #processDesktop .process-circle-text {
+    text-align: center;
+    line-height: 1;
+  }
+
+  #processDesktop .process-circle-text .label {
+    font-size: 17px;
+    font-weight: 700;
+    color: #178fe2;
+  }
+
+  #processDesktop .process-circle-text .num {
+    margin-top: 8px;
+    font-size: 40px;
+    font-weight: 800;
+    color: #11a08b;
+  }
+
+  #processDesktop .process-copy {
+    position: absolute;
+    width: 220px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+  }
+
+  #processDesktop .process-step.top .process-copy {
+    top: 306px;
+  }
+
+  #processDesktop .process-step.bottom .process-copy {
+    top: 8px;
+  }
+
+  #processDesktop .process-copy h3 {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  #processDesktop .process-copy p {
+    margin-top: 10px;
+    font-size: 13px;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.92);
+  }
+
+  #processDesktop .step-dot {
+    position: absolute;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin-left: -10px;
+    border-radius: 9999px;
+    background: white;
+    z-index: 2;
+  }
+
+  #processDesktop .step-stem {
+    position: absolute;
+    left: 50%;
+    width: 0;
+    border-left: 2px dashed rgba(255, 255, 255, 0.82);
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+
+  /* top row: stem đi xuống từ vòng nét đứt ngoài */
+  #processDesktop .process-step.top .step-stem {
+    top: calc(var(--circle-y) + 194px);
+    height: 72px;
+  }
+
+  #processDesktop .process-step.top .step-dot {
+    top: calc(var(--circle-y) + 194px + 62px);
+  }
+
+  /* bottom row: stem đi lên từ vòng nét đứt ngoài */
+  #processDesktop .process-step.bottom .step-stem {
+    top: calc(var(--circle-y) - 72px);
+    height: 72px;
+  }
+
+  #processDesktop .process-step.bottom .step-dot {
+    top: calc(var(--circle-y) - 10px - 72px);
+  }
+</style>
+
+<script>
+  (function () {
+    const desktop = document.getElementById("processDesktop");
+    const stepsWrap = document.getElementById("processSteps");
+    const linesSvg = document.getElementById("processLines");
+
+    if (!desktop || !stepsWrap || !linesSvg) return;
+
+    const processData = [
+      {
+        step: "01",
+        title: "Đăng ký thông tin",
+        desc: "Khách hàng đăng ký thông tin tại quầy tiếp đón Trung tâm Tư vấn & Tiêm chủng vắc-xin."
+      },
+      {
+        step: "02",
+        title: "Tư vấn & Thăm khám",
+        desc: "Khách hàng được thăm khám và tư vấn kỹ trước khi tiêm tại phòng khám với bác sĩ."
+      },
+      {
+        step: "03",
+        title: "Thanh toán chi phí",
+        desc: "Khách hàng thanh toán chi phí tiêm tại quầy lễ tân và nhận phiếu thanh toán."
+      },
+      {
+        step: "04",
+        title: "Thực hiện tiêm chủng",
+        desc: "Cầm theo phiếu thanh toán tới tiêm Vắc-xin tại phòng tiêm theo chỉ dẫn của nhân viên y tế."
+      },
+      {
+        step: "05",
+        title: "Theo dõi sức khỏe",
+        desc: "Theo dõi 30 phút sau tiêm, kiểm tra sức khỏe trước khi ra về và hướng dẫn theo dõi tại nhà."
+      }
+    ];
+
+    function buildSteps() {
+      stepsWrap.innerHTML = "";
+      stepsWrap.style.gridTemplateColumns = `repeat(${processData.length}, minmax(0, 1fr))`;
+
+      processData.forEach((item, index) => {
+        const isTop = index % 2 === 0;
+
+        const step = document.createElement("div");
+        step.className = `process-step ${isTop ? "top" : "bottom"}`;
+        step.dataset.index = index;
+
+        step.innerHTML = `
+          <div class="process-copy">
+            <h3>${item.title}</h3>
+            <p>${item.desc}</p>
+          </div>
+
+          <div class="step-stem"></div>
+          <div class="step-dot"></div>
+
+          <div class="process-circle-wrap">
+            <div class="process-circle-dashed"></div>
+            <div class="process-circle-blue"></div>
+            <div class="process-circle-white">
+              <div class="process-circle-text">
+                <div class="label">Bước</div>
+                <div class="num">${item.step}</div>
+              </div>
+            </div>
+          </div>
+        `;
+
+        stepsWrap.appendChild(step);
+      });
+    }
+
+    function drawLines() {
+      linesSvg.innerHTML = "";
+
+      const desktopRect = desktop.getBoundingClientRect();
+      const stepEls = Array.from(stepsWrap.querySelectorAll(".process-step"));
+
+      const nodes = stepEls.map((stepEl) => {
+        const circle = stepEl.querySelector(".process-circle-wrap");
+        const rect = circle.getBoundingClientRect();
+        return {
+          x: rect.left - desktopRect.left + rect.width / 2,
+          y: rect.top - desktopRect.top + rect.height / 2,
+          r: rect.width / 2
+        };
+      });
+
+      linesSvg.setAttribute("viewBox", `0 0 ${desktopRect.width} ${desktopRect.height}`);
+
+      for (let i = 0; i < nodes.length - 1; i++) {
+        const a = nodes[i];
+        const b = nodes[i + 1];
+
+        const dx = b.x - a.x;
+        const dy = b.y - a.y;
+        const len = Math.sqrt(dx * dx + dy * dy);
+
+        if (!len) continue;
+
+        /* chỉ cho line chạm vòng nét đứt ngoài */
+        const startX = a.x + (dx / len) * a.r;
+        const startY = a.y + (dy / len) * a.r;
+        const endX = b.x - (dx / len) * b.r;
+        const endY = b.y - (dy / len) * b.r;
+
+        const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        line.setAttribute("x1", startX);
+        line.setAttribute("y1", startY);
+        line.setAttribute("x2", endX);
+        line.setAttribute("y2", endY);
+        line.setAttribute("stroke", "rgba(255,255,255,0.85)");
+        line.setAttribute("stroke-width", "2");
+        line.setAttribute("stroke-dasharray", "6 6");
+        line.setAttribute("stroke-linecap", "round");
+        linesSvg.appendChild(line);
+      }
+    }
+
+    function renderProcess() {
+      buildSteps();
+      requestAnimationFrame(drawLines);
+    }
+
+    window.addEventListener("resize", drawLines);
+    renderProcess();
+  })();
+</script>
 
     <!-- ================= Quyền lợi khách hàng ================= -->
      <section class="bg-white py-16 sm:py-20">
@@ -605,20 +879,52 @@
               Quý khách vui lòng để lại số điện thoại, chúng tôi sẽ liên hệ lại ngay!
             </p>
 
-            <form class="mt-4 flex max-w-[520px] flex-col gap-3 sm:flex-row">
-              <input
-                type="text"
-                placeholder="Nhập số điện thoại..."
-                class="h-[48px] flex-1 rounded-full border border-slate-200 bg-[#F3F4F6] px-5 text-[14px] text-slate-700 outline-none placeholder:text-slate-400 focus:border-sky-400 focus:bg-white"
-              />
+            <form class="mt-4 w-full max-w-[860px]">
+              <!-- Desktop / tablet -->
+              <div class="relative hidden sm:block">
+                <input
+                  type="tel"
+                  inputmode="numeric"
+                  autocomplete="tel"
+                  placeholder="Nhập số điện thoại..."
+                  class="h-[74px] w-full rounded-full border-0 bg-[#F5F5F5] pl-[34px] pr-[310px] text-[18px] text-slate-700 outline-none ring-0 placeholder:text-[18px] placeholder:text-[#969696] focus:outline-none focus:ring-0 focus:border-0"
+                />
 
-              <button
-                type="submit"
-                class="inline-flex h-[48px] items-center justify-center gap-2 rounded-full bg-[#F79433] px-6 text-[14px] font-semibold text-white shadow-[0_10px_24px_rgba(247,148,51,0.35)] transition hover:bg-[#ee8621]"
-              >
-                <img src="./assets/images/KiTuGui.png" alt="send" class="h-4 w-4 object-contain" />
-                GỬI THÔNG TIN
-              </button>
+                <button
+                  type="submit"
+                  class="absolute right-[10px] top-1/2 inline-flex h-[58px] min-w-[286px] -translate-y-1/2 items-center justify-center gap-3 rounded-full bg-[#F79433] px-8 text-[16px] font-bold leading-none text-white shadow-[0_10px_24px_rgba(247,148,51,0.28)] transition hover:bg-[#ee8621]"
+                >
+                  <img
+                    src="./assets/images/KiTuGui.png"
+                    alt="send"
+                    class="h-[22px] w-[22px] object-contain"
+                  />
+                  GỬI THÔNG TIN
+                </button>
+              </div>
+
+              <!-- Mobile -->
+              <div class="flex flex-col gap-4 sm:hidden">
+                <input
+                  type="tel"
+                  inputmode="numeric"
+                  autocomplete="tel"
+                  placeholder="Nhập số điện thoại..."
+                  class="h-[70px] w-full rounded-full border-0 bg-[#F5F5F5] px-10 text-[18px] text-slate-700 outline-none ring-0 placeholder:text-[18px] placeholder:text-[#A0AEC0] focus:outline-none focus:ring-0 focus:border-0"
+                />
+
+                <button
+                  type="submit"
+                  class="inline-flex h-[66px] w-full items-center justify-center gap-3 rounded-full bg-[#F79433] px-8 text-[18px] font-bold leading-none text-white shadow-[0_10px_24px_rgba(247,148,51,0.28)] transition hover:bg-[#ee8621]"
+                >
+                  <img
+                    src="./assets/images/KiTuGui.png"
+                    alt="send"
+                    class="h-[20px] w-[20px] object-contain"
+                  />
+                  GỬI THÔNG TIN
+                </button>
+              </div>
             </form>
           </div>
 
@@ -627,7 +933,7 @@
             <div class="overflow-hidden rounded-[18px] bg-white p-3 shadow-[0_18px_40px_rgba(15,23,42,0.12)] sm:p-4">
               
               <!-- SLIDES -->
-              <div id="tableSlider" class="relative">
+              <div id="tableSlider" class="relative select-none touch-pan-y cursor-grab active:cursor-grabbing">
                 
                 <!-- Slide 1 -->
                 <div class="table-slide">
@@ -792,46 +1098,324 @@
                 </div>
 
                 <!-- Slide 2 -->
-                <div class="table-slide hidden">
+                <div class="table-slide">
                   <div class="overflow-x-auto rounded-[12px] border border-slate-200">
-                    <div class="min-w-[760px] bg-white p-6">
-                      <div class="flex items-center justify-between">
-                        <img src="./assets/logo/logo.png" alt="logo" class="h-12 w-auto" />
+                    <div class="min-w-[460px] bg-white">
+                      <div class="flex items-start justify-between px-6 pt-5">
+                        <div class="flex items-center gap-3">
+                          <img src="./assets/logo/logo.png" alt="logo" class="h-12 w-auto" />
+                        </div>
                         <div class="text-right">
-                          <h3 class="text-[17px] font-extrabold uppercase text-sky-600">
+                          <h3 class="text-[17px] font-extrabold uppercase leading-tight text-sky-600">
                             GÓI VẮC XIN CHO TRẺ EM
                           </h3>
-                          <p class="text-[17px] font-extrabold uppercase text-sky-600">
-                            DANH MỤC GÓI VẮC XIN 6 - 12 THÁNG
+                          <p class="text-[17px] font-extrabold uppercase leading-tight text-sky-600">
+                            DANH MỤC GÓI VẮC XIN 0 - 6 THÁNG
                           </p>
                         </div>
                       </div>
 
-                      <div class="mt-8 text-center text-slate-500">
-                        Bảng 2 - Bạn thay nội dung thật vào đây
+                      <table class="mt-5 w-full border-collapse text-center text-[11px] text-slate-700">
+                        <thead>
+                          <tr class="bg-[#0F7FC6] text-white">
+                            <th class="border border-slate-300 px-2 py-2">STT</th>
+                            <th class="border border-slate-300 px-2 py-2">Phòng bệnh</th>
+                            <th class="border border-slate-300 px-2 py-2">Tên Vắc xin</th>
+                            <th class="border border-slate-300 px-2 py-2">Nước sản xuất</th>
+                            <th class="border border-slate-300 px-2 py-2">Gói 1</th>
+                            <th class="border border-slate-300 px-2 py-2">Gói 2</th>
+                            <th class="border border-slate-300 px-2 py-2">Gói 3</th>
+                            <th class="border border-slate-300 px-2 py-2">Gói 4</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr class="bg-sky-50">
+                            <td class="border border-slate-300 px-2 py-2">1</td>
+                            <td class="border border-slate-300 px-2 py-2 text-left">Lao</td>
+                            <td class="border border-slate-300 px-2 py-2">BCG</td>
+                            <td class="border border-slate-300 px-2 py-2">Việt Nam</td>
+                            <td class="border border-slate-300 px-2 py-2">1</td>
+                            <td class="border border-slate-300 px-2 py-2">1</td>
+                            <td class="border border-slate-300 px-2 py-2">1</td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                          </tr>
+
+                          <tr>
+                            <td class="border border-slate-300 px-2 py-2" rowspan="3">2</td>
+                            <td class="border border-slate-300 px-2 py-2 text-left" rowspan="3">Tiêu chảy do Rota virus</td>
+                            <td class="border border-slate-300 px-2 py-2">Rotarix</td>
+                            <td class="border border-slate-300 px-2 py-2">Bỉ</td>
+                            <td class="border border-slate-300 px-2 py-2">2</td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                            <td class="border border-slate-300 px-2 py-2">2</td>
+                          </tr>
+                          <tr>
+                            <td class="border border-slate-300 px-2 py-2">Rotavin</td>
+                            <td class="border border-slate-300 px-2 py-2">Việt Nam</td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                            <td class="border border-slate-300 px-2 py-2">2</td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                          </tr>
+                          <tr>
+                            <td class="border border-slate-300 px-2 py-2">Rotateq</td>
+                            <td class="border border-slate-300 px-2 py-2">Mỹ</td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                            <td class="border border-slate-300 px-2 py-2">3</td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                          </tr>
+
+                          <tr class="bg-sky-50">
+                            <td class="border border-slate-300 px-2 py-2">3</td>
+                            <td class="border border-slate-300 px-2 py-2 text-left">
+                              Ho gà, Bạch hầu, Uốn ván, Bại liệt, Viêm màng não mủ, Viêm họng, Viêm phổi do HIB (5 in 1)
+                            </td>
+                            <td class="border border-slate-300 px-2 py-2">Pentaxim</td>
+                            <td class="border border-slate-300 px-2 py-2">Pháp</td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                            <td class="border border-slate-300 px-2 py-2">3</td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                          </tr>
+
+                          <tr>
+                            <td class="border border-slate-300 px-2 py-2">4</td>
+                            <td class="border border-slate-300 px-2 py-2 text-left">Viêm gan B</td>
+                            <td class="border border-slate-300 px-2 py-2">Engerix B 0,5 ml</td>
+                            <td class="border border-slate-300 px-2 py-2">Bỉ</td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                            <td class="border border-slate-300 px-2 py-2">3</td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                          </tr>
+
+                          <tr class="bg-sky-50">
+                            <td class="border border-slate-300 px-2 py-2" rowspan="2">5</td>
+                            <td class="border border-slate-300 px-2 py-2 text-left" rowspan="2">
+                              Ho gà, Bạch hầu, Uốn ván, Bại liệt, Viêm màng não mủ, Viêm họng, Viêm phổi do HIB, Viêm gan B (6 in 1)
+                            </td>
+                            <td class="border border-slate-300 px-2 py-2">InfanrixHexa</td>
+                            <td class="border border-slate-300 px-2 py-2">Bỉ</td>
+                            <td class="border border-slate-300 px-2 py-2">3</td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                            <td class="border border-slate-300 px-2 py-2">3</td>
+                          </tr>
+                          <tr>
+                            <td class="border border-slate-300 px-2 py-2">Hexaxim</td>
+                            <td class="border border-slate-300 px-2 py-2">Pháp</td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                            <td class="border border-slate-300 px-2 py-2">3</td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                          </tr>
+
+                          <tr>
+                            <td class="border border-slate-300 px-2 py-2" rowspan="2">6</td>
+                            <td class="border border-slate-300 px-2 py-2 text-left" rowspan="2">
+                              Hội chứng nhiễm trùng viêm màng não, viêm phổi, nhiễm khuẩn huyết, viêm tai giữa do phế cầu
+                            </td>
+                            <td class="border border-slate-300 px-2 py-2">Prevenar 13</td>
+                            <td class="border border-slate-300 px-2 py-2">Anh</td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                            <td class="border border-slate-300 px-2 py-2">3</td>
+                            <td class="border border-slate-300 px-2 py-2">3</td>
+                          </tr>
+                          <tr class="bg-sky-50">
+                            <td class="border border-slate-300 px-2 py-2">Synflorix</td>
+                            <td class="border border-slate-300 px-2 py-2">Bỉ</td>
+                            <td class="border border-slate-300 px-2 py-2">3</td>
+                            <td class="border border-slate-300 px-2 py-2">3</td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                          </tr>
+
+                          <tr class="bg-sky-50 font-semibold">
+                            <td class="border border-slate-300 px-2 py-2" colspan="4">Tổng số (liều)</td>
+                            <td class="border border-slate-300 px-2 py-2">9</td>
+                            <td class="border border-slate-300 px-2 py-2">12</td>
+                            <td class="border border-slate-300 px-2 py-2">10</td>
+                            <td class="border border-slate-300 px-2 py-2">8</td>
+                          </tr>
+
+                          <tr class="font-semibold text-sky-700">
+                            <td class="border border-slate-300 px-2 py-2" colspan="4">Giá gói (VNĐ)</td>
+                            <td class="border border-slate-300 px-2 py-2">9,546,000</td>
+                            <td class="border border-slate-300 px-2 py-2">8,598,000</td>
+                            <td class="border border-slate-300 px-2 py-2">10,842,000</td>
+                            <td class="border border-slate-300 px-2 py-2">10,278,000</td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                      <div class="flex items-center justify-between px-6 py-4 text-[12px] font-bold text-sky-600">
+                        <span>BỆNH VIỆN ĐA KHOA PHƯƠNG ĐÔNG</span>
+                        <span>1900 1806</span>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 <!-- Slide 3 -->
-                <div class="table-slide hidden">
+                <div class="table-slide">
                   <div class="overflow-x-auto rounded-[12px] border border-slate-200">
-                    <div class="min-w-[760px] bg-white p-6">
-                      <div class="flex items-center justify-between">
-                        <img src="./assets/logo/logo.png" alt="logo" class="h-12 w-auto" />
+                    <div class="min-w-[460px] bg-white">
+                      <div class="flex items-start justify-between px-6 pt-5">
+                        <div class="flex items-center gap-3">
+                          <img src="./assets/logo/logo.png" alt="logo" class="h-12 w-auto" />
+                        </div>
                         <div class="text-right">
-                          <h3 class="text-[17px] font-extrabold uppercase text-sky-600">
+                          <h3 class="text-[17px] font-extrabold uppercase leading-tight text-sky-600">
                             GÓI VẮC XIN CHO TRẺ EM
                           </h3>
-                          <p class="text-[17px] font-extrabold uppercase text-sky-600">
-                            DANH MỤC GÓI VẮC XIN 12 - 24 THÁNG
+                          <p class="text-[17px] font-extrabold uppercase leading-tight text-sky-600">
+                            DANH MỤC GÓI VẮC XIN 0 - 6 THÁNG
                           </p>
                         </div>
                       </div>
 
-                      <div class="mt-8 text-center text-slate-500">
-                        Bảng 3 - Bạn thay nội dung thật vào đây
+                      <table class="mt-5 w-full border-collapse text-center text-[11px] text-slate-700">
+                        <thead>
+                          <tr class="bg-[#0F7FC6] text-white">
+                            <th class="border border-slate-300 px-2 py-2">STT</th>
+                            <th class="border border-slate-300 px-2 py-2">Phòng bệnh</th>
+                            <th class="border border-slate-300 px-2 py-2">Tên Vắc xin</th>
+                            <th class="border border-slate-300 px-2 py-2">Nước sản xuất</th>
+                            <th class="border border-slate-300 px-2 py-2">Gói 1</th>
+                            <th class="border border-slate-300 px-2 py-2">Gói 2</th>
+                            <th class="border border-slate-300 px-2 py-2">Gói 3</th>
+                            <th class="border border-slate-300 px-2 py-2">Gói 4</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr class="bg-sky-50">
+                            <td class="border border-slate-300 px-2 py-2">1</td>
+                            <td class="border border-slate-300 px-2 py-2 text-left">Lao</td>
+                            <td class="border border-slate-300 px-2 py-2">BCG</td>
+                            <td class="border border-slate-300 px-2 py-2">Việt Nam</td>
+                            <td class="border border-slate-300 px-2 py-2">1</td>
+                            <td class="border border-slate-300 px-2 py-2">1</td>
+                            <td class="border border-slate-300 px-2 py-2">1</td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                          </tr>
+
+                          <tr>
+                            <td class="border border-slate-300 px-2 py-2" rowspan="3">2</td>
+                            <td class="border border-slate-300 px-2 py-2 text-left" rowspan="3">Tiêu chảy do Rota virus</td>
+                            <td class="border border-slate-300 px-2 py-2">Rotarix</td>
+                            <td class="border border-slate-300 px-2 py-2">Bỉ</td>
+                            <td class="border border-slate-300 px-2 py-2">2</td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                            <td class="border border-slate-300 px-2 py-2">2</td>
+                          </tr>
+                          <tr>
+                            <td class="border border-slate-300 px-2 py-2">Rotavin</td>
+                            <td class="border border-slate-300 px-2 py-2">Việt Nam</td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                            <td class="border border-slate-300 px-2 py-2">2</td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                          </tr>
+                          <tr>
+                            <td class="border border-slate-300 px-2 py-2">Rotateq</td>
+                            <td class="border border-slate-300 px-2 py-2">Mỹ</td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                            <td class="border border-slate-300 px-2 py-2">3</td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                          </tr>
+
+                          <tr class="bg-sky-50">
+                            <td class="border border-slate-300 px-2 py-2">3</td>
+                            <td class="border border-slate-300 px-2 py-2 text-left">
+                              Ho gà, Bạch hầu, Uốn ván, Bại liệt, Viêm màng não mủ, Viêm họng, Viêm phổi do HIB (5 in 1)
+                            </td>
+                            <td class="border border-slate-300 px-2 py-2">Pentaxim</td>
+                            <td class="border border-slate-300 px-2 py-2">Pháp</td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                            <td class="border border-slate-300 px-2 py-2">3</td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                          </tr>
+
+                          <tr>
+                            <td class="border border-slate-300 px-2 py-2">4</td>
+                            <td class="border border-slate-300 px-2 py-2 text-left">Viêm gan B</td>
+                            <td class="border border-slate-300 px-2 py-2">Engerix B 0,5 ml</td>
+                            <td class="border border-slate-300 px-2 py-2">Bỉ</td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                            <td class="border border-slate-300 px-2 py-2">3</td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                          </tr>
+
+                          <tr class="bg-sky-50">
+                            <td class="border border-slate-300 px-2 py-2" rowspan="2">5</td>
+                            <td class="border border-slate-300 px-2 py-2 text-left" rowspan="2">
+                              Ho gà, Bạch hầu, Uốn ván, Bại liệt, Viêm màng não mủ, Viêm họng, Viêm phổi do HIB, Viêm gan B (6 in 1)
+                            </td>
+                            <td class="border border-slate-300 px-2 py-2">InfanrixHexa</td>
+                            <td class="border border-slate-300 px-2 py-2">Bỉ</td>
+                            <td class="border border-slate-300 px-2 py-2">3</td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                            <td class="border border-slate-300 px-2 py-2">3</td>
+                          </tr>
+                          <tr>
+                            <td class="border border-slate-300 px-2 py-2">Hexaxim</td>
+                            <td class="border border-slate-300 px-2 py-2">Pháp</td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                            <td class="border border-slate-300 px-2 py-2">3</td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                          </tr>
+
+                          <tr>
+                            <td class="border border-slate-300 px-2 py-2" rowspan="2">6</td>
+                            <td class="border border-slate-300 px-2 py-2 text-left" rowspan="2">
+                              Hội chứng nhiễm trùng viêm màng não, viêm phổi, nhiễm khuẩn huyết, viêm tai giữa do phế cầu
+                            </td>
+                            <td class="border border-slate-300 px-2 py-2">Prevenar 13</td>
+                            <td class="border border-slate-300 px-2 py-2">Anh</td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                            <td class="border border-slate-300 px-2 py-2">3</td>
+                            <td class="border border-slate-300 px-2 py-2">3</td>
+                          </tr>
+                          <tr class="bg-sky-50">
+                            <td class="border border-slate-300 px-2 py-2">Synflorix</td>
+                            <td class="border border-slate-300 px-2 py-2">Bỉ</td>
+                            <td class="border border-slate-300 px-2 py-2">3</td>
+                            <td class="border border-slate-300 px-2 py-2">3</td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                            <td class="border border-slate-300 px-2 py-2"></td>
+                          </tr>
+
+                          <tr class="bg-sky-50 font-semibold">
+                            <td class="border border-slate-300 px-2 py-2" colspan="4">Tổng số (liều)</td>
+                            <td class="border border-slate-300 px-2 py-2">9</td>
+                            <td class="border border-slate-300 px-2 py-2">12</td>
+                            <td class="border border-slate-300 px-2 py-2">10</td>
+                            <td class="border border-slate-300 px-2 py-2">8</td>
+                          </tr>
+
+                          <tr class="font-semibold text-sky-700">
+                            <td class="border border-slate-300 px-2 py-2" colspan="4">Giá gói (VNĐ)</td>
+                            <td class="border border-slate-300 px-2 py-2">9,546,000</td>
+                            <td class="border border-slate-300 px-2 py-2">8,598,000</td>
+                            <td class="border border-slate-300 px-2 py-2">10,842,000</td>
+                            <td class="border border-slate-300 px-2 py-2">10,278,000</td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                      <div class="flex items-center justify-between px-6 py-4 text-[12px] font-bold text-sky-600">
+                        <span>BỆNH VIỆN ĐA KHOA PHƯƠNG ĐÔNG</span>
+                        <span>1900 1806</span>
                       </div>
                     </div>
                   </div>
@@ -854,14 +1438,22 @@
   (function () {
     const slides = document.querySelectorAll('.table-slide');
     const dots = document.querySelectorAll('.table-dot');
+    const slider = document.getElementById('tableSlider');
+
+    let currentIndex = 0;
+    let startX = 0;
+    let startY = 0;
+    let isPointerDown = false;
 
     function showSlide(index) {
+      currentIndex = Math.max(0, Math.min(index, slides.length - 1));
+
       slides.forEach((slide, i) => {
-        slide.classList.toggle('hidden', i !== index);
+        slide.classList.toggle('hidden', i !== currentIndex);
       });
 
       dots.forEach((dot, i) => {
-        if (i === index) {
+        if (i === currentIndex) {
           dot.classList.remove('bg-slate-300', 'w-[16px]');
           dot.classList.add('bg-[#F79433]', 'w-[24px]');
         } else {
@@ -877,163 +1469,249 @@
       });
     });
 
+    function handleStart(x, y) {
+      startX = x;
+      startY = y;
+      isPointerDown = true;
+    }
+
+    function handleEnd(x, y) {
+      if (!isPointerDown) return;
+      isPointerDown = false;
+
+      const diffX = x - startX;
+      const diffY = y - startY;
+
+      if (Math.abs(diffX) > 50 && Math.abs(diffX) > Math.abs(diffY)) {
+        if (diffX < 0) {
+          showSlide(currentIndex + 1);
+        } else {
+          showSlide(currentIndex - 1);
+        }
+      }
+    }
+
+    slider.addEventListener(
+      'touchstart',
+      (e) => {
+        const touch = e.changedTouches[0];
+        handleStart(touch.clientX, touch.clientY);
+      },
+      { passive: true }
+    );
+
+    slider.addEventListener(
+      'touchend',
+      (e) => {
+        const touch = e.changedTouches[0];
+        handleEnd(touch.clientX, touch.clientY);
+      },
+      { passive: true }
+    );
+
+    slider.addEventListener('mousedown', (e) => {
+      handleStart(e.clientX, e.clientY);
+    });
+
+    slider.addEventListener('mouseup', (e) => {
+      handleEnd(e.clientX, e.clientY);
+    });
+
+    slider.addEventListener('mouseleave', (e) => {
+      if (isPointerDown) {
+        handleEnd(e.clientX, e.clientY);
+      }
+    });
+
     showSlide(0);
   })();
 </script>
 
-    <!-- ================= CẢM NHẬN CỦA KHÁCH HÀNG SAU KHI SỬ DỤNG================= -->
-     <section id="camnhan" class="overflow-hidden bg-white py-16 lg:py-20">
-  <div class="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 items-start gap-10 lg:grid-cols-[520px_minmax(0,1fr)] lg:gap-8">
+ <!-- ================= CẢM NHẬN CỦA KHÁCH HÀNG SAU KHI SỬ DỤNG ================= -->
+<section id="camnhan" class="overflow-hidden bg-white pt-14 pb-16 lg:pt-[22px] lg:pb-[82px] font-lato">
+  <div class="relative mx-auto max-w-[1740px]">
+    <div class="relative lg:min-h-[655px]">
 
-      <!-- LEFT -->
-      <div class="relative">
-        <!-- Blue background shape -->
-        <div class="relative mt-8 h-[555px] w-full max-w-[736px] overflow-visible rounded-tr-[277.5px] rounded-br-[45px] bg-gradient-to-r from-[#4CB4F0] to-[#158BDA]">
-          
-          <!-- Doctor image -->
+      <!-- LEFT VISUAL -->
+      <div class="relative w-full lg:absolute lg:left-0 lg:top-[96px] lg:w-[610px]">
+        <div
+          class="relative h-[320px] overflow-visible rounded-tr-[150px] rounded-br-[32px] bg-gradient-to-r from-[#57BDF5] to-[#1290E1] lg:h-[510px] lg:w-[610px] lg:rounded-tr-[214px] lg:rounded-br-[42px]"
+        >
+          <!-- Doctor -->
           <img
             src="./assets/images/cam_nhan_khach_hang_bacsi.png"
             alt="Bác sĩ"
-            class="absolute bottom-0 left-0 z-10 h-[640px] w-auto max-w-none object-contain"
+            class="absolute bottom-0 left-0 z-10 h-[380px] w-auto max-w-none object-contain sm:h-[440px] lg:h-[615px]"
+            draggable="false"
           />
 
-          <!-- Floating like icon -->
-          <div class="absolute right-[64px] top-[-28px] z-20 flex h-[62px] w-[62px] items-center justify-center rounded-2xl bg-white shadow-[0_10px_30px_rgba(15,23,42,0.12)]">
+          <!-- Like icon -->
+          <div
+            class="absolute left-[67%] top-0 z-20 flex h-[154px] w-[154px] -translate-x-1/2 -translate-y-1/2 items-center justify-center lg:h-[120px] lg:w-[120px]"
+          >
             <img
               src="./assets/images/like-icon.png"
               alt="Like"
-              class="h-8 w-8 object-contain"
-              onerror="this.style.display='none'; this.parentNode.innerHTML='<span class=&quot;text-[28px] text-sky-500&quot;>👍</span>';"
+              class="h-[240px] w-[240px] object-contain lg:h-[2152px] lg:w-[2152px]"
+              draggable="false"
             />
           </div>
         </div>
 
         <!-- Likes card -->
-        <div class="absolute bottom-[-30px] left-[34px] z-30 flex items-center gap-3 rounded-2xl bg-white px-5 py-4 shadow-[0_12px_28px_rgba(15,23,42,0.12)]">
+        <div
+          class="absolute bottom-[-26px] left-[18px] z-30 flex items-center gap-3 rounded-[16px] border border-[#EEF2F6] bg-white px-4 py-3 shadow-[0_10px_22px_rgba(15,23,42,0.10)] sm:left-[28px] lg:bottom-[-30px] lg:left-[64px] lg:gap-4 lg:px-4 lg:py-3"
+        >
           <div class="flex -space-x-2">
             <div class="h-9 w-9 overflow-hidden rounded-full border-2 border-white bg-slate-200">
-              <img src="./assets/images/user-1.png" alt="" class="h-full w-full object-cover" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=&quot;flex h-full w-full items-center justify-center text-[11px] text-slate-500&quot;>A</div>';" />
+              <img src="./assets/images/user-1.png" alt="" class="h-full w-full object-cover" />
             </div>
             <div class="h-9 w-9 overflow-hidden rounded-full border-2 border-white bg-slate-300">
-              <img src="./assets/images/user-2.png" alt="" class="h-full w-full object-cover" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=&quot;flex h-full w-full items-center justify-center text-[11px] text-slate-500&quot;>B</div>';" />
+              <img src="./assets/images/user-2.png" alt="" class="h-full w-full object-cover" />
             </div>
             <div class="h-9 w-9 overflow-hidden rounded-full border-2 border-white bg-slate-400">
-              <img src="./assets/images/user-3.png" alt="" class="h-full w-full object-cover" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=&quot;flex h-full w-full items-center justify-center text-[11px] text-white&quot;>C</div>';" />
+              <img src="./assets/images/user-3.png" alt="" class="h-full w-full object-cover" />
             </div>
             <div class="h-9 w-9 overflow-hidden rounded-full border-2 border-white bg-slate-300">
-              <img src="./assets/images/user-4.png" alt="" class="h-full w-full object-cover" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=&quot;flex h-full w-full items-center justify-center text-[11px] text-slate-500&quot;>D</div>';" />
+              <img src="./assets/images/user-4.png" alt="" class="h-full w-full object-cover" />
             </div>
           </div>
 
-          <p class="max-w-[190px] text-[14px] leading-5 text-slate-600">
+          <p class="max-w-[220px] text-[13px] leading-[1.35] text-[#5E6F87] lg:max-w-[220px] lg:text-[12px]">
             Trang, Huyền và 169 người khác thích điều này
           </p>
         </div>
       </div>
 
-      <!-- RIGHT -->
-      <div class="relative pt-2 lg:pt-14">
-        <!-- decorative shape -->
-        <div class="pointer-events-none absolute right-[20px] top-0 hidden h-[74px] w-[74px] rounded-[22px] bg-gradient-to-br from-sky-400 to-blue-600 blur-[1px] lg:block"></div>
+      <!-- RIGHT CONTENT -->
+      <div class="relative z-20 px-4 pt-[66px] sm:px-6 lg:ml-[676px] lg:px-0 lg:pr-[24px] lg:pt-[70px]">
+        <!-- Decorative icon right -->
+        <img
+          src="./assets/images/camnhan-shape-right.png"
+          alt="Decorative icon"
+          class="pointer-events-none absolute right-[14px] top-[-20px] hidden h-[152px] w-[152px] object-contain lg:block"
+          draggable="false"
+        />
 
-        <!-- heading -->
+        <!-- Heading -->
         <div class="max-w-[760px]">
-          <h2 class="text-[34px] font-bold leading-[1.18] tracking-[-0.02em] text-slate-800 sm:text-[42px] lg:text-[58px]">
-            Cảm nhận của khách hàng sau
-            <br />
-            khi sử dụng dịch vụ
-          </h2>
+          <h2
+  class="font-lato text-[32px] font-bold leading-none tracking-[0px] text-[#252525] sm:text-[34px] lg:text-[38px]"
+>
+  Cảm nhận của khách hàng sau
+  <br class="hidden lg:block" />
+  khi sử dụng dịch vụ
+</h2>
 
-          <div class="mt-5 h-[4px] w-[96px] rounded-full bg-sky-500"></div>
+          <div class="mt-4 h-[4px] w-[132px] rounded-full bg-[#25A9F5]"></div>
 
-          <p class="mt-6 max-w-[760px] text-[15px] leading-7 text-slate-500">
+          <p class="mt-6 max-w-[870px] text-[15px] leading-[2] text-[#66768C] lg:max-w-[820px] lg:text-[13px] lg:leading-[2.2]">
             Dưới đây là những chia sẻ từ khách hàng dành cho Bệnh viện Đa khoa Phương Đông
             và tập thể điều dưỡng Khoa kiểm soát nhiễm khuẩn đã tận tình chăm sóc, điều trị
             trong suốt thời gian qua.
           </p>
         </div>
 
-        <!-- testimonial slider -->
-        <div class="mt-10 overflow-hidden">
-          <div id="testimonialTrack" class="flex gap-6 transition-transform duration-500 ease-out">
-
+        <!-- Testimonial slider -->
+        <div
+          id="testimonialViewport"
+          class="mt-9 select-none overflow-hidden [touch-action:pan-y] lg:-ml-[138px] lg:mt-[34px] lg:w-[calc(100%+260px)]"
+        >
+          <div
+            id="testimonialTrack"
+            class="flex cursor-grab gap-5 active:cursor-grabbing lg:gap-6"
+          >
             <!-- CARD 1 -->
-            <article class="min-w-[356px] rounded-[18px] border border-slate-200 bg-white p-5 shadow-[0_16px_36px_rgba(15,23,42,0.10)]">
-              <p class="text-[15px] leading-7 text-slate-600">
+            <article
+              class="testimonial-card w-[85vw] max-w-[382px] shrink-0 rounded-[22px] border border-[#E7EBF0] bg-white p-6 shadow-[0_14px_28px_rgba(15,23,42,0.05)] lg:w-[368px] lg:max-w-none lg:rounded-[20px] lg:p-[22px]"
+              data-card="0"
+            >
+              <p class="text-[15px] leading-[2] text-[#505E73] lg:text-[12px] lg:leading-[2.35]">
                 Trong thời gian chữa bệnh cho chồng tôi ở bệnh viện. Tôi thật sự cảm ơn các bác sĩ đã
                 cứu chữa cho chồng tôi rất giỏi. Còn các điều dưỡng y tá ở phòng thì thái độ rất hòa nhã,
                 chăm sóc tận tình, luôn luôn theo dõi sức khỏe chồng tôi thật sát sao, luôn có trách nhiệm.
               </p>
 
-              <div class="mt-5 h-px w-full bg-slate-200"></div>
+              <div class="mt-5 h-px w-full bg-[#E8EDF3]"></div>
 
-              <div class="mt-4 flex items-center justify-between gap-4">
+              <div class="mt-5 flex items-center justify-between gap-4">
                 <div class="flex items-center gap-3">
-                  <div class="h-14 w-14 overflow-hidden rounded-full bg-slate-200">
-                    <img src="./assets/images/customer-1.png" alt="Avatar" class="h-full w-full object-cover" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=&quot;flex h-full w-full items-center justify-center text-sm text-slate-500&quot;>Avatar</div>';" />
+                  <div class="h-14 w-14 overflow-hidden rounded-full bg-slate-200 lg:h-[56px] lg:w-[56px]">
+                    <img src="./assets/images/customer-1.png" alt="Avatar" class="h-full w-full object-cover" />
                   </div>
                   <div>
-                    <h3 class="text-[18px] font-semibold text-slate-800">Nguyễn Quỳnh Trang</h3>
-                    <p class="text-[14px] text-slate-500">Hà Nội</p>
+                    <h3 class="text-[17px] font-extrabold leading-7 text-[#1F2E4D] lg:text-[14px] lg:leading-6">
+                      Nguyễn Quỳnh Trang
+                    </h3>
+                    <p class="text-[14px] text-[#708199] lg:text-[11px]">Hà Nội</p>
                   </div>
                 </div>
 
-                <div class="flex gap-1 text-[18px] text-[#F6B000]">
+                <div class="flex gap-[2px] text-[18px] text-[#F6B000] lg:text-[14px]">
                   <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
               </div>
             </article>
 
             <!-- CARD 2 -->
-            <article class="min-w-[356px] rounded-[18px] border border-slate-200 bg-white p-5">
-              <p class="text-[15px] leading-7 text-slate-600">
+            <article
+              class="testimonial-card w-[85vw] max-w-[382px] shrink-0 rounded-[22px] border border-[#E7EBF0] bg-white p-6 shadow-[0_12px_24px_rgba(15,23,42,0.03)] lg:w-[368px] lg:max-w-none lg:rounded-[20px] lg:p-[22px]"
+              data-card="1"
+            >
+              <p class="text-[15px] leading-[2] text-[#505E73] lg:text-[12px] lg:leading-[2.35]">
                 Trong thời gian chữa bệnh cho chồng tôi ở bệnh viện. Tôi thật sự cảm ơn các bác sĩ đã
                 cứu chữa cho chồng tôi rất giỏi. Còn các điều dưỡng y tá ở phòng thì thái độ rất hòa nhã,
                 chăm sóc tận tình, luôn luôn theo dõi sức khỏe chồng tôi thật sát sao, luôn có trách nhiệm.
               </p>
 
-              <div class="mt-5 h-px w-full bg-slate-200"></div>
+              <div class="mt-5 h-px w-full bg-[#E8EDF3]"></div>
 
-              <div class="mt-4 flex items-center justify-between gap-4">
+              <div class="mt-5 flex items-center justify-between gap-4">
                 <div class="flex items-center gap-3">
-                  <div class="h-14 w-14 overflow-hidden rounded-full bg-slate-200">
-                    <img src="./assets/images/customer-2.png" alt="Avatar" class="h-full w-full object-cover" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=&quot;flex h-full w-full items-center justify-center text-sm text-slate-500&quot;>Avatar</div>';" />
+                  <div class="h-14 w-14 overflow-hidden rounded-full bg-slate-200 lg:h-[56px] lg:w-[56px]">
+                    <img src="./assets/images/customer-2.png" alt="Avatar" class="h-full w-full object-cover" />
                   </div>
                   <div>
-                    <h3 class="text-[18px] font-semibold text-slate-800">Nguyễn Quỳnh Trang</h3>
-                    <p class="text-[14px] text-slate-500">Hà Nội</p>
+                    <h3 class="text-[17px] font-extrabold leading-7 text-[#1F2E4D] lg:text-[14px] lg:leading-6">
+                      Nguyễn Quỳnh Trang
+                    </h3>
+                    <p class="text-[14px] text-[#708199] lg:text-[11px]">Hà Nội</p>
                   </div>
                 </div>
 
-                <div class="flex gap-1 text-[18px] text-[#F6B000]">
+                <div class="flex gap-[2px] text-[18px] text-[#F6B000] lg:text-[14px]">
                   <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
               </div>
             </article>
 
             <!-- CARD 3 -->
-            <article class="min-w-[356px] rounded-[18px] border border-slate-200 bg-white p-5">
-              <p class="text-[15px] leading-7 text-slate-600">
+            <article
+              class="testimonial-card w-[85vw] max-w-[382px] shrink-0 rounded-[22px] border border-[#E7EBF0] bg-white p-6 shadow-[0_12px_24px_rgba(15,23,42,0.03)] lg:w-[368px] lg:max-w-none lg:rounded-[20px] lg:p-[22px]"
+              data-card="2"
+            >
+              <p class="text-[15px] leading-[2] text-[#505E73] lg:text-[12px] lg:leading-[2.35]">
                 Trong thời gian chữa bệnh cho chồng tôi ở bệnh viện. Tôi thật sự cảm ơn các bác sĩ đã
                 cứu chữa cho chồng tôi rất giỏi. Còn các điều dưỡng y tá ở phòng thì thái độ rất hòa nhã,
                 chăm sóc tận tình, luôn luôn theo dõi sức khỏe chồng tôi thật sát sao, luôn có trách nhiệm.
               </p>
 
-              <div class="mt-5 h-px w-full bg-slate-200"></div>
+              <div class="mt-5 h-px w-full bg-[#E8EDF3]"></div>
 
-              <div class="mt-4 flex items-center justify-between gap-4">
+              <div class="mt-5 flex items-center justify-between gap-4">
                 <div class="flex items-center gap-3">
-                  <div class="h-14 w-14 overflow-hidden rounded-full bg-slate-200">
-                    <img src="./assets/images/customer-3.png" alt="Avatar" class="h-full w-full object-cover" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=&quot;flex h-full w-full items-center justify-center text-sm text-slate-500&quot;>Avatar</div>';" />
+                  <div class="h-14 w-14 overflow-hidden rounded-full bg-slate-200 lg:h-[56px] lg:w-[56px]">
+                    <img src="./assets/images/customer-3.png" alt="Avatar" class="h-full w-full object-cover" />
                   </div>
                   <div>
-                    <h3 class="text-[18px] font-semibold text-slate-800">Nguyễn Quỳnh Trang</h3>
-                    <p class="text-[14px] text-slate-500">Hà Nội</p>
+                    <h3 class="text-[17px] font-extrabold leading-7 text-[#1F2E4D] lg:text-[14px] lg:leading-6">
+                      Nguyễn Quỳnh Trang
+                    </h3>
+                    <p class="text-[14px] text-[#708199] lg:text-[11px]">Hà Nội</p>
                   </div>
                 </div>
 
-                <div class="flex gap-1 text-[18px] text-[#F6B000]">
+                <div class="flex gap-[2px] text-[18px] text-[#F6B000] lg:text-[14px]">
                   <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
               </div>
@@ -1041,8 +1719,8 @@
           </div>
         </div>
 
-        <!-- dots -->
-        <div class="mt-5 flex items-center justify-center gap-2 lg:justify-start">
+        <!-- Dots -->
+        <div class="mt-5 flex items-center justify-center gap-2 lg:mt-5 lg:w-[368px] lg:-translate-x-[138px] lg:justify-center">
           <button type="button" class="testimonial-dot h-[6px] w-[34px] rounded-full bg-[#F79433]" data-index="0"></button>
           <button type="button" class="testimonial-dot h-[6px] w-[14px] rounded-full bg-slate-300" data-index="1"></button>
           <button type="button" class="testimonial-dot h-[6px] w-[14px] rounded-full bg-slate-300" data-index="2"></button>
@@ -1054,41 +1732,109 @@
 
 <script>
   (function () {
-    const track = document.getElementById('testimonialTrack');
-    const dots = document.querySelectorAll('.testimonial-dot');
+    const viewport = document.getElementById("testimonialViewport");
+    const track = document.getElementById("testimonialTrack");
+    const cards = Array.from(document.querySelectorAll(".testimonial-card"));
+    const dots = Array.from(document.querySelectorAll(".testimonial-dot"));
+
+    if (!viewport || !track || !cards.length) return;
+
     let active = 0;
+    let startX = 0;
+    let startY = 0;
+    let dragging = false;
 
-    function updateSlider(index) {
-      active = index;
-
-      if (!track) return;
-
-      if (window.innerWidth >= 1024) {
-        const cardWidth = 382;
-        track.style.transform = `translateX(-${index * cardWidth}px)`;
-      } else {
-        track.style.transform = `translateX(-${index * 100}%)`;
-      }
-
+    function updateDots(index) {
       dots.forEach((dot, i) => {
         if (i === index) {
-          dot.classList.remove('bg-slate-300', 'w-[14px]');
-          dot.classList.add('bg-[#F79433]', 'w-[34px]');
+          dot.classList.remove("bg-slate-300", "w-[14px]");
+          dot.classList.add("bg-[#F79433]", "w-[34px]");
         } else {
-          dot.classList.remove('bg-[#F79433]', 'w-[34px]');
-          dot.classList.add('bg-slate-300', 'w-[14px]');
+          dot.classList.remove("bg-[#F79433]", "w-[34px]");
+          dot.classList.add("bg-slate-300", "w-[14px]");
         }
       });
     }
 
+    function updateOrder() {
+      cards.forEach((card, i) => {
+        const visualOrder = (i - active + cards.length) % cards.length;
+        card.style.order = visualOrder;
+
+        if (visualOrder === 0) {
+          card.classList.add("shadow-[0_14px_28px_rgba(15,23,42,0.05)]");
+          card.classList.remove("shadow-[0_12px_24px_rgba(15,23,42,0.03)]");
+        } else {
+          card.classList.remove("shadow-[0_14px_28px_rgba(15,23,42,0.05)]");
+          card.classList.add("shadow-[0_12px_24px_rgba(15,23,42,0.03)]");
+        }
+      });
+
+      updateDots(active);
+    }
+
+    function goTo(index) {
+      active = ((index % cards.length) + cards.length) % cards.length;
+      updateOrder();
+    }
+
+    function goNext() {
+      active = (active + 1) % cards.length;
+      updateOrder();
+    }
+
+    function goPrev() {
+      active = (active - 1 + cards.length) % cards.length;
+      updateOrder();
+    }
+
+    function startDrag(x, y) {
+      dragging = true;
+      startX = x;
+      startY = y;
+    }
+
+    function endDrag(x, y) {
+      if (!dragging) return;
+      dragging = false;
+
+      const diffX = x - startX;
+      const diffY = y - startY;
+
+      if (Math.abs(diffX) > 50 && Math.abs(diffX) > Math.abs(diffY)) {
+        if (diffX < 0) {
+          goNext();
+        } else {
+          goPrev();
+        }
+      }
+    }
+
+    viewport.addEventListener("pointerdown", (e) => {
+      startDrag(e.clientX, e.clientY);
+    });
+
+    viewport.addEventListener("pointerup", (e) => {
+      endDrag(e.clientX, e.clientY);
+    });
+
+    viewport.addEventListener("pointerleave", (e) => {
+      if (dragging && e.pointerType === "mouse") {
+        endDrag(e.clientX, e.clientY);
+      }
+    });
+
+    viewport.addEventListener("pointercancel", () => {
+      dragging = false;
+    });
+
     dots.forEach((dot) => {
-      dot.addEventListener('click', () => {
-        updateSlider(Number(dot.dataset.index));
+      dot.addEventListener("click", () => {
+        goTo(Number(dot.dataset.index));
       });
     });
 
-    window.addEventListener('resize', () => updateSlider(active));
-    updateSlider(0);
+    updateOrder();
   })();
 </script>
 
@@ -1243,26 +1989,78 @@
   </footer>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const menuBtn = document.getElementById('menuBtn');
-      const mobileMenu = document.getElementById('mobileMenu');
+  const menuBtn = document.getElementById("menuBtn");
+  const closeMenuBtn = document.getElementById("closeMenuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const mobileBackdrop = document.getElementById("mobileBackdrop");
 
-      if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener('click', function () {
-          mobileMenu.classList.toggle('hidden');
-          const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
-          menuBtn.setAttribute('aria-expanded', String(!expanded));
-        });
+  const desktopLinks = document.querySelectorAll(".nav-link");
+  const mobileLinks = document.querySelectorAll(".mobile-nav-link");
 
-        mobileMenu.querySelectorAll('a').forEach(function (link) {
-          link.addEventListener('click', function () {
-            mobileMenu.classList.add('hidden');
-            menuBtn.setAttribute('aria-expanded', 'false');
-          });
-        });
+  function openMenu() {
+    document.body.classList.add("menu-open");
+
+    mobileBackdrop.classList.remove("opacity-0", "pointer-events-none");
+    mobileBackdrop.classList.add("opacity-100", "pointer-events-auto");
+
+    mobileMenu.classList.remove("-translate-x-full");
+    mobileMenu.classList.add("translate-x-0");
+
+    if (menuBtn) {
+      menuBtn.setAttribute("aria-expanded", "true");
+    }
+  }
+
+  function closeMenu() {
+    document.body.classList.remove("menu-open");
+
+    mobileBackdrop.classList.remove("opacity-100", "pointer-events-auto");
+    mobileBackdrop.classList.add("opacity-0", "pointer-events-none");
+
+    mobileMenu.classList.remove("translate-x-0");
+    mobileMenu.classList.add("-translate-x-full");
+
+    if (menuBtn) {
+      menuBtn.setAttribute("aria-expanded", "false");
+    }
+  }
+
+  function setActiveLink(hash) {
+    desktopLinks.forEach((link) => {
+      if (link.getAttribute("href") === hash) {
+        link.classList.add("nav-link-active");
+      } else {
+        link.classList.remove("nav-link-active");
       }
     });
-  </script>
+  }
+
+  if (menuBtn) {
+    menuBtn.addEventListener("click", openMenu);
+  }
+
+  if (closeMenuBtn) {
+    closeMenuBtn.addEventListener("click", closeMenu);
+  }
+
+  if (mobileBackdrop) {
+    mobileBackdrop.addEventListener("click", closeMenu);
+  }
+
+  [...desktopLinks, ...mobileLinks].forEach((link) => {
+    link.addEventListener("click", () => {
+      const hash = link.getAttribute("href");
+      setActiveLink(hash);
+      closeMenu();
+    });
+  });
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
+
+  setActiveLink(window.location.hash || "#gioithieu");
+</script>
 
 </body>
 </html>
