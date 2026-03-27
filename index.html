@@ -413,7 +413,7 @@
     
 
     <!-- ================= QUY TRÌNH ================= -->
-    <section id="quytrinh" class="bg-[#f5f5f5] py-14 font-lato">
+    <section id="quytrinh" class="bg-white py-14 font-lato">
   <div class="mx-auto max-w-[1740px] px-4 sm:px-6">
 
     <!-- ================= MOBILE / TABLET ================= -->
@@ -489,190 +489,192 @@
     </div>
 
     <!-- ================= DESKTOP ================= -->
-    <div
-      id="processDesktop"
-      class="relative mx-auto hidden min-h-[710px] w-full overflow-hidden rounded-[88px] bg-gradient-to-r from-[#57B6EE] to-[#1689D8] px-[58px] pt-[48px] pb-[44px] xl:block"
-    >
-      <!-- decor -->
-      <img
-        src="./assets/images/process-top-decor.png"
-        alt=""
-        class="pointer-events-none absolute right-[52px] top-[-18px] w-[118px]"
-      />
-      <img
-        src="./assets/images/process-bottom-decor.png"
-        alt=""
-        class="pointer-events-none absolute bottom-[-28px] left-[46px] w-[104px]"
-      />
+    <div class="relative mx-auto hidden w-full max-w-[1680px] overflow-visible xl:block">
+  <!-- decor OUTSIDE để không bị cắt -->
+  <img
+    src="./assets/images/process-top-decor.png"
+    alt=""
+    class="pointer-events-none absolute right-[-24px] top-0 z-20 w-[208px] -translate-y-1/2"
+  />
+  <img
+    src="./assets/images/process-bottom-decor.png"
+    alt=""
+    class="pointer-events-none absolute bottom-0 left-[52px] z-20 w-[175px] translate-y-1/2"
+  />
 
-      <!-- title -->
-      <div class="text-center">
-        <h2 class="text-[31px] font-bold leading-none tracking-[0px] text-white">
-          Quy trình dịch vụ Tiêm chủng Vắc-xin tại Bệnh viện Phương Đông
-        </h2>
-        <div class="mx-auto mt-5 h-[4px] w-[92px] rounded-full bg-white/95"></div>
-      </div>
-
-      <!-- svg lines -->
-      <svg
-        id="processLines"
-        class="pointer-events-none absolute inset-0 h-full w-full"
-        preserveAspectRatio="none"
-      ></svg>
-
-      <!-- steps -->
-      <div
-        id="processSteps"
-        class="relative mt-[54px] grid min-h-[520px] items-start gap-0"
-      ></div>
+  <div
+    id="processDesktop"
+    class="relative h-[600px] w-full overflow-hidden rounded-[122px] bg-gradient-to-r from-[#57B6EE] to-[#1689D8] px-[52px] pt-[42px] pb-[38px]"
+  >
+    <!-- title -->
+    <div class="text-center">
+      <h2 class="text-[29px] font-bold leading-none tracking-[0px] text-white">
+        Quy trình dịch vụ Tiêm chủng Vắc-xin tại Bệnh viện Phương Đông
+      </h2>
+      <div class="mx-auto mt-5 h-[4px] w-[92px] rounded-full bg-white/95"></div>
     </div>
+
+    <!-- svg lines -->
+    <svg
+      id="processLines"
+      class="pointer-events-none absolute inset-0 h-full w-full"
+      preserveAspectRatio="none"
+    ></svg>
+
+    <!-- steps -->
+    <div
+      id="processSteps"
+      class="relative mt-[44px] grid min-h-[500px] items-start gap-0"
+    ></div>
+  </div>
+</div>
   </div>
 </section>
 
 <style>
   #processDesktop .process-step {
-    position: relative;
-    min-height: 520px;
-  }
+  position: relative;
+  min-height: 500px;
+}
 
-  /* giảm chênh lệch lên xuống để giống ảnh mẫu hơn */
-  #processDesktop .process-step.top {
-    --circle-y: 14px;
-  }
+/* hàng trên lên thêm, hàng dưới xuống thêm */
+#processDesktop .process-step.top {
+  --circle-y: 6px;
+}
 
-  #processDesktop .process-step.bottom {
-    --circle-y: 218px;
-  }
+#processDesktop .process-step.bottom {
+  --circle-y: 214px;
+}
 
-  #processDesktop .process-circle-wrap {
-    position: absolute;
-    top: var(--circle-y);
-    left: 50%;
-    transform: translateX(-50%);
-    width: 194px;
-    height: 194px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-  }
+#processDesktop .process-circle-wrap {
+  position: absolute;
+  top: var(--circle-y);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 182px;
+  height: 182px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
 
-  #processDesktop .process-circle-dashed {
-    position: absolute;
-    inset: 0;
-    border: 2px dashed rgba(255, 255, 255, 0.82);
-    border-radius: 9999px;
-  }
+#processDesktop .process-circle-dashed {
+  position: absolute;
+  inset: 0;
+  border: 2px dashed rgba(255, 255, 255, 0.82);
+  border-radius: 9999px;
+}
 
-  #processDesktop .process-circle-blue {
-    position: absolute;
-    inset: 18px;
-    border-radius: 9999px;
-    background: radial-gradient(circle at 35% 30%, #58c4ff 0%, #1d9bea 46%, #0a79d2 100%);
-    box-shadow:
-      inset 0 10px 16px rgba(255, 255, 255, 0.18),
-      0 8px 18px rgba(0, 95, 176, 0.24);
-  }
+#processDesktop .process-circle-blue {
+  position: absolute;
+  inset: 17px;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 35% 30%, #58c4ff 0%, #1d9bea 46%, #0a79d2 100%);
+  box-shadow:
+    inset 0 10px 16px rgba(255, 255, 255, 0.18),
+    0 8px 18px rgba(0, 95, 176, 0.24);
+}
 
-  #processDesktop .process-circle-white {
-    position: absolute;
-    inset: 38px;
-    border-radius: 9999px;
-    background: #ffffff;
-    box-shadow: 0 6px 16px rgba(0, 79, 148, 0.12);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+#processDesktop .process-circle-white {
+  position: absolute;
+  inset: 35px;
+  border-radius: 9999px;
+  background: #ffffff;
+  box-shadow: 0 6px 16px rgba(0, 79, 148, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  #processDesktop .process-circle-text {
-    text-align: center;
-    line-height: 1;
-  }
+#processDesktop .process-circle-text {
+  text-align: center;
+  line-height: 1;
+}
 
-  #processDesktop .process-circle-text .label {
-    font-size: 17px;
-    font-weight: 700;
-    color: #178fe2;
-  }
+#processDesktop .process-circle-text .label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #178fe2;
+}
 
-  #processDesktop .process-circle-text .num {
-    margin-top: 8px;
-    font-size: 40px;
-    font-weight: 800;
-    color: #11a08b;
-  }
+#processDesktop .process-circle-text .num {
+  margin-top: 8px;
+  font-size: 36px;
+  font-weight: 800;
+  color: #11a08b;
+}
 
-  #processDesktop .process-copy {
-    position: absolute;
-    width: 220px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    color: white;
-    z-index: 2;
-  }
+#processDesktop .process-copy {
+  position: absolute;
+  width: 208px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
 
-  #processDesktop .process-step.top .process-copy {
-    top: 306px;
-  }
+#processDesktop .process-step.top .process-copy {
+  top: 282px;
+}
 
-  #processDesktop .process-step.bottom .process-copy {
-    top: 8px;
-  }
+#processDesktop .process-step.bottom .process-copy {
+  top: 10px;
+}
 
-  #processDesktop .process-copy h3 {
-    font-size: 17px;
-    font-weight: 700;
-    line-height: 1.25;
-  }
+#processDesktop .process-copy h3 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+}
 
-  #processDesktop .process-copy p {
-    margin-top: 10px;
-    font-size: 13px;
-    line-height: 1.55;
-    color: rgba(255, 255, 255, 0.92);
-  }
+#processDesktop .process-copy p {
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.92);
+}
 
-  #processDesktop .step-dot {
-    position: absolute;
-    left: 50%;
-    width: 20px;
-    height: 20px;
-    margin-left: -10px;
-    border-radius: 9999px;
-    background: white;
-    z-index: 2;
-  }
+#processDesktop .step-dot {
+  position: absolute;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  margin-left: -9px;
+  border-radius: 9999px;
+  background: white;
+  z-index: 2;
+}
 
-  #processDesktop .step-stem {
-    position: absolute;
-    left: 50%;
-    width: 0;
-    border-left: 2px dashed rgba(255, 255, 255, 0.82);
-    transform: translateX(-50%);
-    z-index: 1;
-  }
+#processDesktop .step-stem {
+  position: absolute;
+  left: 50%;
+  width: 0;
+  border-left: 2px dashed rgba(255, 255, 255, 0.82);
+  transform: translateX(-50%);
+  z-index: 1;
+}
 
-  /* top row: stem đi xuống từ vòng nét đứt ngoài */
-  #processDesktop .process-step.top .step-stem {
-    top: calc(var(--circle-y) + 194px);
-    height: 72px;
-  }
+/* top row */
+#processDesktop .process-step.top .step-stem {
+  top: calc(var(--circle-y) + 182px);
+  height: 78px;
+}
 
-  #processDesktop .process-step.top .step-dot {
-    top: calc(var(--circle-y) + 194px + 62px);
-  }
+#processDesktop .process-step.top .step-dot {
+  top: calc(var(--circle-y) + 182px + 69px);
+}
 
-  /* bottom row: stem đi lên từ vòng nét đứt ngoài */
-  #processDesktop .process-step.bottom .step-stem {
-    top: calc(var(--circle-y) - 72px);
-    height: 72px;
-  }
+/* bottom row */
+#processDesktop .process-step.bottom .step-stem {
+  top: calc(var(--circle-y) - 78px);
+  height: 78px;
+}
 
-  #processDesktop .process-step.bottom .step-dot {
-    top: calc(var(--circle-y) - 10px - 72px);
-  }
+#processDesktop .process-step.bottom .step-dot {
+  top: calc(var(--circle-y) - 9px - 78px);
+}
 </style>
 
 <script>
