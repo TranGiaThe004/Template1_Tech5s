@@ -1,0 +1,2191 @@
+.nav-link {
+    position: relative;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -1px;
+    width: 0;
+    height: 3px;
+    border-radius: 9999px;
+    background: #2497e3;
+    transform: translateX(-50%);
+    transition: width 0.25s ease;
+  }
+
+  .nav-link-active {
+    color: #2497e3 !important;
+  }
+
+  .nav-link-active::after {
+    width: 28px;
+  }
+
+  .phone-shadow {
+    box-shadow: 0 8px 18px rgba(247, 148, 51, 0.22);
+  }
+
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  #mobileBackdrop {
+    transition: opacity 0.3s ease;
+  }
+
+  #mobileMenu {
+    transition: transform 0.3s ease;
+  }
+
+
+/* ================= QUY TRÌNH ================= */
+#processDesktop .process-step {
+  position: relative;
+  min-height: 500px;
+}
+
+/* hàng trên lên thêm, hàng dưới xuống thêm */
+#processDesktop .process-step.top {
+  --circle-y: 6px;
+}
+
+#processDesktop .process-step.bottom {
+  --circle-y: 214px;
+}
+
+#processDesktop .process-circle-wrap {
+  position: absolute;
+  top: var(--circle-y);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 182px;
+  height: 182px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+#processDesktop .process-circle-dashed {
+  position: absolute;
+  inset: 0;
+  border: 2px dashed rgba(255, 255, 255, 0.82);
+  border-radius: 9999px;
+}
+
+#processDesktop .process-circle-blue {
+  position: absolute;
+  inset: 17px;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 35% 30%, #58c4ff 0%, #1d9bea 46%, #0a79d2 100%);
+  box-shadow:
+    inset 0 10px 16px rgba(255, 255, 255, 0.18),
+    0 8px 18px rgba(0, 95, 176, 0.24);
+}
+
+#processDesktop .process-circle-white {
+  position: absolute;
+  inset: 35px;
+  border-radius: 9999px;
+  background: #ffffff;
+  box-shadow: 0 6px 16px rgba(0, 79, 148, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#processDesktop .process-circle-text {
+  text-align: center;
+  line-height: 1;
+}
+
+#processDesktop .process-circle-text .label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #178fe2;
+}
+
+#processDesktop .process-circle-text .num {
+  margin-top: 8px;
+  font-size: 36px;
+  font-weight: 800;
+  color: #11a08b;
+}
+
+#processDesktop .process-copy {
+  position: absolute;
+  width: 208px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+
+#processDesktop .process-step.top .process-copy {
+  top: 282px;
+}
+
+#processDesktop .process-step.bottom .process-copy {
+  top: 10px;
+}
+
+#processDesktop .process-copy h3 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+#processDesktop .process-copy p {
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+#processDesktop .step-dot {
+  position: absolute;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  margin-left: -9px;
+  border-radius: 9999px;
+  background: white;
+  z-index: 2;
+}
+
+#processDesktop .step-stem {
+  position: absolute;
+  left: 50%;
+  width: 0;
+  border-left: 2px dashed rgba(255, 255, 255, 0.82);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* top row */
+#processDesktop .process-step.top .step-stem {
+  top: calc(var(--circle-y) + 182px);
+  height: 78px;
+}
+
+#processDesktop .process-step.top .step-dot {
+  top: calc(var(--circle-y) + 182px + 69px);
+}
+
+/* bottom row */
+#processDesktop .process-step.bottom .step-stem {
+  top: calc(var(--circle-y) - 78px);
+  height: 78px;
+}
+
+#processDesktop .process-step.bottom .step-dot {
+  top: calc(var(--circle-y) - 9px - 78px);
+}
+
+/* ================= Đội ngũ bác sĩ ================= */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+
+  .font-lato {
+    font-family: 'Lato', sans-serif;
+  }
+
+  #doctorSection .doctor-card,
+  #doctorTrackMobile .doctor-card-mobile {
+    background: #edf3f5;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  #doctorSection .doctor-card {
+    position: relative;
+    width: 328px;
+    height: 474px;
+    flex: 0 0 328px;
+    box-shadow: 0 14px 34px rgba(50, 74, 98, 0.06);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+  }
+
+  #doctorSection .doctor-card.is-expanded {
+    box-shadow: 0 20px 44px rgba(50, 74, 98, 0.10);
+    transform: translateY(-2px);
+  }
+
+  /* Ảnh đứng yên */
+  #doctorSection .doctor-top {
+    position: absolute;
+    inset: 0;
+    background: #edf3f5;
+  }
+
+  #doctorSection .doctor-top img {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: auto !important;
+    max-width: none !important;
+    height: 93% !important;
+    object-fit: contain;
+    object-position: bottom center;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* Khung trắng mặc định */
+  #doctorSection .doctor-bottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 96px;
+    background: #ffffff;
+    padding: 22px 22px 16px;
+    transition: height 0.35s ease, padding 0.35s ease;
+  }
+
+  /* Khi mở chỉ khung trắng cao lên */
+  #doctorSection .doctor-card.is-expanded .doctor-bottom {
+    height: 236px;
+    padding: 18px 24px 14px;
+  }
+
+  #doctorSection .doctor-brief,
+  #doctorSection .doctor-detail {
+    transition: opacity 0.25s ease;
+  }
+
+  #doctorSection .doctor-detail {
+    display: none;
+  }
+
+  #doctorSection .doctor-card.is-expanded .doctor-brief {
+    display: none;
+  }
+
+  #doctorSection .doctor-card.is-expanded .doctor-detail {
+    display: block;
+  }
+
+  #doctorSection .doctor-stars {
+    letter-spacing: 2px;
+  }
+
+  #doctorSection .doctor-dot {
+    height: 8px;
+    width: 18px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.95);
+    transition: all 0.25s ease;
+  }
+
+  #doctorSection .doctor-dot.is-active {
+    width: 62px;
+    background: #f08a17;
+  }
+
+  #doctorTrackMobile {
+    scrollbar-width: none;
+  }
+
+  #doctorTrackMobile::-webkit-scrollbar {
+    display: none;
+  }
+
+  #doctorTrackMobile .doctor-card-mobile {
+    width: 290px;
+    min-width: 290px;
+    box-shadow: 0 14px 34px rgba(50, 74, 98, 0.08);
+  }
+
+  #doctorTrackMobile .doctor-mobile-top {
+    position: relative;
+    height: 250px;
+    background: #edf3f5;
+  }
+
+  #doctorTrackMobile .doctor-mobile-top img {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    object-fit: contain;
+    object-position: bottom center;
+    width: auto;
+    height: 94%;
+  }
+
+  #doctorTrackMobile .doctor-mobile-bottom {
+    background: white;
+    padding: 20px 18px 18px;
+  }
+
+  #doctorDotsMobile .doctor-dot-mobile {
+    height: 8px;
+    width: 18px;
+    border-radius: 999px;
+    background: rgba(39, 168, 244, 0.22);
+    transition: all 0.25s ease;
+  }
+
+  #doctorDotsMobile .doctor-dot-mobile.is-active {
+    width: 54px;
+    background: #f08a17;
+  }
+
+
+  /* ================= Hình ảnh của khách hàng khi sử dụng gói dịch vụ Tiêm chủng Vắc-xin ================= */
+/* =========================================================
+   == RESET CƠ BẢN ==
+   ========================================================= */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #262626;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+}
+
+/* =========================================================
+   == KHUNG NGOÀI TOÀN TRANG ==
+   ========================================================= */
+.page-wrap {
+  width: 100%;
+}
+
+/* =========================================================
+   == SECTION: HÌNH ẢNH KHÁCH HÀNG ==
+   ========================================================= */
+.customer-gallery-section {
+  padding: 0 24px 36px;
+}
+
+.gallery-container {
+  width: min(100%, 1290px); /* nhỏ hơn trước */
+  margin: 0 auto;
+}
+
+/* =========================================================
+   == TITLE ==
+   ========================================================= */
+.section-heading {
+  padding-top: 50px; /* giảm nhẹ */
+  text-align: center;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: 28px; /* trước 31px */
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: #2a2a2a;
+}
+
+.section-line {
+  display: block;
+  width: 100px; /* trước 112px */
+  height: 5px;
+  margin: 16px auto 0;
+  border-radius: 999px;
+  background: #2aa3f0;
+}
+
+/* =========================================================
+   == KHỐI ẢNH CHÍNH ==
+   == ẢNH NHỎ HƠN + LUÔN CĂN GIỮA ==
+   ========================================================= */
+.gallery-main-wrap {
+  position: relative;
+  width: min(100%, 1190px); /* trước 1240px */
+  margin: 30px auto 0;
+}
+
+.gallery-main-slider {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.gallery-main-slider .swiper-slide {
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.gallery-main-image {
+  width: 100%;
+  aspect-ratio: 1280 / 618;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 20px;
+}
+
+/* =========================================================
+   == NÚT ARROW ==
+   ========================================================= */
+.gallery-arrow {
+  position: absolute;
+  bottom: -72px;
+  z-index: 20;
+  width: 48px;   /* trước 52px */
+  height: 48px;  /* trước 52px */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #31a7ef;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #31a7ef;
+  cursor: pointer;
+  transition:
+    background-color 0.28s ease,
+    color 0.28s ease,
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
+}
+
+.gallery-arrow:hover {
+  background: #31a7ef;
+  color: #ffffff;
+  border-color: #31a7ef;
+  box-shadow: 0 12px 24px rgba(49, 167, 239, 0.28);
+  transform: translateY(-1px);
+}
+
+.gallery-arrow:active {
+  transform: translateY(0);
+}
+
+.gallery-arrow svg {
+  width: 20px;   /* trước 22px */
+  height: 20px;  /* trước 22px */
+}
+
+.gallery-arrow-prev {
+  left: -50px;
+}
+
+.gallery-arrow-next {
+  right: -50px;
+}
+
+/* =========================================================
+   == KHỐI THUMBNAILS ==
+   ========================================================= */
+.gallery-thumbs-wrap {
+  width: min(100%, 1190px); /* trước 1240px */
+  margin: 8px auto 0;
+  padding: 0 2px;
+}
+
+.gallery-thumbs-slider {
+  overflow: hidden;
+}
+
+.gallery-thumbs-slider .swiper-slide {
+  width: 160px; /* trước 176px */
+  cursor: pointer;
+  opacity: 1;
+}
+
+.gallery-thumb-box {
+  overflow: hidden;
+  border-radius: 10px;
+  background: #ffffff;
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    opacity 0.28s ease;
+}
+
+.gallery-thumb-image {
+  width: 100%;
+  height: 88px; /* trước 96px */
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 10px;
+}
+
+.gallery-thumbs-slider .swiper-slide-thumb-active .gallery-thumb-box {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================================
+   == RESPONSIVE ==
+   ========================================================= */
+@media (max-width: 1500px) {
+  .gallery-arrow-prev {
+    left: -22px;
+  }
+
+  .gallery-arrow-next {
+    right: -22px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .section-heading {
+    padding-top: 42px;
+  }
+
+  .section-heading h2 {
+    font-size: 24px;
+  }
+
+  .gallery-main-wrap {
+    width: min(100%, 1060px);
+  }
+
+  .gallery-thumbs-wrap {
+    width: min(100%, 1060px);
+  }
+
+  .gallery-arrow {
+    width: 44px;
+    height: 44px;
+    bottom: -68px;
+  }
+
+  .gallery-arrow svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .gallery-thumbs-slider .swiper-slide {
+    width: 142px;
+  }
+
+  .gallery-thumb-image {
+    height: 82px;
+  }
+}
+
+@media (max-width: 768px) {
+  .customer-gallery-section {
+    padding: 0 14px 30px;
+  }
+
+  .section-heading {
+    padding-top: 28px;
+  }
+
+  .section-heading h2 {
+    font-size: 20px;
+    line-height: 1.35;
+  }
+
+  .section-line {
+    width: 82px;
+    height: 4px;
+    margin-top: 12px;
+  }
+
+  .gallery-main-wrap {
+    width: 100%;
+    margin: 22px auto 0;
+  }
+
+  .gallery-main-slider,
+  .gallery-main-slider .swiper-slide,
+  .gallery-main-image {
+    border-radius: 15px;
+  }
+
+  .gallery-main-image {
+    aspect-ratio: 16 / 10;
+    object-position: center center;
+  }
+
+  .gallery-arrow {
+    top: calc(100% + 22px);
+    bottom: auto;
+    width: 42px;
+    height: 42px;
+  }
+
+  .gallery-arrow svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .gallery-arrow-prev {
+    left: 0;
+  }
+
+  .gallery-arrow-next {
+    right: 0;
+  }
+
+  .gallery-thumbs-wrap {
+    width: 100%;
+    margin: 56px auto 0;
+    padding: 0 50px;
+  }
+
+  .gallery-thumbs-slider .swiper-slide {
+    width: 100px;
+  }
+
+  .gallery-thumb-image {
+    height: 68px;
+    border-radius: 8px;
+  }
+
+  .gallery-thumb-box {
+    border-radius: 8px;
+  }
+}
+
+/* ================= Video khách hàng thăm khám tại bệnh viện Phương Đông ================= */
+/* =========================================================
+   == RESET CƠ BẢN ==
+   ========================================================= */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f3f3f3;
+  color: #262626;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  padding: 0;
+}
+
+/* =========================================================
+   == SECTION: VIDEO KHÁCH HÀNG ==
+   ========================================================= */
+.customer-video-section {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    to bottom,
+    #23a4ec 0,
+    #1597e5 350px,
+    #f3f3f3 350px,
+    #f3f3f3 100%
+  );
+}
+
+.customer-video-bg {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 350px;
+  background-image: url("../images/Group 9544.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.customer-video-container {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 1410px);
+  margin: 0 auto;
+  padding: 70px 22px 62px;
+}
+
+/* =========================================================
+   == TITLE ==
+   ========================================================= */
+.customer-video-heading {
+  text-align: center;
+}
+
+.customer-video-heading h2 {
+  margin: 0;
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.customer-video-line {
+  display: block;
+  width: 120px;
+  height: 4px;
+  margin: 22px auto 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.96);
+}
+
+/* =========================================================
+   == SLIDER WRAP ==
+   == THU NHỎ 3 ẢNH VÀO GIỮA ĐỂ KHÔNG CHẠM MŨI TÊN ==
+   ========================================================= */
+.customer-video-slider-wrap {
+  position: relative;
+  margin-top: 40px;
+  padding: 0 64px;
+}
+
+.customer-video-swiper {
+  width: 100%;
+  margin: 0 auto;
+  overflow: visible;
+  padding-bottom: 72px;
+}
+
+.customer-video-swiper .swiper-slide {
+  height: auto;
+}
+
+/* =========================================================
+   == VIDEO CARD ==
+   ========================================================= */
+.video-card {
+  position: relative;
+  padding-bottom: 52px;
+}
+
+.video-thumb {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #d9d9d9;
+  text-decoration: none;
+}
+
+.video-thumb img {
+  width: 100%;
+  aspect-ratio: 454 / 276;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 20px;
+}
+
+/* =========================================================
+   == PLAY BUTTON ==
+   ========================================================= */
+.video-play-btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 50px;
+  height: 36px;
+  transform: translate(-50%, -50%);
+  border-radius: 12px;
+  background: #ff140a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 18px rgba(255, 20, 10, 0.24);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.video-card:hover .video-play-btn {
+  transform: translate(-50%, -50%) scale(1.06);
+  box-shadow: 0 10px 24px rgba(255, 20, 10, 0.28);
+}
+
+.video-play-triangle {
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 14px solid #ffffff;
+}
+
+/* =========================================================
+   == INFO CARD ==
+   ========================================================= */
+.video-info {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: calc(100% - 76px);
+  transform: translateX(-50%);
+  border-radius: 18px;
+  background: #f2f2f2;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
+  padding: 18px 18px 16px;
+}
+
+.video-title {
+  margin: 0;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.18;
+  font-weight: 700;
+  color: #313131;
+}
+
+.video-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.video-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #8e8e8e;
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.video-meta-item svg {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+}
+
+/* =========================================================
+   == ARROWS ==
+   ========================================================= */
+.video-arrow {
+  position: absolute;
+  top: 110px;
+  z-index: 20;
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  cursor: pointer;
+  backdrop-filter: blur(2px);
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.video-arrow:hover {
+  background: rgba(255, 255, 255, 0.22);
+  transform: translateY(-1px);
+}
+
+.video-arrow:active {
+  transform: translateY(0);
+}
+
+.video-arrow svg {
+  width: 20px;
+  height: 20px;
+}
+
+.video-arrow-prev {
+  left: 0;
+}
+
+.video-arrow-next {
+  right: 0;
+}
+
+/* =========================================================
+   == RESPONSIVE ==
+   ========================================================= */
+@media (max-width: 1280px) {
+  .customer-video-container {
+    width: min(100%, 1320px);
+    padding-top: 62px;
+  }
+
+  .customer-video-heading h2 {
+    font-size: 28px;
+  }
+
+  .video-title {
+    font-size: 15px;
+  }
+
+  .video-meta-item {
+    font-size: 13px;
+  }
+
+  .customer-video-slider-wrap {
+    padding: 0 56px;
+  }
+}
+
+@media (max-width: 991px) {
+  .customer-video-section {
+    background: linear-gradient(
+      to bottom,
+      #23a4ec 0,
+      #1597e5 300px,
+      #f3f3f3 300px,
+      #f3f3f3 100%
+    );
+  }
+
+  .customer-video-bg {
+    height: 300px;
+  }
+
+  .customer-video-container {
+    padding: 54px 18px 54px;
+  }
+
+  .customer-video-heading h2 {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  .customer-video-line {
+    width: 94px;
+    margin-top: 16px;
+  }
+
+  .customer-video-slider-wrap {
+    margin-top: 28px;
+    padding: 0 48px;
+  }
+
+  .customer-video-swiper {
+    padding-bottom: 76px;
+  }
+
+  .video-arrow {
+    top: calc(100% - 18px);
+    width: 42px;
+    height: 42px;
+    background: rgba(35, 164, 236, 0.95);
+  }
+
+  .video-arrow-prev {
+    left: 0;
+  }
+
+  .video-arrow-next {
+    right: 0;
+  }
+
+  .video-info {
+    width: calc(100% - 28px);
+    padding: 16px 16px 14px;
+  }
+
+  .video-title {
+    font-size: 15px;
+  }
+
+  .video-meta {
+    gap: 18px;
+  }
+
+  .video-meta-item {
+    font-size: 13px;
+    gap: 8px;
+  }
+
+  .video-meta-item svg {
+    width: 18px;
+    height: 18px;
+    flex-basis: 18px;
+  }
+}
+
+@media (max-width: 640px) {
+  .customer-video-container {
+    padding: 44px 14px 46px;
+  }
+
+  .customer-video-heading h2 {
+    font-size: 21px;
+  }
+
+  .customer-video-line {
+    width: 82px;
+    height: 4px;
+  }
+
+  .customer-video-slider-wrap {
+    padding: 0 42px;
+  }
+
+  .customer-video-swiper {
+    padding-bottom: 72px;
+  }
+
+  .video-card {
+    padding-bottom: 48px;
+  }
+
+  .video-thumb,
+  .video-thumb img {
+    border-radius: 16px;
+  }
+
+  .video-info {
+    border-radius: 16px;
+  }
+
+  .video-title {
+    font-size: 14px;
+    line-height: 1.22;
+  }
+
+  .video-meta {
+    gap: 14px;
+    margin-top: 12px;
+  }
+
+  .video-meta-item {
+    font-size: 12px;
+  }
+
+  .video-play-btn {
+    width: 46px;
+    height: 33px;
+    border-radius: 11px;
+  }
+
+  .video-play-triangle {
+    border-top-width: 8px;
+    border-bottom-width: 8px;
+    border-left-width: 13px;
+  }
+}
+
+/* ================= Chương trình ưu đãi đặc biệt dành cho gói Tư vấn & Tiêm chủng Vắc-xin ================= */
+  /* =========================================================
+    == RESET ==
+    ========================================================= */
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f3f3;
+    color: #262626;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  button,
+  a {
+    font: inherit;
+  }
+
+  /* =========================================================
+    == SECTION ==
+    ========================================================= */
+  .promo-vaccine-section {
+    position: relative;
+    overflow: hidden;
+    padding: 52px 24px 84px;
+    background: #f3f3f3;
+  }
+
+  .promo-container {
+    position: relative;
+    z-index: 2;
+    width: min(100%, 1420px);
+    margin: 0 auto;
+  }
+
+  /* =========================================================
+    == DECOR 2 GÓC ==
+    ========================================================= */
+  .promo-decor {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .promo-decor-left {
+    left: -10px;
+    top: 162px;
+    width: 138px;
+  }
+
+  .promo-decor-right {
+    right: 88px;
+    top: -30px;
+    width: 102px;
+  }
+
+  /* =========================================================
+    == TITLE ==
+    ========================================================= */
+  .promo-heading {
+    text-align: center;
+  }
+
+  .promo-heading h2 {
+    margin: 0;
+    font-size: 28px;
+    line-height: 1.25;
+    font-weight: 700;
+    color: #252525;
+  }
+
+  .promo-line {
+    display: block;
+    width: 136px;
+    height: 4px;
+    margin: 18px auto 0;
+    border-radius: 999px;
+    background: #30a7ed;
+  }
+
+  /* =========================================================
+    == STAGE ==
+    ========================================================= */
+  .promo-stage {
+    position: relative;
+    margin-top: 58px;
+    padding: 0 86px;
+  }
+
+  .promo-track {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    column-gap: 0;
+    overflow: visible;
+  }
+
+  /* =========================================================
+    == CARD SLOT ==
+    ========================================================= */
+  .promo-slot {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+  }
+
+  .promo-slot-left {
+    transform: translateX(34px) translateY(10px);
+    z-index: 1;
+  }
+
+  .promo-slot-center {
+    transform: translateY(-10px);
+    z-index: 3;
+  }
+
+  .promo-slot-right {
+    transform: translateX(-34px) translateY(10px);
+    z-index: 1;
+  }
+
+  /* =========================================================
+    == CARD ==
+    ========================================================= */
+  .promo-card {
+    width: 410px;
+    border-radius: 28px;
+    overflow: hidden;
+    background: #dfe6ea;
+    box-shadow: 0 12px 26px rgba(31, 55, 77, 0.06);
+    transition:
+      background 0.35s ease,
+      box-shadow 0.35s ease,
+      transform 0.35s ease;
+  }
+
+  .promo-slot-left .promo-card,
+  .promo-slot-right .promo-card {
+    transform: scale(0.93);
+  }
+
+  .promo-slot-center .promo-card {
+    width: 438px;
+    background: linear-gradient(180deg, #44b3ef 0%, #1a92dd 100%);
+    box-shadow: 0 22px 42px rgba(26, 146, 221, 0.22);
+    transform: scale(1);
+  }
+
+  /* =========================================================
+    == MEDIA ==
+    ========================================================= */
+  .promo-media {
+    padding: 10px 10px 0;
+  }
+
+  .promo-media img {
+    width: 100%;
+    aspect-ratio: 418 / 210;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 22px;
+  }
+
+  /* =========================================================
+    == BODY ==
+    ========================================================= */
+  .promo-body {
+    padding: 14px 28px 28px;
+    text-align: center;
+  }
+
+  .promo-title {
+    margin: 0;
+    min-height: 54px;
+    font-size: 18px;
+    line-height: 1.22;
+    font-weight: 700;
+    color: #299ce6;
+    transition: color 0.35s ease;
+  }
+
+  .promo-price {
+    margin-top: 8px;
+    font-size: 42px;
+    line-height: 1;
+    font-weight: 800;
+    color: #299ce6;
+    transition: color 0.35s ease;
+  }
+
+  .promo-old {
+    margin-top: 6px;
+    font-size: 12px;
+    line-height: 1.2;
+    color: #888888;
+    transition: color 0.35s ease;
+  }
+
+  .promo-list {
+    margin: 18px 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 12px;
+    text-align: left;
+  }
+
+  .promo-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #666666;
+    font-size: 12px;
+    line-height: 1.35;
+    transition: color 0.35s ease;
+  }
+
+  .promo-check {
+    width: 24px;
+    height: 24px;
+    flex: 0 0 24px;
+    color: #5f5f5f;
+    transition: color 0.35s ease;
+  }
+
+  /* =========================================================
+    == CENTER CARD TEXT ==
+    ========================================================= */
+  .promo-slot-center .promo-title,
+  .promo-slot-center .promo-price,
+  .promo-slot-center .promo-list li {
+    color: #ffffff;
+  }
+
+  .promo-slot-center .promo-old {
+    color: rgba(255, 255, 255, 0.82);
+  }
+
+  .promo-slot-center .promo-check {
+    color: #ffffff;
+  }
+
+  /* =========================================================
+    == BUTTON ==
+    == KHÔNG ĐỔI MÀU KHI HOVER, NHƯNG VẪN CÓ HIỆU ỨNG ==
+    ========================================================= */
+  .promo-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 176px;
+    height: 42px;
+    margin-top: 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+      transform 0.22s ease,
+      box-shadow 0.22s ease,
+      opacity 0.22s ease;
+  }
+
+  /* == 2 CARD BÊN: XANH == */
+  .promo-slot-left .promo-btn,
+  .promo-slot-right .promo-btn {
+    background: #2a9de7;
+    border: 1px solid #2a9de7;
+    color: #ffffff;
+  }
+
+  /* == CARD GIỮA: TRẮNG == */
+  .promo-slot-center .promo-btn {
+    background: #ffffff;
+    border: 1px solid #ffffff;
+    color: #2a9de7;
+  }
+
+  /* == HOVER CHUNG: NHẤC NHẸ LÊN == */
+  .promo-btn:hover,
+  .promo-btn:focus-visible {
+    transform: translateY(-2px);
+    outline: none;
+  }
+
+  /* == HOVER 2 NÚT BÊN: GIỮ NGUYÊN MÀU == */
+  .promo-slot-left .promo-btn:hover,
+  .promo-slot-left .promo-btn:focus-visible,
+  .promo-slot-left .promo-btn:active,
+  .promo-slot-right .promo-btn:hover,
+  .promo-slot-right .promo-btn:focus-visible,
+  .promo-slot-right .promo-btn:active {
+    background: #2a9de7;
+    border-color: #2a9de7;
+    color: #ffffff;
+    box-shadow: 0 10px 22px rgba(42, 157, 231, 0.24);
+  }
+
+  /* == HOVER NÚT Ở GIỮA: GIỮ NGUYÊN MÀU == */
+  .promo-slot-center .promo-btn:hover,
+  .promo-slot-center .promo-btn:focus-visible,
+  .promo-slot-center .promo-btn:active {
+    background: #ffffff;
+    border-color: #ffffff;
+    color: #2a9de7;
+    box-shadow: 0 10px 22px rgba(255, 255, 255, 0.22);
+  }
+
+  .promo-btn:active {
+    transform: translateY(0);
+  }
+
+  /* =========================================================
+    == ARROWS ==
+    ========================================================= */
+  .promo-arrow {
+    position: absolute;
+    top: 286px;
+    z-index: 20;
+    width: 42px;
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #2b9ce5;
+    border-radius: 999px;
+    background: #f3f3f3;
+    color: #2b9ce5;
+    cursor: pointer;
+    transition:
+      background-color 0.25s ease,
+      color 0.25s ease,
+      box-shadow 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .promo-arrow:hover {
+    background: #2b9ce5;
+    color: #ffffff;
+    box-shadow: 0 10px 22px rgba(43, 156, 229, 0.18);
+    transform: translateY(-1px);
+  }
+
+  .promo-arrow:active {
+    transform: translateY(0);
+  }
+
+  .promo-arrow svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .promo-arrow-prev {
+    left: 20px;
+  }
+
+  .promo-arrow-next {
+    right: 20px;
+  }
+
+  /* =========================================================
+    == CLICKABLE SIDE CARDS ==
+    ========================================================= */
+  .promo-slot-left .promo-card,
+  .promo-slot-right .promo-card {
+    cursor: pointer;
+  }
+
+  /* =========================================================
+    == RESPONSIVE ==
+    ========================================================= */
+  @media (max-width: 1400px) {
+    .promo-stage {
+      padding: 0 72px;
+    }
+
+    .promo-card {
+      width: 388px;
+    }
+
+    .promo-slot-center .promo-card {
+      width: 418px;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .promo-vaccine-section {
+      padding: 48px 18px 74px;
+    }
+
+    .promo-heading h2 {
+      font-size: 28px;
+    }
+
+    .promo-stage {
+      margin-top: 48px;
+      padding: 0 58px;
+    }
+
+    .promo-card {
+      width: 350px;
+    }
+
+    .promo-slot-center .promo-card {
+      width: 382px;
+    }
+
+    .promo-price {
+      font-size: 38px;
+    }
+
+    .promo-arrow {
+      top: 258px;
+    }
+
+    .promo-decor-right {
+      right: 72px;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .promo-vaccine-section {
+      padding: 42px 14px 66px;
+    }
+
+    .promo-heading h2 {
+      font-size: 23px;
+      line-height: 1.35;
+    }
+
+    .promo-line {
+      width: 94px;
+      margin-top: 16px;
+    }
+
+    .promo-stage {
+      margin-top: 38px;
+      padding: 0 46px;
+    }
+
+    .promo-track {
+      grid-template-columns: 1fr;
+    }
+
+    .promo-slot-left,
+    .promo-slot-right {
+      display: none;
+    }
+
+    .promo-slot-center {
+      transform: none;
+    }
+
+    .promo-card,
+    .promo-slot-center .promo-card {
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .promo-slot-center .promo-card {
+      margin: 0 auto;
+    }
+
+    .promo-title {
+      min-height: auto;
+      font-size: 16px;
+    }
+
+    .promo-price {
+      font-size: 36px;
+    }
+
+    .promo-arrow {
+      top: 230px;
+      width: 40px;
+      height: 40px;
+    }
+
+    .promo-arrow-prev {
+      left: 0;
+    }
+
+    .promo-arrow-next {
+      right: 0;
+    }
+
+    .promo-decor-left {
+      width: 94px;
+      left: -36px;
+      top: 340px;
+    }
+
+    .promo-decor-right {
+      width: 54px;
+      right: 24px;
+      top: 16px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .promo-vaccine-section {
+      padding: 38px 12px 56px;
+    }
+
+    .promo-heading h2 {
+      font-size: 20px;
+    }
+
+    .promo-stage {
+      margin-top: 30px;
+      padding: 0 38px;
+    }
+
+    .promo-card,
+    .promo-slot-center .promo-card {
+      max-width: 320px;
+      border-radius: 24px;
+    }
+
+    .promo-media img {
+      border-radius: 18px;
+    }
+
+    .promo-body {
+      padding: 14px 18px 22px;
+    }
+
+    .promo-title {
+      font-size: 15px;
+    }
+
+    .promo-price {
+      font-size: 34px;
+    }
+
+    .promo-list {
+      gap: 10px;
+    }
+
+    .promo-list li {
+      font-size: 11px;
+    }
+
+    .promo-btn {
+      min-width: 154px;
+      height: 38px;
+      font-size: 12px;
+    }
+
+    .promo-arrow {
+      top: 206px;
+      width: 38px;
+      height: 38px;
+    }
+
+    .promo-decor-left {
+      width: 82px;
+      top: 360px;
+    }
+
+    .promo-decor-right {
+      width: 48px;
+      right: 12px;
+    }
+  }
+
+
+/* ================= 9 mũi vắc xin ngoài chương trình tiêm chủng mở rộng cha mẹ không nên bỏ qua ================= */
+/* =========================================================
+   == RESET ==
+   ========================================================= */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f3f3;
+    color: #262626;
+  }
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* =========================================================
+   == SECTION WRAP ==
+   ========================================================= */
+.promo-vaccine-section {
+  position: relative;
+  overflow: hidden;
+  padding: 52px 24px 84px;
+  background: #f3f3f3;
+}
+
+.article-feature-section {
+  position: relative;
+  overflow: hidden;
+  padding: 34px 0 96px;
+  background: #f3f3f3;
+}
+
+/* =========================================================
+   == NỀN XANH ==
+   ========================================================= */
+.article-bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 60px;
+  width: 100%;
+  height: 708px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 40px;
+  z-index: 1;
+}
+
+/* =========================================================
+   == HÌNH TRANG TRÍ GÓC PHẢI ==
+   ========================================================= */
+.article-decor {
+  position: absolute;
+  right: 72px;
+  top: -40px;
+  width: 180px;
+  z-index: 6;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* =========================================================
+   == THANH XÁM TRÊN ==
+   == ĐỔI TỪ ABSOLUTE SANG RELATIVE ĐỂ KHÔNG LỆCH SECTION ==
+   ========================================================= */
+.article-top-strip {
+  position: relative;
+  z-index: 3;
+  display: block;
+  width: min(calc(100% - 640px), 1200px);
+  margin: 134px auto 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.article-socials {
+  position: relative;
+  z-index: 5;
+  width: min(calc(100% - 640px), 1200px);
+  margin: -54px auto 0;
+  padding-left: 52px;
+  display: flex;
+  align-items: center;
+  gap: 44px;
+}
+
+.article-socials img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  opacity: 0.9;
+}
+
+/* =========================================================
+   == CARD CHÍNH ==
+   == KHÔNG CÒN ABSOLUTE TRÊN DESKTOP ==
+   ========================================================= */
+.article-card {
+  position: relative;
+  z-index: 4;
+  width: min(calc(100% - 484px), 1350px);
+  margin: 8px auto 0;
+  min-height: 620px;
+  padding-right: 430px; /* chừa chỗ cho bác sĩ bên phải */
+  background: #f7f7f7;
+  border-radius: 32px;
+  overflow: visible;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.02);
+}
+
+.article-content {
+  min-height: 620px;
+  padding: 48px 50px 56px 48px;
+}
+
+.article-title {
+  margin: 0;
+  max-width: none;
+  font-size: 30px;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #242424;
+}
+
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  margin-top: 26px;
+  color: #8c8c8c;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.meta-item svg {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+}
+
+.article-text {
+  margin-top: 38px;
+  max-width: none;
+}
+
+.article-text p {
+  margin: 0 0 22px;
+  font-size: 12.5px;
+  line-height: 1.34;
+  color: #5f5f5f;
+  font-weight: 400;
+}
+
+.article-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   == ẢNH BÁC SĨ ==
+   ========================================================= */
+.doctor-visual {
+  position: absolute;
+  right: 58px;
+  bottom: 150px;
+  width: 520px;
+  z-index: 6;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* =========================================================
+   == KHỐI LOGO DƯỚI PHẢI ==
+   ========================================================= */
+.article-logo-box {
+  position: absolute;
+  right: -200px;
+  bottom: 40px;
+  width: 520px;
+  z-index: 7;
+}
+
+.article-logo-box img.logo-plate {
+  width: 100%;
+  height: auto;
+}
+
+.article-logo {
+  position: absolute;
+  right: 54px;
+  bottom: 26px;
+  width: 286px;
+  z-index: 8;
+}
+
+/* =========================================================
+   == RESPONSIVE LARGE ==
+   ========================================================= */
+@media (max-width: 1700px) {
+  .article-bg {
+    height: 650px;
+  }
+
+  .article-top-strip {
+    width: min(calc(100% - 560px), 1120px);
+    margin-top: 122px;
+  }
+
+  .article-socials {
+    width: min(calc(100% - 560px), 1120px);
+    margin-top: -40px;
+    padding-left: 48px;
+    gap: 38px;
+  }
+
+  .article-card {
+    width: min(calc(100% - 360px), 1260px);
+    min-height: 590px;
+    padding-right: 388px;
+  }
+
+  .article-content {
+    min-height: 590px;
+    padding: 42px 42px 50px 44px;
+  }
+
+  .article-title {
+    font-size: 28px;
+  }
+
+  .doctor-visual {
+    width: 460px;
+    right: -110px;
+  }
+
+  .article-logo-box {
+    width: 470px;
+  }
+
+  .article-logo {
+    width: 258px;
+    right: 48px;
+  }
+
+  .article-decor {
+    width: 192px;
+      right: 6px;
+  }
+}
+
+/* =========================================================
+   == RESPONSIVE MEDIUM ==
+   ========================================================= */
+@media (max-width: 1440px) {
+  .article-feature-section {
+    padding-bottom: 82px;
+  }
+
+  .article-bg {
+    top: 38px;
+    height: 590px;
+    border-radius: 32px;
+  }
+
+  .article-top-strip {
+    width: min(calc(100% - 360px), 960px);
+    margin-top: 118px;
+  }
+
+  .article-socials {
+    width: min(calc(100% - 360px), 960px);
+    margin-top: -46px;
+    padding-left: 42px;
+    gap: 30px;
+  }
+
+  .article-socials img {
+    width: 26px;
+    height: 26px;
+  }
+
+  .article-card {
+    width: min(calc(100% - 180px), 1110px);
+    min-height: 510px;
+    padding-right: 340px;
+    border-radius: 28px;
+  }
+
+  .article-content {
+    min-height: 510px;
+    padding: 36px 36px 44px 40px;
+  }
+
+  .article-title {
+    font-size: 40px;
+  }
+
+  .article-meta {
+    margin-top: 20px;
+    gap: 24px;
+    font-size: 15px;
+  }
+
+  .article-text {
+    margin-top: 28px;
+  }
+
+  .article-text p {
+    font-size: 15px;
+    margin-bottom: 18px;
+  }
+
+  .doctor-visual {
+    width: 392px;
+    right: 36px;
+  }
+
+  .article-logo-box {
+    width: 398px;
+  }
+
+  .article-logo {
+    width: 220px;
+    right: 42px;
+    bottom: 20px;
+  }
+
+  .article-decor {
+    width: 78px;
+    right: 44px;
+  }
+}
+
+/* =========================================================
+   == TABLET / MOBILE ==
+   ========================================================= */
+@media (max-width: 1100px) {
+  .article-feature-section {
+    padding: 18px 0 42px;
+  }
+
+  .article-feature-inner {
+    width: 100%;
+    padding: 0 14px;
+  }
+
+  .article-bg {
+    position: relative;
+    top: 0;
+    height: 260px;
+    border-radius: 24px;
+  }
+
+  .article-decor {
+    width: 62px;
+    right: 22px;
+    top: -10px;
+  }
+
+  .article-top-strip {
+    width: min(100%, 760px);
+    margin: -42px auto 0;
+  }
+
+  .article-socials {
+    width: min(100%, 760px);
+    margin: -56px auto 0;
+    padding-left: 34px;
+    justify-content: flex-start;
+    gap: 24px;
+  }
+
+  .article-card {
+    width: 100%;
+    max-width: 880px;
+    min-height: auto;
+    margin: 10px auto 0;
+    padding-right: 0;
+    padding-bottom: 280px;
+  }
+
+  .article-content {
+    min-height: auto;
+    padding: 26px 22px 18px;
+  }
+
+  .article-title {
+    font-size: 28px;
+    line-height: 1.18;
+  }
+
+  .article-meta {
+    font-size: 14px;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
+  .article-text {
+    margin-top: 22px;
+  }
+
+  .article-text p {
+    font-size: 14px;
+  }
+
+  .doctor-visual {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 74px;
+    width: 260px;
+  }
+
+  .article-logo-box {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 0;
+    width: 310px;
+  }
+
+  .article-logo {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 16px;
+    width: 170px;
+  }
+}
+
+@media (max-width: 640px) {
+  .article-feature-section {
+    padding-bottom: 34px;
+  }
+
+  .article-bg {
+    height: 190px;
+    border-radius: 18px;
+  }
+
+  .article-top-strip {
+    margin-top: -28px;
+  }
+
+  .article-socials {
+    margin-top: -44px;
+    padding-left: 22px;
+    gap: 18px;
+  }
+
+  .article-socials img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .article-card {
+    margin-top: 8px;
+    border-radius: 20px;
+    padding-bottom: 236px;
+  }
+
+  .article-content {
+    padding: 22px 18px 16px;
+  }
+
+  .article-title {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  .article-meta {
+    margin-top: 16px;
+    gap: 14px;
+    font-size: 13px;
+  }
+
+  .meta-item svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .article-text {
+    margin-top: 18px;
+  }
+
+  .article-text p {
+    font-size: 13px;
+    line-height: 1.45;
+    margin-bottom: 14px;
+  }
+
+  .doctor-visual {
+    width: 210px;
+    bottom: 64px;
+  }
+
+  .article-logo-box {
+    width: 250px;
+  }
+
+  .article-logo {
+    width: 138px;
+    bottom: 13px;
+  }
+
+  .article-decor {
+    width: 50px;
+  }
+}

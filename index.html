@@ -11,49 +11,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
-
-  <style>
-  .nav-link {
-    position: relative;
-  }
-
-  .nav-link::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: -1px;
-    width: 0;
-    height: 3px;
-    border-radius: 9999px;
-    background: #2497e3;
-    transform: translateX(-50%);
-    transition: width 0.25s ease;
-  }
-
-  .nav-link-active {
-    color: #2497e3 !important;
-  }
-
-  .nav-link-active::after {
-    width: 28px;
-  }
-
-  .phone-shadow {
-    box-shadow: 0 8px 18px rgba(247, 148, 51, 0.22);
-  }
-
-  body.menu-open {
-    overflow: hidden;
-  }
-
-  #mobileBackdrop {
-    transition: opacity 0.3s ease;
-  }
-
-  #mobileMenu {
-    transition: transform 0.3s ease;
-  }
-</style>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+  />
 </head>
 <body class="bg-[#f7f7f7] text-slate-900">
   
@@ -170,6 +132,7 @@
 </header>
 
   <main>
+    <!-- ================= Home================= -->
     <section id="home" class="relative overflow-x-hidden bg-white">
       <!-- Desktop right image block -->
       <div class="pointer-events-none absolute right-0 top-0 z-0 hidden lg:block lg:w-[51vw] lg:min-w-[860px] lg:max-w-[976px]">
@@ -336,6 +299,8 @@
         </div>
       </div>
     </section>
+
+    <!-- ================= 6 items ================= -->
     <section class="bg-white py-16 sm:py-20">
       <div class="mx-auto max-w-[1280px] px-4 sm:px-6">
         <div class="grid grid-cols-1 gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
@@ -534,281 +499,6 @@
 </div>
   </div>
 </section>
-
-<style>
-  #processDesktop .process-step {
-  position: relative;
-  min-height: 500px;
-}
-
-/* hàng trên lên thêm, hàng dưới xuống thêm */
-#processDesktop .process-step.top {
-  --circle-y: 6px;
-}
-
-#processDesktop .process-step.bottom {
-  --circle-y: 214px;
-}
-
-#processDesktop .process-circle-wrap {
-  position: absolute;
-  top: var(--circle-y);
-  left: 50%;
-  transform: translateX(-50%);
-  width: 182px;
-  height: 182px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-}
-
-#processDesktop .process-circle-dashed {
-  position: absolute;
-  inset: 0;
-  border: 2px dashed rgba(255, 255, 255, 0.82);
-  border-radius: 9999px;
-}
-
-#processDesktop .process-circle-blue {
-  position: absolute;
-  inset: 17px;
-  border-radius: 9999px;
-  background: radial-gradient(circle at 35% 30%, #58c4ff 0%, #1d9bea 46%, #0a79d2 100%);
-  box-shadow:
-    inset 0 10px 16px rgba(255, 255, 255, 0.18),
-    0 8px 18px rgba(0, 95, 176, 0.24);
-}
-
-#processDesktop .process-circle-white {
-  position: absolute;
-  inset: 35px;
-  border-radius: 9999px;
-  background: #ffffff;
-  box-shadow: 0 6px 16px rgba(0, 79, 148, 0.12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#processDesktop .process-circle-text {
-  text-align: center;
-  line-height: 1;
-}
-
-#processDesktop .process-circle-text .label {
-  font-size: 16px;
-  font-weight: 700;
-  color: #178fe2;
-}
-
-#processDesktop .process-circle-text .num {
-  margin-top: 8px;
-  font-size: 36px;
-  font-weight: 800;
-  color: #11a08b;
-}
-
-#processDesktop .process-copy {
-  position: absolute;
-  width: 208px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  color: white;
-  z-index: 2;
-}
-
-#processDesktop .process-step.top .process-copy {
-  top: 282px;
-}
-
-#processDesktop .process-step.bottom .process-copy {
-  top: 10px;
-}
-
-#processDesktop .process-copy h3 {
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1.25;
-}
-
-#processDesktop .process-copy p {
-  margin-top: 10px;
-  font-size: 12px;
-  line-height: 1.55;
-  color: rgba(255, 255, 255, 0.92);
-}
-
-#processDesktop .step-dot {
-  position: absolute;
-  left: 50%;
-  width: 18px;
-  height: 18px;
-  margin-left: -9px;
-  border-radius: 9999px;
-  background: white;
-  z-index: 2;
-}
-
-#processDesktop .step-stem {
-  position: absolute;
-  left: 50%;
-  width: 0;
-  border-left: 2px dashed rgba(255, 255, 255, 0.82);
-  transform: translateX(-50%);
-  z-index: 1;
-}
-
-/* top row */
-#processDesktop .process-step.top .step-stem {
-  top: calc(var(--circle-y) + 182px);
-  height: 78px;
-}
-
-#processDesktop .process-step.top .step-dot {
-  top: calc(var(--circle-y) + 182px + 69px);
-}
-
-/* bottom row */
-#processDesktop .process-step.bottom .step-stem {
-  top: calc(var(--circle-y) - 78px);
-  height: 78px;
-}
-
-#processDesktop .process-step.bottom .step-dot {
-  top: calc(var(--circle-y) - 9px - 78px);
-}
-</style>
-
-<script>
-  (function () {
-    const desktop = document.getElementById("processDesktop");
-    const stepsWrap = document.getElementById("processSteps");
-    const linesSvg = document.getElementById("processLines");
-
-    if (!desktop || !stepsWrap || !linesSvg) return;
-
-    const processData = [
-      {
-        step: "01",
-        title: "Đăng ký thông tin",
-        desc: "Khách hàng đăng ký thông tin tại quầy tiếp đón Trung tâm Tư vấn & Tiêm chủng vắc-xin."
-      },
-      {
-        step: "02",
-        title: "Tư vấn & Thăm khám",
-        desc: "Khách hàng được thăm khám và tư vấn kỹ trước khi tiêm tại phòng khám với bác sĩ."
-      },
-      {
-        step: "03",
-        title: "Thanh toán chi phí",
-        desc: "Khách hàng thanh toán chi phí tiêm tại quầy lễ tân và nhận phiếu thanh toán."
-      },
-      {
-        step: "04",
-        title: "Thực hiện tiêm chủng",
-        desc: "Cầm theo phiếu thanh toán tới tiêm Vắc-xin tại phòng tiêm theo chỉ dẫn của nhân viên y tế."
-      },
-      {
-        step: "05",
-        title: "Theo dõi sức khỏe",
-        desc: "Theo dõi 30 phút sau tiêm, kiểm tra sức khỏe trước khi ra về và hướng dẫn theo dõi tại nhà."
-      }
-    ];
-
-    function buildSteps() {
-      stepsWrap.innerHTML = "";
-      stepsWrap.style.gridTemplateColumns = `repeat(${processData.length}, minmax(0, 1fr))`;
-
-      processData.forEach((item, index) => {
-        const isTop = index % 2 === 0;
-
-        const step = document.createElement("div");
-        step.className = `process-step ${isTop ? "top" : "bottom"}`;
-        step.dataset.index = index;
-
-        step.innerHTML = `
-          <div class="process-copy">
-            <h3>${item.title}</h3>
-            <p>${item.desc}</p>
-          </div>
-
-          <div class="step-stem"></div>
-          <div class="step-dot"></div>
-
-          <div class="process-circle-wrap">
-            <div class="process-circle-dashed"></div>
-            <div class="process-circle-blue"></div>
-            <div class="process-circle-white">
-              <div class="process-circle-text">
-                <div class="label">Bước</div>
-                <div class="num">${item.step}</div>
-              </div>
-            </div>
-          </div>
-        `;
-
-        stepsWrap.appendChild(step);
-      });
-    }
-
-    function drawLines() {
-      linesSvg.innerHTML = "";
-
-      const desktopRect = desktop.getBoundingClientRect();
-      const stepEls = Array.from(stepsWrap.querySelectorAll(".process-step"));
-
-      const nodes = stepEls.map((stepEl) => {
-        const circle = stepEl.querySelector(".process-circle-wrap");
-        const rect = circle.getBoundingClientRect();
-        return {
-          x: rect.left - desktopRect.left + rect.width / 2,
-          y: rect.top - desktopRect.top + rect.height / 2,
-          r: rect.width / 2
-        };
-      });
-
-      linesSvg.setAttribute("viewBox", `0 0 ${desktopRect.width} ${desktopRect.height}`);
-
-      for (let i = 0; i < nodes.length - 1; i++) {
-        const a = nodes[i];
-        const b = nodes[i + 1];
-
-        const dx = b.x - a.x;
-        const dy = b.y - a.y;
-        const len = Math.sqrt(dx * dx + dy * dy);
-
-        if (!len) continue;
-
-        /* chỉ cho line chạm vòng nét đứt ngoài */
-        const startX = a.x + (dx / len) * a.r;
-        const startY = a.y + (dy / len) * a.r;
-        const endX = b.x - (dx / len) * b.r;
-        const endY = b.y - (dy / len) * b.r;
-
-        const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
-        line.setAttribute("x1", startX);
-        line.setAttribute("y1", startY);
-        line.setAttribute("x2", endX);
-        line.setAttribute("y2", endY);
-        line.setAttribute("stroke", "rgba(255,255,255,0.85)");
-        line.setAttribute("stroke-width", "2");
-        line.setAttribute("stroke-dasharray", "6 6");
-        line.setAttribute("stroke-linecap", "round");
-        linesSvg.appendChild(line);
-      }
-    }
-
-    function renderProcess() {
-      buildSteps();
-      requestAnimationFrame(drawLines);
-    }
-
-    window.addEventListener("resize", drawLines);
-    renderProcess();
-  })();
-</script>
 
     
 
@@ -1127,13 +817,13 @@
                         <thead>
                           <tr class="bg-[#0F7FC6] text-white">
                             <th class="border border-slate-300 px-2 py-2">STT</th>
-                            <th class="border border-slate-300 px-2 py-2">Phòng bệnh</th>
-                            <th class="border border-slate-300 px-2 py-2">Tên Vắc xin</th>
+                            <th class="border border-slate-300 px-2 py-2">ádasd bệnh</th>
+                            <th class="border border-slate-300 px-2 py-2">Tên sadắc xin</th>
                             <th class="border border-slate-300 px-2 py-2">Nước sản xuất</th>
                             <th class="border border-slate-300 px-2 py-2">Gói 1</th>
-                            <th class="border border-slate-300 px-2 py-2">Gói 2</th>
+                            <!-- <th class="border border-slate-300 px-2 py-2">Gói 2</th>
                             <th class="border border-slate-300 px-2 py-2">Gói 3</th>
-                            <th class="border border-slate-300 px-2 py-2">Gói 4</th>
+                            <th class="border border-slate-300 px-2 py-2">Gói 4</th> -->
                           </tr>
                         </thead>
                         <tbody>
@@ -1442,99 +1132,6 @@
       </div>
     </section>
 
-<script>
-  (function () {
-    const slides = document.querySelectorAll('.table-slide');
-    const dots = document.querySelectorAll('.table-dot');
-    const slider = document.getElementById('tableSlider');
-
-    let currentIndex = 0;
-    let startX = 0;
-    let startY = 0;
-    let isPointerDown = false;
-
-    function showSlide(index) {
-      currentIndex = Math.max(0, Math.min(index, slides.length - 1));
-
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('hidden', i !== currentIndex);
-      });
-
-      dots.forEach((dot, i) => {
-        if (i === currentIndex) {
-          dot.classList.remove('bg-slate-300', 'w-[16px]');
-          dot.classList.add('bg-[#F79433]', 'w-[24px]');
-        } else {
-          dot.classList.remove('bg-[#F79433]', 'w-[24px]');
-          dot.classList.add('bg-slate-300', 'w-[16px]');
-        }
-      });
-    }
-
-    dots.forEach((dot) => {
-      dot.addEventListener('click', () => {
-        showSlide(Number(dot.dataset.slide));
-      });
-    });
-
-    function handleStart(x, y) {
-      startX = x;
-      startY = y;
-      isPointerDown = true;
-    }
-
-    function handleEnd(x, y) {
-      if (!isPointerDown) return;
-      isPointerDown = false;
-
-      const diffX = x - startX;
-      const diffY = y - startY;
-
-      if (Math.abs(diffX) > 50 && Math.abs(diffX) > Math.abs(diffY)) {
-        if (diffX < 0) {
-          showSlide(currentIndex + 1);
-        } else {
-          showSlide(currentIndex - 1);
-        }
-      }
-    }
-
-    slider.addEventListener(
-      'touchstart',
-      (e) => {
-        const touch = e.changedTouches[0];
-        handleStart(touch.clientX, touch.clientY);
-      },
-      { passive: true }
-    );
-
-    slider.addEventListener(
-      'touchend',
-      (e) => {
-        const touch = e.changedTouches[0];
-        handleEnd(touch.clientX, touch.clientY);
-      },
-      { passive: true }
-    );
-
-    slider.addEventListener('mousedown', (e) => {
-      handleStart(e.clientX, e.clientY);
-    });
-
-    slider.addEventListener('mouseup', (e) => {
-      handleEnd(e.clientX, e.clientY);
-    });
-
-    slider.addEventListener('mouseleave', (e) => {
-      if (isPointerDown) {
-        handleEnd(e.clientX, e.clientY);
-      }
-    });
-
-    showSlide(0);
-  })();
-</script>
-
  <!-- ================= CẢM NHẬN CỦA KHÁCH HÀNG SAU KHI SỬ DỤNG ================= -->
 <section id="camnhan" class="overflow-hidden bg-white pt-14 pb-16 lg:pt-[22px] lg:pb-[82px] font-lato">
   <div class="relative mx-auto max-w-[1740px]">
@@ -1737,114 +1334,6 @@
     </div>
   </div>
 </section>
-
-<script>
-  (function () {
-    const viewport = document.getElementById("testimonialViewport");
-    const track = document.getElementById("testimonialTrack");
-    const cards = Array.from(document.querySelectorAll(".testimonial-card"));
-    const dots = Array.from(document.querySelectorAll(".testimonial-dot"));
-
-    if (!viewport || !track || !cards.length) return;
-
-    let active = 0;
-    let startX = 0;
-    let startY = 0;
-    let dragging = false;
-
-    function updateDots(index) {
-      dots.forEach((dot, i) => {
-        if (i === index) {
-          dot.classList.remove("bg-slate-300", "w-[14px]");
-          dot.classList.add("bg-[#F79433]", "w-[34px]");
-        } else {
-          dot.classList.remove("bg-[#F79433]", "w-[34px]");
-          dot.classList.add("bg-slate-300", "w-[14px]");
-        }
-      });
-    }
-
-    function updateOrder() {
-      cards.forEach((card, i) => {
-        const visualOrder = (i - active + cards.length) % cards.length;
-        card.style.order = visualOrder;
-
-        if (visualOrder === 0) {
-          card.classList.add("shadow-[0_14px_28px_rgba(15,23,42,0.05)]");
-          card.classList.remove("shadow-[0_12px_24px_rgba(15,23,42,0.03)]");
-        } else {
-          card.classList.remove("shadow-[0_14px_28px_rgba(15,23,42,0.05)]");
-          card.classList.add("shadow-[0_12px_24px_rgba(15,23,42,0.03)]");
-        }
-      });
-
-      updateDots(active);
-    }
-
-    function goTo(index) {
-      active = ((index % cards.length) + cards.length) % cards.length;
-      updateOrder();
-    }
-
-    function goNext() {
-      active = (active + 1) % cards.length;
-      updateOrder();
-    }
-
-    function goPrev() {
-      active = (active - 1 + cards.length) % cards.length;
-      updateOrder();
-    }
-
-    function startDrag(x, y) {
-      dragging = true;
-      startX = x;
-      startY = y;
-    }
-
-    function endDrag(x, y) {
-      if (!dragging) return;
-      dragging = false;
-
-      const diffX = x - startX;
-      const diffY = y - startY;
-
-      if (Math.abs(diffX) > 50 && Math.abs(diffX) > Math.abs(diffY)) {
-        if (diffX < 0) {
-          goNext();
-        } else {
-          goPrev();
-        }
-      }
-    }
-
-    viewport.addEventListener("pointerdown", (e) => {
-      startDrag(e.clientX, e.clientY);
-    });
-
-    viewport.addEventListener("pointerup", (e) => {
-      endDrag(e.clientX, e.clientY);
-    });
-
-    viewport.addEventListener("pointerleave", (e) => {
-      if (dragging && e.pointerType === "mouse") {
-        endDrag(e.clientX, e.clientY);
-      }
-    });
-
-    viewport.addEventListener("pointercancel", () => {
-      dragging = false;
-    });
-
-    dots.forEach((dot) => {
-      dot.addEventListener("click", () => {
-        goTo(Number(dot.dataset.index));
-      });
-    });
-
-    updateOrder();
-  })();
-</script>
 
     <!-- ================= Những lưu ý cần thiết cho khách hàng ================= -->
       <section id="luuy" class="bg-white py-12 font-lato">
@@ -2103,98 +1592,6 @@
   </div>
 </section>
 
-<script>
-  (function () {
-    const desktop = document.getElementById("luuyDesktop");
-    const ring = document.getElementById("luuyRing");
-    const svg = document.getElementById("luuyConnectors");
-
-    if (!desktop || !ring || !svg) return;
-
-    function drawConnectors() {
-      svg.innerHTML = "";
-
-      const desktopRect = desktop.getBoundingClientRect();
-      const ringRect = ring.getBoundingClientRect();
-      const cards = Array.from(desktop.querySelectorAll("[data-connector-side]"));
-
-      const cx = ringRect.left - desktopRect.left + ringRect.width / 2;
-      const cy = ringRect.top - desktopRect.top + ringRect.height / 2;
-
-      /* chạm đúng vòng nét đứt ngoài */
-      const r = ringRect.width / 2;
-
-      svg.setAttribute("viewBox", `0 0 ${desktopRect.width} ${desktopRect.height}`);
-
-      cards.forEach((card) => {
-        const cardRect = card.getBoundingClientRect();
-        const side = card.dataset.connectorSide;
-
-        const anchor = side === "left"
-          ? {
-              x: cardRect.right - desktopRect.left,
-              y: cardRect.top - desktopRect.top + cardRect.height / 2
-            }
-          : {
-              x: cardRect.left - desktopRect.left,
-              y: cardRect.top - desktopRect.top + cardRect.height / 2
-            };
-
-        /* đoạn ngang sát box */
-        const elbowOffset = 42;
-        const elbow = side === "left"
-          ? { x: anchor.x + elbowOffset, y: anchor.y }
-          : { x: anchor.x - elbowOffset, y: anchor.y };
-
-        /* điểm chạm vòng nét đứt */
-        const dx = elbow.x - cx;
-        const dy = elbow.y - cy;
-        const len = Math.hypot(dx, dy) || 1;
-
-        const ringPoint = {
-          x: cx + (dx / len) * r,
-          y: cy + (dy / len) * r
-        };
-
-        /* line kiểu gãy góc: ngang rồi chéo */
-        const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-        path.setAttribute(
-          "d",
-          `M ${anchor.x} ${anchor.y}
-           L ${elbow.x} ${elbow.y}
-           L ${ringPoint.x} ${ringPoint.y}`
-        );
-        path.setAttribute("fill", "none");
-        path.setAttribute("stroke", "rgba(38,168,246,0.72)");
-        path.setAttribute("stroke-width", "2.2");
-        path.setAttribute("stroke-dasharray", "8 9");
-        path.setAttribute("stroke-linecap", "round");
-        path.setAttribute("stroke-linejoin", "round");
-        svg.appendChild(path);
-
-        /* chấm ở box */
-        const dotCard = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-        dotCard.setAttribute("cx", anchor.x);
-        dotCard.setAttribute("cy", anchor.y);
-        dotCard.setAttribute("r", "5.2");
-        dotCard.setAttribute("fill", "rgba(38,168,246,0.78)");
-        svg.appendChild(dotCard);
-
-        /* chấm ở vòng nét đứt */
-        const dotRing = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-        dotRing.setAttribute("cx", ringPoint.x);
-        dotRing.setAttribute("cy", ringPoint.y);
-        dotRing.setAttribute("r", "5.2");
-        dotRing.setAttribute("fill", "rgba(38,168,246,0.78)");
-        svg.appendChild(dotRing);
-      });
-    }
-
-    window.addEventListener("resize", drawConnectors);
-    requestAnimationFrame(drawConnectors);
-  })();
-</script>
-
     <! -- ================= GIỚI THIỆU DỊCH VỤ ================= --!>
     <section id="dacbiet" class="overflow-hidden bg-white py-14 lg:py-20 font-lato">
   <div class="mx-auto max-w-[1920px]">
@@ -2353,90 +1750,718 @@
   </div>
 </section>
 
-    <!-- ================= BẢNG GIÁ ================= -->
-    <section id="banggia" class="py-20">
-      <div class="mx-auto max-w-[1280px] px-6">
-        <h2 class="text-center text-3xl font-bold lg:text-4xl">Bảng giá và gói ưu đãi</h2>
-        <div class="mx-auto mt-4 h-1 w-20 rounded-full bg-sky-500"></div>
+    <!-- ================= Đội ngũ bác sĩ ================= -->
+<section id="doingu" class="relative overflow-hidden bg-white font-lato">
+  <div class="pointer-events-none absolute inset-0 z-0">
+    <img
+      src="./assets/images/19449749 1.jpg"
+      alt=""
+      class="h-full w-full object-cover opacity-100"
+    />
+  </div>
 
-        <div class="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-3">
-          <div class="rounded-3xl bg-white p-6 shadow-lg">
-            <h3 class="text-center text-xl font-bold">Gói cơ bản</h3>
-            <p class="mt-4 text-center text-4xl font-bold text-sky-500">999k</p>
-            <button class="mt-6 w-full rounded-full bg-sky-500 px-6 py-3 text-white">ĐĂNG KÝ NGAY</button>
+  <div class="relative z-10 mx-auto max-w-[1700px] px-4 pb-16 pt-10 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h2 class="font-lato text-[38px] font-bold leading-none tracking-[0px] text-center text-[#252525]">
+        Đội ngũ bác sĩ giàu nhiệt huyết, tận tụy vì khách hàng
+      </h2>
+      <div class="mx-auto mt-5 h-[4px] w-[118px] rounded-full bg-[#27A8F4]"></div>
+    </div>
+
+    <!-- Desktop -->
+    <div
+      id="doctorSection"
+      class="relative mx-auto mt-12 hidden max-w-[1440px] select-none lg:block"
+    >
+      <div id="doctorViewport" class="overflow-hidden">
+        <div id="doctorTrack" class="flex items-end gap-[30px] will-change-transform"></div>
+      </div>
+
+      <div class="mt-8 flex items-center justify-center gap-2" id="doctorDots"></div>
+    </div>
+
+    <!-- Mobile -->
+    <div class="mt-10 lg:hidden">
+      <div
+        id="doctorTrackMobile"
+        class="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4"
+      ></div>
+      <div class="mt-6 flex items-center justify-center gap-2" id="doctorDotsMobile"></div>
+    </div>
+  </div>
+</section>
+
+    <!-- ================= Thắc mắc của khách hàng ================= -->
+    <section
+  id="faq-timeline"
+  class="relative isolate overflow-hidden"
+>
+  <!-- Background -->
+  <div class="absolute inset-0 -z-10">
+    <img
+      src="./assets/images/blurred-abstract-background-interior-view-looking-out-toward-empty-office-lobby-entrance-doors-glass-curtain-wall-with-frame%201.jpg"
+      alt="Background"
+      class="h-full w-full object-cover"
+    />
+    <div class="absolute inset-0 bg-white/68"></div>
+  </div>
+
+  <div class="mx-auto max-w-[1280px] px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
+    <!-- Heading -->
+    <div class="text-center">
+      <h2
+        class="mx-auto max-w-[720px] text-[22px] font-semibold leading-[1.35] text-[#1E1E1E] sm:text-[24px] lg:text-[26px]"
+      >
+        Thắc mắc của khách hàng khi sử dụng dịch vụ<br />
+        tại Bệnh viện Phương Đông
+      </h2>
+
+      <div class="mt-3 flex justify-center">
+        <span class="block h-[3px] w-[46px] rounded-full bg-[#25AEE4]"></span>
+      </div>
+    </div>
+
+    <!-- DESKTOP / LARGE SCREEN -->
+    <div class="relative mt-8 hidden h-[700px] lg:block">
+      <!-- center line -->
+      <div class="absolute left-1/2 top-0 h-full w-[4px] -translate-x-1/2 rounded-full bg-white/95"></div>
+
+      <!-- timeline dots -->
+      <div class="absolute left-1/2 top-[52px] h-[16px] w-[16px] -translate-x-1/2 rounded-full border border-white bg-white shadow-[0_4px_10px_rgba(0,0,0,0.08)]"></div>
+      <div class="absolute left-1/2 top-[170px] h-[16px] w-[16px] -translate-x-1/2 rounded-full border border-white bg-white shadow-[0_4px_10px_rgba(0,0,0,0.08)]"></div>
+      <div class="absolute left-1/2 top-[290px] h-[16px] w-[16px] -translate-x-1/2 rounded-full border border-white bg-white shadow-[0_4px_10px_rgba(0,0,0,0.08)]"></div>
+      <div class="absolute left-1/2 top-[410px] h-[16px] w-[16px] -translate-x-1/2 rounded-full border border-white bg-white shadow-[0_4px_10px_rgba(0,0,0,0.08)]"></div>
+      <div class="absolute left-1/2 top-[530px] h-[16px] w-[16px] -translate-x-1/2 rounded-full border border-white bg-white shadow-[0_4px_10px_rgba(0,0,0,0.08)]"></div>
+
+      <!-- ===== LEFT BIG CARD 1 ===== -->
+      <article
+        class="absolute left-[48px] top-[0px] flex h-[145px] w-[430px] gap-4 rounded-[18px] bg-white p-[10px] shadow-[0_10px_25px_rgba(0,0,0,0.06)]"
+      >
+        <img
+          src="./assets/images/Rectangle%206403.jpg"
+          alt="Question image"
+          class="h-[125px] w-[125px] shrink-0 rounded-[14px] object-cover"
+        />
+
+        <div class="min-w-0 pt-[2px]">
+          <h3 class="text-[12px] font-semibold leading-[1.25] text-[#1F1F1F]">
+            Bệnh viện Phương Đông có tiêm phòng trước khi mang thai không?
+          </h3>
+
+          <p class="mt-2 text-[10px] leading-[1.35] text-[#444]">
+            Xin chào bệnh viện, em dự định có kế hoạch có em bé nên muốn tìm
+            hiểu về các mũi tiêm cần thiết trước khi mang thai. Bệnh viện có
+            dịch vụ tiêm phòng trước mang thai không và cần chuẩn bị những gì
+            trước khi đi tiêm ạ?
+          </p>
+        </div>
+      </article>
+
+      <!-- RIGHT PROFILE 1 -->
+      <div class="absolute right-[80px] top-[30px]">
+        <div class="absolute -left-[46px] top-1/2 h-[2px] w-[46px] -translate-y-1/2 bg-white"></div>
+        <article
+          class="flex h-[74px] w-[248px] items-center gap-4 rounded-[16px] bg-white px-4 shadow-[0_10px_25px_rgba(0,0,0,0.06)]"
+        >
+          <img
+            src="./assets/images/Ellipse%201054.png"
+            alt="Nguyễn Minh Ánh"
+            class="h-[50px] w-[50px] rounded-full object-cover"
+          />
+          <div>
+            <h4 class="text-[13px] font-semibold text-[#2A2A2A]">
+              Nguyễn Minh Ánh
+            </h4>
+            <p class="mt-[2px] text-[11px] text-[#919191]">
+              Đã hỏi: Ngày 25/07/2022
+            </p>
           </div>
+        </article>
+      </div>
 
-          <div class="rounded-3xl bg-sky-500 p-6 text-white shadow-xl">
-            <h3 class="text-center text-xl font-bold">Gói gia đình</h3>
-            <p class="mt-4 text-center text-4xl font-bold">999k</p>
-            <button class="mt-6 w-full rounded-full bg-white px-6 py-3 font-semibold text-sky-500">ĐĂNG KÝ NGAY</button>
+      <!-- LEFT DOCTOR 1 -->
+      <div class="absolute left-[142px] top-[156px]">
+        <div class="absolute -right-[46px] top-1/2 h-[2px] w-[46px] -translate-y-1/2 bg-white"></div>
+        <article
+          class="flex h-[74px] w-[248px] items-center gap-4 rounded-[16px] bg-white px-4 shadow-[0_10px_25px_rgba(0,0,0,0.06)]"
+        >
+          <img
+            src="./assets/images/Mask%20group.jpg"
+            alt="Doctor"
+            class="h-[50px] w-[50px] rounded-full object-cover"
+          />
+          <div>
+            <h4 class="text-[13px] font-semibold text-[#2A2A2A]">
+              Bác sĩ Nguyễn Huy Bạo
+            </h4>
+            <p class="mt-[2px] text-[11px] text-[#919191]">
+              Đã trả lời: Ngày 25/07/2022
+            </p>
           </div>
+        </article>
+      </div>
 
-          <div class="rounded-3xl bg-white p-6 shadow-lg">
-            <h3 class="text-center text-xl font-bold">Gói doanh nghiệp</h3>
-            <p class="mt-4 text-center text-4xl font-bold text-sky-500">999k</p>
-            <button class="mt-6 w-full rounded-full bg-sky-500 px-6 py-3 text-white">ĐĂNG KÝ NGAY</button>
+      <!-- RIGHT BIG CARD 1 -->
+      <article
+        class="absolute right-[48px] top-[124px] h-[150px] w-[470px] rounded-[18px] bg-[#F5F5F5] p-5 shadow-[0_10px_25px_rgba(0,0,0,0.04)]"
+      >
+        <div
+          class="absolute -left-[10px] top-1/2 h-[22px] w-[22px] -translate-y-1/2 rotate-45 bg-[#F5F5F5]"
+        ></div>
+
+        <h3 class="text-[12px] font-semibold leading-[1.35] text-[#1F1F1F]">
+          Cảm ơn quý khách đã đặt câu hỏi cho chuyên mục Hỏi đáp chuyên gia
+          của Bệnh viện Đa khoa Phương Đông
+        </h3>
+
+        <div class="mt-2 space-y-2 text-[10px] leading-[1.35] text-[#4B4B4B]">
+          <p>
+            Hiện nay, Bệnh viện Đa khoa Phương Đông có cung cấp các dịch vụ xét
+            nghiệm tổng quát và tiêm chủng dành cho phụ nữ dự định mang thai.
+            Quý khách nên tiêm phòng trước khi mang thai để tăng khả năng bảo vệ
+            sức khỏe cho mẹ và bé.
+          </p>
+          <p>
+            Một số mũi tiêm thường được bác sĩ tư vấn trước thai kỳ gồm cúm,
+            rubella, thủy đậu và viêm gan B. Quý khách nên thăm khám để được tư
+            vấn lịch tiêm phù hợp với thể trạng và tiền sử sức khỏe.
+          </p>
+        </div>
+      </article>
+
+      <!-- ===== LEFT BIG CARD 2 ===== -->
+      <article
+        class="absolute left-[48px] top-[210px] flex h-[145px] w-[430px] gap-4 rounded-[18px] bg-white p-[10px] shadow-[0_10px_25px_rgba(0,0,0,0.06)]"
+      >
+        <img
+          src="./assets/images/Rectangle%206403.jpg"
+          alt="Question image"
+          class="h-[125px] w-[125px] shrink-0 rounded-[14px] object-cover"
+        />
+
+        <div class="min-w-0 pt-[2px]">
+          <h3 class="text-[12px] font-semibold leading-[1.25] text-[#1F1F1F]">
+            Bệnh viện Phương Đông có tiêm phòng trước khi mang thai không?
+          </h3>
+
+          <p class="mt-2 text-[10px] leading-[1.35] text-[#444]">
+            Em muốn biết nếu đến viện khám và tiêm phòng trước khi mang thai thì
+            cần đặt lịch trước hay có thể đến trực tiếp. Ngoài ra, em đang băn
+            khoăn không biết có cần làm xét nghiệm gì trước khi tiêm không ạ?
+          </p>
+        </div>
+      </article>
+
+      <!-- RIGHT PROFILE 2 -->
+      <div class="absolute right-[80px] top-[300px]">
+        <div class="absolute -left-[46px] top-1/2 h-[2px] w-[46px] -translate-y-1/2 bg-white"></div>
+        <article
+          class="flex h-[74px] w-[248px] items-center gap-4 rounded-[16px] bg-white px-4 shadow-[0_10px_25px_rgba(0,0,0,0.06)]"
+        >
+          <img
+            src="./assets/images/Ellipse%201054.png"
+            alt="Nguyễn Minh Ánh"
+            class="h-[50px] w-[50px] rounded-full object-cover"
+          />
+          <div>
+            <h4 class="text-[13px] font-semibold text-[#2A2A2A]">
+              Nguyễn Minh Ánh
+            </h4>
+            <p class="mt-[2px] text-[11px] text-[#919191]">
+              Đã hỏi: Ngày 25/07/2022
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <!-- LEFT DOCTOR 2 -->
+      <div class="absolute left-[142px] top-[420px]">
+        <div class="absolute -right-[46px] top-1/2 h-[2px] w-[46px] -translate-y-1/2 bg-white"></div>
+        <article
+          class="flex h-[74px] w-[248px] items-center gap-4 rounded-[16px] bg-white px-4 shadow-[0_10px_25px_rgba(0,0,0,0.06)]"
+        >
+          <img
+            src="./assets/images/Ellipse%201054%20(2).png"
+            alt="Doctor"
+            class="h-[50px] w-[50px] rounded-full object-cover"
+          />
+          <div>
+            <h4 class="text-[13px] font-semibold text-[#2A2A2A]">
+              Bác sĩ Nguyễn Huy Bạo
+            </h4>
+            <p class="mt-[2px] text-[11px] text-[#919191]">
+              Đã trả lời: Ngày 25/07/2022
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <!-- RIGHT BIG CARD 2 -->
+      <article
+        class="absolute right-[48px] top-[390px] h-[150px] w-[470px] rounded-[18px] bg-[#F5F5F5] p-5 shadow-[0_10px_25px_rgba(0,0,0,0.04)]"
+      >
+        <div
+          class="absolute -left-[10px] top-1/2 h-[22px] w-[22px] -translate-y-1/2 rotate-45 bg-[#F5F5F5]"
+        ></div>
+
+        <h3 class="text-[12px] font-semibold leading-[1.35] text-[#1F1F1F]">
+          Cảm ơn quý khách đã đặt câu hỏi cho chuyên mục Hỏi đáp chuyên gia
+          của Bệnh viện Đa khoa Phương Đông
+        </h3>
+
+        <div class="mt-2 space-y-2 text-[10px] leading-[1.35] text-[#4B4B4B]">
+          <p>
+            Trước khi tiêm, bác sĩ có thể chỉ định thăm khám tổng quát hoặc làm
+            một số xét nghiệm cần thiết nhằm đánh giá tình trạng sức khỏe hiện
+            tại và lựa chọn mũi tiêm phù hợp nhất.
+          </p>
+          <p>
+            Quý khách nên chủ động đặt lịch trước để được sắp xếp thời gian
+            thuận tiện hơn. Khi đến khám, hãy mang theo thông tin tiêm chủng cũ
+            nếu có để bác sĩ tư vấn chính xác hơn.
+          </p>
+        </div>
+      </article>
+
+      <!-- ===== LEFT BIG CARD 3 ===== -->
+      <article
+        class="absolute left-[48px] top-[480px] flex h-[145px] w-[430px] gap-4 rounded-[18px] bg-white p-[10px] shadow-[0_10px_25px_rgba(0,0,0,0.06)]"
+      >
+        <img
+          src="./assets/images/Rectangle%206403.jpg"
+          alt="Question image"
+          class="h-[125px] w-[125px] shrink-0 rounded-[14px] object-cover"
+        />
+
+        <div class="min-w-0 pt-[2px]">
+          <h3 class="text-[12px] font-semibold leading-[1.25] text-[#1F1F1F]">
+            Bệnh viện Phương Đông có tiêm phòng trước khi mang thai không?
+          </h3>
+
+          <p class="mt-2 text-[10px] leading-[1.35] text-[#444]">
+            Em nghe nói nên hoàn thành một số mũi tiêm trước khi mang thai ít
+            nhất vài tháng. Vậy nếu em đang có kế hoạch sinh em bé trong thời
+            gian gần thì nên đi khám và tiêm phòng từ khi nào là phù hợp nhất?
+          </p>
+        </div>
+      </article>
+
+      <!-- RIGHT PROFILE 3 -->
+      <div class="absolute right-[80px] top-[570px]">
+        <div class="absolute -left-[46px] top-1/2 h-[2px] w-[46px] -translate-y-1/2 bg-white"></div>
+        <article
+          class="flex h-[74px] w-[248px] items-center gap-4 rounded-[16px] bg-white px-4 shadow-[0_10px_25px_rgba(0,0,0,0.06)]"
+        >
+          <img
+            src="./assets/images/Ellipse%201054.png"
+            alt="Nguyễn Minh Ánh"
+            class="h-[50px] w-[50px] rounded-full object-cover"
+          />
+          <div>
+            <h4 class="text-[13px] font-semibold text-[#2A2A2A]">
+              Nguyễn Minh Ánh
+            </h4>
+            <p class="mt-[2px] text-[11px] text-[#919191]">
+              Đã hỏi: Ngày 25/07/2022
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <!-- LEFT DOCTOR 3 -->
+      <div class="absolute left-[142px] top-[618px]">
+        <div class="absolute -right-[46px] top-1/2 h-[2px] w-[46px] -translate-y-1/2 bg-white"></div>
+        <article
+          class="flex h-[74px] w-[248px] items-center gap-4 rounded-[16px] bg-white px-4 shadow-[0_10px_25px_rgba(0,0,0,0.06)]"
+        >
+          <img
+            src="./assets/images/Ellipse%201054%20(3).png"
+            alt="Doctor"
+            class="h-[50px] w-[50px] rounded-full object-cover"
+          />
+          <div>
+            <h4 class="text-[13px] font-semibold text-[#2A2A2A]">
+              Bác sĩ Nguyễn Huy Bạo
+            </h4>
+            <p class="mt-[2px] text-[11px] text-[#919191]">
+              Đã trả lời: Ngày 25/07/2022
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <!-- RIGHT BIG CARD 3 -->
+      <article
+        class="absolute right-[48px] top-[610px] h-[150px] w-[470px] rounded-[18px] bg-[#F5F5F5] p-5 shadow-[0_10px_25px_rgba(0,0,0,0.04)]"
+      >
+        <div
+          class="absolute -left-[10px] top-1/2 h-[22px] w-[22px] -translate-y-1/2 rotate-45 bg-[#F5F5F5]"
+        ></div>
+
+        <h3 class="text-[12px] font-semibold leading-[1.35] text-[#1F1F1F]">
+          Cảm ơn quý khách đã đặt câu hỏi cho chuyên mục Hỏi đáp chuyên gia
+          của Bệnh viện Đa khoa Phương Đông
+        </h3>
+
+        <div class="mt-2 space-y-2 text-[10px] leading-[1.35] text-[#4B4B4B]">
+          <p>
+            Thông thường, phụ nữ nên chủ động tiêm phòng trước khi mang thai từ
+            1 đến 3 tháng tùy từng loại vắc xin. Việc khám sớm sẽ giúp bác sĩ
+            lên lịch tiêm đầy đủ và an toàn hơn.
+          </p>
+          <p>
+            Để có kế hoạch phù hợp nhất, quý khách nên đến bệnh viện để được
+            bác sĩ chuyên khoa tư vấn trực tiếp dựa trên độ tuổi, tiền sử tiêm
+            chủng và dự định mang thai.
+          </p>
+        </div>
+      </article>
+    </div>
+
+    <!-- MOBILE / TABLET -->
+    <div class="mx-auto mt-8 max-w-[760px] space-y-5 lg:hidden">
+      <!-- item 1 -->
+      <article class="rounded-[18px] bg-white p-3 shadow-[0_10px_25px_rgba(0,0,0,0.06)]">
+        <div class="flex gap-3">
+          <img
+            src="./assets/images/Rectangle%206403.jpg"
+            alt="Question"
+            class="h-[108px] w-[108px] rounded-[14px] object-cover"
+          />
+          <div class="min-w-0">
+            <h3 class="text-[13px] font-semibold leading-[1.3] text-[#1F1F1F]">
+              Bệnh viện Phương Đông có tiêm phòng trước khi mang thai không?
+            </h3>
+            <p class="mt-2 text-[11px] leading-[1.45] text-[#444]">
+              Xin chào bệnh viện, em dự định có kế hoạch có em bé nên muốn tìm
+              hiểu về các mũi tiêm cần thiết trước khi mang thai.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="flex items-center gap-4 rounded-[16px] bg-white px-4 py-3 shadow-[0_10px_25px_rgba(0,0,0,0.06)]">
+        <img
+          src="./assets/images/Ellipse%201054.png"
+          alt="Nguyễn Minh Ánh"
+          class="h-[52px] w-[52px] rounded-full object-cover"
+        />
+        <div>
+          <h4 class="text-[14px] font-semibold text-[#2A2A2A]">Nguyễn Minh Ánh</h4>
+          <p class="text-[11px] text-[#919191]">Đã hỏi: Ngày 25/07/2022</p>
+        </div>
+      </article>
+
+      <article class="relative rounded-[18px] bg-[#F5F5F5] p-4 shadow-[0_10px_25px_rgba(0,0,0,0.04)]">
+        <h3 class="text-[13px] font-semibold leading-[1.35] text-[#1F1F1F]">
+          Cảm ơn quý khách đã đặt câu hỏi cho chuyên mục Hỏi đáp chuyên gia
+          của Bệnh viện Đa khoa Phương Đông
+        </h3>
+        <p class="mt-2 text-[11px] leading-[1.45] text-[#4B4B4B]">
+          Bệnh viện có dịch vụ tư vấn và tiêm chủng trước thai kỳ. Quý khách
+          nên đến thăm khám để bác sĩ lên lịch tiêm phù hợp.
+        </p>
+      </article>
+
+      <article class="flex items-center gap-4 rounded-[16px] bg-white px-4 py-3 shadow-[0_10px_25px_rgba(0,0,0,0.06)]">
+        <img
+          src="./assets/images/Mask%20group.jpg"
+          alt="Doctor"
+          class="h-[52px] w-[52px] rounded-full object-cover"
+        />
+        <div>
+          <h4 class="text-[14px] font-semibold text-[#2A2A2A]">
+            Bác sĩ Nguyễn Huy Bạo
+          </h4>
+          <p class="text-[11px] text-[#919191]">Đã trả lời: Ngày 25/07/2022</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+    <!-- ================= Hình ảnh khách hàng khi sử dụng gói dịch vụ Tiêm chủng Vắc-xin ================= -->
+    <section class="customer-gallery-section">
+      <div class="gallery-container">
+        <!-- ====== TITLE ====== -->
+        <div class="section-heading">
+          <h2>Hình ảnh khách hàng khi sử dụng gói dịch vụ Tiêm chủng Vắc-xin</h2>
+          <span class="section-line"></span>
+        </div>
+
+        <!-- ====== MAIN SLIDER WRAP ====== -->
+        <div class="gallery-main-wrap">
+          <!-- Nút trái -->
+          <button
+            type="button"
+            class="gallery-arrow gallery-arrow-prev"
+            aria-label="Ảnh trước"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M15 6L9 12L15 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </button>
+
+          <!-- Nút phải -->
+          <button
+            type="button"
+            class="gallery-arrow gallery-arrow-next"
+            aria-label="Ảnh sau"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 6L15 12L9 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </button>
+
+          <!-- ====== SWIPER: ẢNH LỚN ====== -->
+          <div class="swiper gallery-main-slider">
+            <div class="swiper-wrapper" id="galleryMainWrapper"></div>
+          </div>
+        </div>
+
+        <!-- ====== SWIPER: THUMBNAILS ====== -->
+        <div class="gallery-thumbs-wrap">
+          <div class="swiper gallery-thumbs-slider">
+            <div class="swiper-wrapper" id="galleryThumbsWrapper"></div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ================= video khách hàng thăm khám tại bệnh viện Phương Đông ================= -->
+    <section class="customer-video-section">
+    <!-- == BACKGROUND TOP == -->
+    <div class="customer-video-bg"></div>
 
-    <!-- ================= ĐỘI NGŨ ================= -->
-    <section id="doingu" class="py-20">
-      <div class="mx-auto max-w-[1280px] px-6">
-        <h2 class="text-center text-3xl font-bold lg:text-4xl">Đội ngũ bác sĩ</h2>
-        <div class="mx-auto mt-4 h-1 w-20 rounded-full bg-sky-500"></div>
+    <div class="customer-video-container">
+      <!-- == TITLE == -->
+      <div class="customer-video-heading">
+        <h2>Video khách hàng thăm khám tại Bệnh viện Phương Đông</h2>
+        <span class="customer-video-line"></span>
+      </div>
 
-        <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
-          <div class="rounded-2xl bg-white p-6 shadow-md text-center">
-            <div class="mx-auto h-40 w-full rounded-xl bg-slate-200"></div>
-            <h3 class="mt-5 font-bold">NGUYỄN TRUNG CHÍNH</h3>
-            <p class="mt-2 text-sm text-sky-600">PGS.TS. Bác sĩ Ung bướu</p>
-          </div>
+      <!-- == SLIDER WRAP == -->
+      <div class="customer-video-slider-wrap">
+        <!-- == ARROW LEFT == -->
+        <button
+          type="button"
+          class="video-arrow video-arrow-prev"
+          aria-label="Video trước"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M15 6L9 12L15 18"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </svg>
+        </button>
 
-          <div class="rounded-2xl bg-white p-6 shadow-md text-center">
-            <div class="mx-auto h-40 w-full rounded-xl bg-slate-200"></div>
-            <h3 class="mt-5 font-bold">NGUYỄN HUY BẢO</h3>
-            <p class="mt-2 text-sm text-sky-600">PGĐ.TS.BS. CKII Sản phụ khoa</p>
-          </div>
+        <!-- == ARROW RIGHT == -->
+        <button
+          type="button"
+          class="video-arrow video-arrow-next"
+          aria-label="Video sau"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M9 6L15 12L9 18"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </svg>
+        </button>
 
-          <div class="rounded-2xl bg-white p-6 shadow-md text-center">
-            <div class="mx-auto h-40 w-full rounded-xl bg-slate-200"></div>
-            <h3 class="mt-5 font-bold">TRẦN KINH TRANG</h3>
-            <p class="mt-2 text-sm text-sky-600">Bác sĩ CKII Nội khoa</p>
-          </div>
-
-          <div class="rounded-2xl bg-white p-6 shadow-md text-center">
-            <div class="mx-auto h-40 w-full rounded-xl bg-slate-200"></div>
-            <h3 class="mt-5 font-bold">NGUYỄN THỊ KIM YẾN</h3>
-            <p class="mt-2 text-sm text-sky-600">ThS. Dược sĩ</p>
-          </div>
+        <!-- == SWIPER == -->
+        <div class="swiper customer-video-swiper">
+          <div class="swiper-wrapper" id="customerVideoWrapper"></div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ================= HÌNH ẢNH & VIDEO ================= -->
-    <section id="hinhanhvideo" class="py-20">
-      <div class="mx-auto max-w-[1280px] px-6">
-        <h2 class="text-center text-3xl font-bold lg:text-4xl">Hình ảnh & Video</h2>
-        <div class="mx-auto mt-4 h-1 w-20 rounded-full bg-sky-500"></div>
+    <!-- ================= Chương trình ưu đãi đặc biệt dành cho gói Tư vấn & Tiêm chủng Vắc-xin ================= -->
+    <section class="promo-vaccine-section">
+    <!-- == HÌNH TRANG TRÍ 2 GÓC == -->
+    <img
+      src="./assets/images/Torus_Laying_3_0002 2.png"
+      alt=""
+      class="promo-decor promo-decor-left"
+    />
+    <img
+      src="./assets/images/Platonic_1_-_Octa0001 1.png"
+      alt=""
+      class="promo-decor promo-decor-right"
+    />
 
-        <div class="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
-          <div class="rounded-3xl bg-white p-6 shadow-lg">
-            <div class="flex h-[280px] items-center justify-center rounded-2xl bg-slate-200 text-slate-500">
-              Gallery Image
-            </div>
+    <div class="promo-container">
+      <!-- == TIÊU ĐỀ == -->
+      <div class="promo-heading">
+        <h2>Chương trình ưu đãi đặc biệt dành cho gói Tư vấn &amp; Tiêm chủng Vắc-xin</h2>
+        <span class="promo-line"></span>
+      </div>
+
+      <!-- == KHUNG CAROUSEL == -->
+      <div class="promo-stage" id="promoStage">
+        <!-- == MŨI TÊN TRÁI == -->
+        <button
+          type="button"
+          class="promo-arrow promo-arrow-prev"
+          id="promoPrevBtn"
+          aria-label="Gói trước"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M15 6L9 12L15 18"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </svg>
+        </button>
+
+        <!-- == TRACK 3 CARD == -->
+        <div class="promo-track" id="promoTrack"></div>
+
+        <!-- == MŨI TÊN PHẢI == -->
+        <button
+          type="button"
+          class="promo-arrow promo-arrow-next"
+          id="promoNextBtn"
+          aria-label="Gói sau"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M9 6L15 12L9 18"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+    <!-- ================= 9 mũi vắc xin ngoài chương trình tiêm chủng mở rộng cha mẹ không nên bỏ qua ================= -->
+    <section class="article-feature-section">
+    <div class="article-feature-inner">
+      <!-- == NỀN XANH == -->
+      <img
+        src="./assets/images/Group 9545.jpg"
+        alt=""
+        class="article-bg"
+      />
+
+      <!-- == DECOR GÓC PHẢI == -->
+      <img
+        src="./assets/images/Spring_Fat_Tall0001 1.png"
+        alt=""
+        class="article-decor"
+      />
+
+      <!-- == THANH XÁM == -->
+      <img
+        src="./assets/images/Group 9268.png"
+        alt=""
+        class="article-top-strip"
+      />
+
+      <!-- == ICON MXH == -->
+      <div class="article-socials">
+        <img src="./assets/images/bi_facebook.png" alt="Facebook" />
+        <img src="./assets/images/akar-icons_twitter-fill.png" alt="Twitter" />
+        <img src="./assets/images/Group.png" alt="YouTube" />
+        <img src="./assets/images/ant-design_instagram-filled.png" alt="Instagram" />
+      </div>
+
+      <!-- == CARD NỘI DUNG == -->
+      <article class="article-card">
+        <div class="article-content">
+          <h2 class="article-title">
+            9 mũi vắc xin ngoài chương trình tiêm chủng mở rộng cha mẹ không nên bỏ qua
+          </h2>
+
+          <div class="article-meta">
+            <span class="meta-item">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <g fill="none" stroke="#9B9B9B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3.5" y="5.5" width="17" height="15" rx="2.2"></rect>
+                  <path d="M7.5 3.5v4"></path>
+                  <path d="M16.5 3.5v4"></path>
+                  <path d="M3.5 9.5h17"></path>
+                  <path d="M8 13h.01"></path>
+                  <path d="M12 13h.01"></path>
+                  <path d="M16 13h.01"></path>
+                </g>
+              </svg>
+              <span>22/07/2022</span>
+            </span>
+
+            <span class="meta-item">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <g fill="none" stroke="#9B9B9B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="8.5" r="3.5"></circle>
+                  <path d="M5 19c1.8-3.1 4.4-4.7 7-4.7s5.2 1.6 7 4.7"></path>
+                </g>
+              </svg>
+              <span>Admin</span>
+            </span>
           </div>
 
-          <div class="rounded-3xl bg-white p-6 shadow-lg">
-            <div class="flex h-[280px] items-center justify-center rounded-2xl bg-slate-200 text-slate-500">
-              Video Thumbnail
-            </div>
+          <div class="article-text">
+            <p>
+              Theo khuyến cáo của bác sĩ nhi khoa, để giúp trẻ có được hệ miễn dịch tốt nhất, tránh khỏi các bệnh truyền nhiễm nguy hiểm, ngoài việc tiêm đầy đủ vắc xin trong chương trình tiêm chủng mở rộng, cha mẹ nên lưu ý cho bé tiêm thêm một số mũi quan trọng khác phòng các bệnh như thủy đậu, viêm gan A...Tham khảo ngay 9 mũi tiêm quan trọng cho trẻ trong bài viết dưới đây:
+            </p>
+
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae vitae ut erat laoreet sit elit. Lorem ridiculus suscipit ipsum quis in fames ultricies nec quis. Semper nulla adipiscing leo mauris, sed. Eu cras mattis posuere imperdiet id mauris egestas. Ante ipsum nisi, diam quis neque, nunc tortor faucibus. Ullamcorper commodo velit ut ipsum dictum platea ullamcorper vitae nec. Potenti amet lacus nisi massa malesuada etiam mauris vivamus. Lacus amet, at mauris scelerisque. Donec amet ultrices libero, congue. In sapien, viverra sed aenean tristique eget. Porttitor libero dapibus integer tempus, fames diam. Elit lectus eget laoreet enim, diam. Dapibus et ultrices dolor, mauris neque augue faucibus a mauris.
+            </p>
+
+            <p>
+              Ullamcorper commodo velit ut ipsum dictum platea ullamcorper vitae neque. Potenti amet lacus nisi massa malesuada etiam mauris vivamus. Lacus amet, at mauris scelerisque. Donec amet ultrices libero, congue.
+            </p>
           </div>
         </div>
-      </div>
-    </section>
+
+        <!-- == BÁC SĨ == -->
+        <img
+          src="./assets/images/portrait-young-asian-female-doctor (1) 1.png"
+          alt="Bác sĩ"
+          class="doctor-visual"
+        />
+
+        <!-- == KHỐI LOGO == -->
+        <div class="article-logo-box">
+          <img
+            src="./assets/images/Union (2).png"
+            alt=""
+            class="logo-plate"
+          />
+          <img
+            src="./assets/logo/logo.png"
+            alt="Bệnh viện Phương Đông"
+            class="article-logo"
+          />
+        </div>
+      </article>
+    </div>
+  </section>
+    
+
+    
+
   </main>
 
   <!-- Footer -->
@@ -2472,79 +2497,8 @@
     </div>
   </footer>
 
-  <script>
-  const menuBtn = document.getElementById("menuBtn");
-  const closeMenuBtn = document.getElementById("closeMenuBtn");
-  const mobileMenu = document.getElementById("mobileMenu");
-  const mobileBackdrop = document.getElementById("mobileBackdrop");
 
-  const desktopLinks = document.querySelectorAll(".nav-link");
-  const mobileLinks = document.querySelectorAll(".mobile-nav-link");
-
-  function openMenu() {
-    document.body.classList.add("menu-open");
-
-    mobileBackdrop.classList.remove("opacity-0", "pointer-events-none");
-    mobileBackdrop.classList.add("opacity-100", "pointer-events-auto");
-
-    mobileMenu.classList.remove("-translate-x-full");
-    mobileMenu.classList.add("translate-x-0");
-
-    if (menuBtn) {
-      menuBtn.setAttribute("aria-expanded", "true");
-    }
-  }
-
-  function closeMenu() {
-    document.body.classList.remove("menu-open");
-
-    mobileBackdrop.classList.remove("opacity-100", "pointer-events-auto");
-    mobileBackdrop.classList.add("opacity-0", "pointer-events-none");
-
-    mobileMenu.classList.remove("translate-x-0");
-    mobileMenu.classList.add("-translate-x-full");
-
-    if (menuBtn) {
-      menuBtn.setAttribute("aria-expanded", "false");
-    }
-  }
-
-  function setActiveLink(hash) {
-    desktopLinks.forEach((link) => {
-      if (link.getAttribute("href") === hash) {
-        link.classList.add("nav-link-active");
-      } else {
-        link.classList.remove("nav-link-active");
-      }
-    });
-  }
-
-  if (menuBtn) {
-    menuBtn.addEventListener("click", openMenu);
-  }
-
-  if (closeMenuBtn) {
-    closeMenuBtn.addEventListener("click", closeMenu);
-  }
-
-  if (mobileBackdrop) {
-    mobileBackdrop.addEventListener("click", closeMenu);
-  }
-
-  [...desktopLinks, ...mobileLinks].forEach((link) => {
-    link.addEventListener("click", () => {
-      const hash = link.getAttribute("href");
-      setActiveLink(hash);
-      closeMenu();
-    });
-  });
-
-  window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeMenu();
-  });
-
-  setActiveLink(window.location.hash || "#gioithieu");
-</script>
-
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  <script src="./assets/js/main.js"></script>
 </body>
 </html>
