@@ -1669,44 +1669,20 @@ button {
 
 
 /* ================= 9 mũi vắc xin ngoài chương trình tiêm chủng mở rộng cha mẹ không nên bỏ qua ================= */
-/* =========================================================
-   == RESET ==
-   ========================================================= */
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f3f3f3;
-    color: #262626;
-  }
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-/* =========================================================
-   == SECTION WRAP ==
-   ========================================================= */
-.promo-vaccine-section {
-  position: relative;
-  overflow: hidden;
-  padding: 52px 24px 84px;
-  background: #f3f3f3;
-}
 
 .article-feature-section {
   position: relative;
   overflow: hidden;
-  padding: 34px 0 96px;
+  padding: 26px 0 92px;
   background: #f3f3f3;
+  font-family: 'Lato', sans-serif;
+}
+
+.article-feature-inner {
+  position: relative;
+  width: min(100%, 1640px);
+  margin: 0 auto;
+  min-height: 860px;
 }
 
 /* =========================================================
@@ -1716,90 +1692,100 @@ img {
   position: absolute;
   left: 0;
   right: 0;
-  top: 60px;
+  top: 48px;
   width: 100%;
-  height: 708px;
+  height: 700px;
   object-fit: cover;
   object-position: center;
-  border-radius: 40px;
+  border-radius: 38px;
   z-index: 1;
 }
 
 /* =========================================================
-   == HÌNH TRANG TRÍ GÓC PHẢI ==
+   == DECOR GÓC PHẢI ==
    ========================================================= */
 .article-decor {
   position: absolute;
-  right: 72px;
+  right: 58px;
   top: -40px;
-  width: 180px;
-  z-index: 6;
+  width: 118px;
+  z-index: 9;
   pointer-events: none;
   user-select: none;
 }
 
 /* =========================================================
    == THANH XÁM TRÊN ==
-   == ĐỔI TỪ ABSOLUTE SANG RELATIVE ĐỂ KHÔNG LỆCH SECTION ==
    ========================================================= */
 .article-top-strip {
-  position: relative;
+  position: absolute;
+  left: 50%;
+  top: 156px;
+  transform: translateX(-50%);
+  width: 80px;
+  max-width: calc(100% - 640px);
   z-index: 3;
-  display: block;
-  width: min(calc(100% - 640px), 1200px);
-  margin: 134px auto 0;
   pointer-events: none;
   user-select: none;
 }
 
+/* =========================================================
+   == ICON MXH ==
+   ========================================================= */
 .article-socials {
-  position: relative;
-  z-index: 5;
-  width: min(calc(100% - 640px), 1200px);
-  margin: -54px auto 0;
-  padding-left: 52px;
+  position: absolute;
+  left: 50%;
+  top: 172px;
+  transform: translateX(-50%);
+  width: 1180px;
+  max-width: calc(100% - 640px);
+  padding-left: 56px;
   display: flex;
   align-items: center;
-  gap: 44px;
+  gap: 38px;
+  z-index: 5;
 }
 
 .article-socials img {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   object-fit: contain;
   opacity: 0.9;
 }
 
 /* =========================================================
    == CARD CHÍNH ==
-   == KHÔNG CÒN ABSOLUTE TRÊN DESKTOP ==
    ========================================================= */
 .article-card {
-  position: relative;
-  z-index: 4;
-  width: min(calc(100% - 484px), 1350px);
-  margin: 8px auto 0;
-  min-height: 620px;
-  padding-right: 430px; /* chừa chỗ cho bác sĩ bên phải */
+  position: absolute;
+  left: 50%;
+  top: 02px;
+  transform: translateX(-50%);
+  width: 1320px;
+  max-width: calc(100% - 220px);
+  min-height: 598px;
+  padding: 48px 470px 58px 56px;
   background: #f7f7f7;
-  border-radius: 32px;
+  border-radius: 34px;
   overflow: visible;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.02);
+  z-index: 4;
 }
 
 .article-content {
-  min-height: 620px;
-  padding: 48px 50px 56px 48px;
+  width: 100%;
 }
 
 .article-title {
   margin: 0;
-  max-width: none;
-  font-size: 30px;
-  line-height: 1.1;
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  max-width: 760px;
+  font-size: 27px;
+  line-height: 1.08;
+  font-weight: 500;
+  letter-spacing: -0.03em;
   color: #242424;
+  font-family: 'Lato', sans-serif;
+
 }
 
 .article-meta {
@@ -1807,8 +1793,8 @@ img {
   align-items: center;
   gap: 34px;
   margin-top: 26px;
-  color: #8c8c8c;
-  font-size: 18px;
+  color: #8f8f8f;
+  font-size: 17px;
   font-weight: 400;
 }
 
@@ -1825,31 +1811,34 @@ img {
 }
 
 .article-text {
-  margin-top: 38px;
-  max-width: none;
+  margin-top: 18px;
+  max-width: 790px;
+  font-family: 'Lato', sans-serif;
 }
 
 .article-text p {
-  margin: 0 0 22px;
-  font-size: 12.5px;
-  line-height: 1.34;
-  color: #5f5f5f;
+  margin: 0 0 12px;
+  font-size: 16px;
+  line-height: 1.4;
   font-weight: 400;
+  color: #5e5e5e;
+  text-align: justify;
+  text-justify: inter-word;
+  font-family: 'Lato', sans-serif;
 }
 
 .article-text p:last-child {
   margin-bottom: 0;
 }
-
 /* =========================================================
    == ẢNH BÁC SĨ ==
    ========================================================= */
 .doctor-visual {
   position: absolute;
-  right: 58px;
-  bottom: 150px;
-  width: 520px;
-  z-index: 6;
+  right: 72px;
+  bottom: 30px;
+  width: 510px;
+  z-index: 7;
   pointer-events: none;
   user-select: none;
 }
@@ -1859,125 +1848,141 @@ img {
    ========================================================= */
 .article-logo-box {
   position: absolute;
-  right: -200px;
-  bottom: 40px;
-  width: 520px;
-  z-index: 7;
+  right: -18px;
+  bottom: 50px;
+  width: 600px;
+  height: 180px; /* thêm để dễ canh */
+  z-index: 8;
+  pointer-events: none;
+  user-select: none;
 }
 
-.article-logo-box img.logo-plate {
-  width: 100%;
+/* chỉnh riêng cái nền trắng */
+.article-logo-box .logo-plate {
+  position: absolute;
+  right: -140px;         /* đổi số này để đẩy trái/phải */
+  bottom: -80px;
+  width: 1580px;     /* tăng số này để làm lớn hơn */
+  max-width: none;  /* rất quan trọng */
   height: auto;
 }
 
+/* chỉnh riêng logo Phương Đông */
 .article-logo {
   position: absolute;
-  right: 54px;
-  bottom: 26px;
-  width: 286px;
-  z-index: 8;
+  right: 66px;
+  bottom: -5px;
+  width: 300px;
+  z-index: 9;
 }
 
 /* =========================================================
-   == RESPONSIVE LARGE ==
+   == RESPONSIVE 1600 ==
    ========================================================= */
-@media (max-width: 1700px) {
+@media (max-width: 1600px) {
   .article-bg {
-    height: 650px;
+    height: 700px;
   }
 
   .article-top-strip {
-    width: min(calc(100% - 560px), 1120px);
-    margin-top: 122px;
+    width: 1100px;
+    max-width: calc(100% - 520px);
+    top: 148px;
   }
 
   .article-socials {
-    width: min(calc(100% - 560px), 1120px);
-    margin-top: -40px;
-    padding-left: 48px;
-    gap: 38px;
+    width: 1100px;
+    max-width: calc(100% - 520px);
+    top: 164px;
+    padding-left: 52px;
   }
 
   .article-card {
-    width: min(calc(100% - 360px), 1260px);
-    min-height: 590px;
-    padding-right: 388px;
-  }
-
-  .article-content {
-    min-height: 590px;
-    padding: 42px 42px 50px 44px;
-  }
-
-  .article-title {
-    font-size: 28px;
-  }
-
-  .doctor-visual {
-    width: 460px;
-    right: -110px;
-  }
-
-  .article-logo-box {
-    width: 470px;
-  }
-
-  .article-logo {
-    width: 258px;
-    right: 48px;
-  }
-
-  .article-decor {
-    width: 192px;
-      right: 6px;
-  }
-}
-
-/* =========================================================
-   == RESPONSIVE MEDIUM ==
-   ========================================================= */
-@media (max-width: 1440px) {
-  .article-feature-section {
-    padding-bottom: 82px;
-  }
-
-  .article-bg {
-    top: 38px;
-    height: 590px;
-    border-radius: 32px;
-  }
-
-  .article-top-strip {
-    width: min(calc(100% - 360px), 960px);
-    margin-top: 118px;
-  }
-
-  .article-socials {
-    width: min(calc(100% - 360px), 960px);
-    margin-top: -46px;
-    padding-left: 42px;
-    gap: 30px;
-  }
-
-  .article-socials img {
-    width: 26px;
-    height: 26px;
-  }
-
-  .article-card {
-    width: min(calc(100% - 180px), 1110px);
-    min-height: 510px;
-    padding-right: 340px;
-    border-radius: 28px;
-  }
-
-  .article-content {
-    min-height: 510px;
-    padding: 36px 36px 44px 40px;
+    width: 1220px;
+    max-width: calc(100% - 160px);
+    min-height: 566px;
+    padding: 42px 430px 50px 46px;
+    top: 196px;
   }
 
   .article-title {
     font-size: 40px;
+  }
+
+  .article-text {
+    max-width: 730px;
+  }
+
+  .article-text p {
+    font-size: 14px;
+  }
+
+  .doctor-visual {
+    width: 550px;
+    right: -115px;
+  }
+
+  .article-logo-box {
+    width: 500px;
+    right: -18px;
+  }
+
+  .article-logo {
+    width: 320px;
+    right: -100px;
+  }
+
+  .article-decor {
+    width: 180px;
+    right: 14px;
+  }
+}
+
+/* =========================================================
+   == RESPONSIVE 1360 ==
+   ========================================================= */
+@media (max-width: 1360px) {
+  .article-feature-inner {
+    min-height: 760px;
+  }
+
+  .article-bg {
+    top: 42px;
+    height: 610px;
+    border-radius: 32px;
+  }
+
+  .article-top-strip {
+    width: 980px;
+    max-width: calc(100% - 320px);
+    top: 138px;
+  }
+
+  .article-socials {
+    width: 980px;
+    max-width: calc(100% - 320px);
+    top: 152px;
+    padding-left: 44px;
+    gap: 30px;
+  }
+
+  .article-socials img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .article-card {
+    width: 1080px;
+    max-width: calc(100% - 100px);
+    min-height: 520px;
+    padding: 38px 350px 42px 40px;
+    top: 184px;
+    border-radius: 28px;
+  }
+
+  .article-title {
+    font-size: 40px;
+    max-width: 620px;
   }
 
   .article-meta {
@@ -1988,36 +1993,40 @@ img {
 
   .article-text {
     margin-top: 28px;
+    max-width: 620px;
   }
 
   .article-text p {
     font-size: 15px;
+    line-height: 1.42;
     margin-bottom: 18px;
   }
 
   .doctor-visual {
-    width: 392px;
-    right: 36px;
+    width: 382px;
+    right: 28px;
   }
 
   .article-logo-box {
-    width: 398px;
+    width: 400px;
+    right: -8px;
   }
 
   .article-logo {
-    width: 220px;
+    width: 222px;
     right: 42px;
-    bottom: 20px;
+    bottom: 22px;
   }
 
   .article-decor {
-    width: 78px;
-    right: 44px;
+    width: 82px;
+    right: 34px;
+    top: 0px;
   }
 }
 
 /* =========================================================
-   == TABLET / MOBILE ==
+   == TABLET ==
    ========================================================= */
 @media (max-width: 1100px) {
   .article-feature-section {
@@ -2026,6 +2035,7 @@ img {
 
   .article-feature-inner {
     width: 100%;
+    min-height: auto;
     padding: 0 14px;
   }
 
@@ -2039,38 +2049,57 @@ img {
   .article-decor {
     width: 62px;
     right: 22px;
-    top: -10px;
+    top: -100px;
   }
 
   .article-top-strip {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
     width: min(100%, 760px);
+    max-width: none;
     margin: -42px auto 0;
   }
 
   .article-socials {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
     width: min(100%, 760px);
+    max-width: none;
     margin: -56px auto 0;
     padding-left: 34px;
     justify-content: flex-start;
     gap: 24px;
   }
 
+  .article-socials img {
+    width: 24px;
+    height: 24px;
+  }
+
   .article-card {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
     width: 100%;
     max-width: 880px;
     min-height: auto;
     margin: 10px auto 0;
-    padding-right: 0;
-    padding-bottom: 280px;
+    padding: 26px 22px 290px;
+    border-radius: 24px;
   }
 
   .article-content {
-    min-height: auto;
-    padding: 26px 22px 18px;
+    width: 100%;
   }
 
   .article-title {
-    font-size: 28px;
+    max-width: none;
+    font-size: 30px;
     line-height: 1.18;
   }
 
@@ -2082,34 +2111,39 @@ img {
 
   .article-text {
     margin-top: 22px;
+    max-width: none;
   }
 
   .article-text p {
     font-size: 14px;
+    line-height: 1.45;
   }
 
   .doctor-visual {
     right: 50%;
     transform: translateX(50%);
-    bottom: 74px;
-    width: 260px;
+    bottom: 78px;
+    width: 280px;
   }
 
   .article-logo-box {
     right: 50%;
     transform: translateX(50%);
     bottom: 0;
-    width: 310px;
+    width: 320px;
   }
 
   .article-logo {
     right: 50%;
     transform: translateX(50%);
     bottom: 16px;
-    width: 170px;
+    width: 180px;
   }
 }
 
+/* =========================================================
+   == MOBILE ==
+   ========================================================= */
 @media (max-width: 640px) {
   .article-feature-section {
     padding-bottom: 34px;
@@ -2138,15 +2172,11 @@ img {
   .article-card {
     margin-top: 8px;
     border-radius: 20px;
-    padding-bottom: 236px;
-  }
-
-  .article-content {
-    padding: 22px 18px 16px;
+    padding: 22px 18px 236px;
   }
 
   .article-title {
-    font-size: 20px;
+    font-size: 22px;
     line-height: 1.2;
   }
 
@@ -2187,5 +2217,435 @@ img {
 
   .article-decor {
     width: 50px;
+  }
+}
+
+
+/* ================= Đăng ký tư vấn ================= */
+
+/* section phía trên phải hết khoảng cách */
+.article-feature-section {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* bản thân section này cũng không được có khoảng hở trên */
+.register-consult-section {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #eef1f3;
+  overflow: hidden;
+  font-family: 'Lato', sans-serif;
+}
+
+.register-consult-grid {
+  width: 100%;
+  min-height: 620px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 0;
+  align-items: stretch;
+  margin: 0 !important;
+  padding: 0 !important;
+  align-items: stretch;
+}
+
+
+/* ================= LEFT ================= */
+.register-consult-left {
+  position: relative;
+  min-height: 620px;
+  background: #eef1f3;
+  overflow: hidden;
+}
+
+.register-consult-quote {
+  position: absolute;
+  top: 18px; /* đưa text sát lên trên */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  width: calc(100% - 80px);
+  margin: 0;
+  text-align: center;
+  font-family: 'Great Vibes', cursive;
+  font-size: 34px;
+  line-height: 1.3;
+  color: #1f1f1f;
+}
+
+.register-consult-left-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ảnh chiếm trọn nửa trái */
+  object-position: center center;
+}
+
+/* ================= RIGHT ================= */
+.register-consult-right {
+  position: relative;
+  min-height: 620px;
+  overflow: hidden;
+}
+
+.register-consult-right-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ảnh nền chiếm trọn nửa phải */
+  object-position: center center;
+}
+
+.register-consult-card {
+  position: absolute;
+  top: 10px; /* sát mép trên luôn */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  width: calc(100% - 90px);
+  max-width: 560px;
+  height: auto;
+  margin: 10px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: rgba(245, 245, 245, 0.96);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+}
+
+.register-consult-card-header {
+  background: linear-gradient(180deg, #49aee9 0%, #168fda 100%);
+  text-align: center;
+  color: #ffffff;
+  padding: 18px 20px 16px;
+}
+
+.register-consult-card-header h2 {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.1;
+  font-weight: 900;
+  font-family: 'Lato', sans-serif;
+}
+
+.register-consult-card-header p {
+  margin: 8px 0 0;
+  font-size: 14px;
+  line-height: 1.35;
+  font-weight: 400;
+  font-family: 'Lato', sans-serif;
+}
+
+.register-consult-card-body {
+  padding: 40px 34px 42px;
+  background: rgba(245, 245, 245, 0.98);
+}
+
+.register-consult-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.register-consult-form input,
+.register-consult-form textarea {
+  width: 100%;
+  border: 0;
+  outline: none;
+  background: #ececec;
+  border-radius: 8px;
+  color: #6e6e6e;
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+}
+
+.register-consult-form input {
+  height: 54px;
+  padding: 0 22px;
+}
+
+.register-consult-form textarea {
+  height: 116px;
+  padding: 18px 22px;
+  resize: none;
+}
+
+.register-consult-form input::placeholder,
+.register-consult-form textarea::placeholder {
+  color: #8d8d8d;
+}
+
+.register-consult-submit-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.register-consult-submit {
+  height: 56px;
+  min-width: 320px;
+  border: 0;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 34px;
+  cursor: pointer;
+  background: linear-gradient(180deg, #f7b15f 0%, #e57a0c 100%);
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 800;
+  font-family: 'Lato', sans-serif;
+  box-shadow: 0 12px 26px rgba(229, 122, 12, 0.28);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.register-consult-submit:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 30px rgba(229, 122, 12, 0.34);
+}
+
+.register-consult-submit img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1200px) {
+  .register-consult-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .register-consult-left,
+  .register-consult-right {
+    min-height: 520px;
+  }
+
+  .register-consult-quote {
+    top: 20px;
+    width: calc(100% - 40px);
+    font-size: 28px;
+  }
+
+  .register-consult-card {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: calc(100% - 40px);
+    margin: 24px auto 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .register-consult-left,
+  .register-consult-right {
+    min-height: 420px;
+  }
+
+  .register-consult-quote {
+    top: 16px;
+    font-size: 22px;
+    line-height: 1.35;
+  }
+
+  .register-consult-card-header h2 {
+    font-size: 22px;
+  }
+
+  .register-consult-card-header p {
+    font-size: 13px;
+  }
+
+  .register-consult-card-body {
+    padding: 24px 16px 28px;
+  }
+
+  .register-consult-form input {
+    height: 46px;
+    font-size: 15px;
+  }
+
+  .register-consult-form textarea {
+    height: 90px;
+    font-size: 15px;
+  }
+
+  .register-consult-submit {
+    min-width: 240px;
+    height: 50px;
+    font-size: 16px;
+  }
+}
+
+
+
+/* ================= FOOTER PHƯƠNG ĐÔNG ================= */
+.pd-footer {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background-color: #2ea7ec;
+  background-image: url("../images/Group 9546.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+}
+
+.pd-footer__inner {
+  position: relative;
+  width: min(100%, 1460px);
+  margin: 0 auto;
+  min-height: 310px;
+  padding: 26px 24px 34px;
+}
+
+.pd-footer__logo-box {
+  position: absolute;
+  top: 12px;
+  left: 24px;
+}
+
+.pd-footer__logo {
+  width: 328px;
+  max-width: none;
+  height: auto;
+}
+
+.pd-footer__grid {
+  display: grid;
+  grid-template-columns: 1.7fr 1.05fr 1.1fr 0.85fr;
+  column-gap: 54px;
+  align-items: start;
+  padding-top: 106px;
+}
+
+.pd-footer__col h3 {
+  margin: 0 0 18px;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.pd-footer__line {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 14px;
+  font-size: 16px;
+  line-height: 1.3;
+  color: #ffffff;
+  flex-wrap: wrap;
+}
+
+.pd-footer__label {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.pd-footer__col--hospital .pd-footer__line {
+  font-size: 17px;
+}
+
+.pd-footer__col--social .pd-footer__socials {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 10px;
+}
+
+.pd-footer__socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+}
+
+.pd-footer__socials a:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.pd-footer__socials img {
+  width: 31px;
+  height: 31px;
+  object-fit: contain;
+  display: block;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1200px) {
+  .pd-footer__inner {
+    min-height: auto;
+    padding: 24px 20px 30px;
+  }
+
+  .pd-footer__logo-box {
+    position: static;
+    margin-bottom: 24px;
+  }
+
+  .pd-footer__logo {
+    width: 280px;
+  }
+
+  .pd-footer__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px 34px;
+    padding-top: 0;
+  }
+
+  .pd-footer__col h3 {
+    margin-bottom: 14px;
+    font-size: 17px;
+  }
+
+  .pd-footer__line,
+  .pd-footer__col--hospital .pd-footer__line {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pd-footer__inner {
+    padding: 22px 16px 26px;
+  }
+
+  .pd-footer__logo {
+    width: 230px;
+  }
+
+  .pd-footer__grid {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .pd-footer__col h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .pd-footer__line,
+  .pd-footer__col--hospital .pd-footer__line {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .pd-footer__col--social .pd-footer__socials {
+    gap: 18px;
+    margin-top: 8px;
+  }
+
+  .pd-footer__socials img {
+    width: 28px;
+    height: 28px;
   }
 }

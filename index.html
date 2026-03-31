@@ -13,6 +13,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/style.css" />
   <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+    rel="stylesheet"
+  />
+  <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
   />
@@ -2380,10 +2384,41 @@
 
       <!-- == ICON MXH == -->
       <div class="article-socials">
-        <img src="./assets/images/bi_facebook.png" alt="Facebook" />
-        <img src="./assets/images/akar-icons_twitter-fill.png" alt="Twitter" />
-        <img src="./assets/images/Group.png" alt="YouTube" />
-        <img src="./assets/images/ant-design_instagram-filled.png" alt="Instagram" />
+        <a
+          href="https://www.facebook.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook"
+        >
+          <img src="./assets/images/bi_facebook.png" alt="Facebook" />
+        </a>
+
+        <a
+          href="https://twitter.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Twitter"
+        >
+          <img src="./assets/images/akar-icons_twitter-fill.png" alt="Twitter" />
+        </a>
+
+        <a
+          href="https://www.youtube.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="YouTube"
+        >
+          <img src="./assets/images/Group.png" alt="YouTube" />
+        </a>
+
+        <a
+          href="https://www.instagram.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+        >
+          <img src="./assets/images/ant-design_instagram-filled.png" alt="Instagram" />
+        </a>
       </div>
 
       <!-- == CARD NỘI DUNG == -->
@@ -2458,40 +2493,150 @@
       </article>
     </div>
   </section>
+
+
+    <!-- ================= Đăng kí tư vấn ================= -->
+    <section class="register-consult-section">
+  <div class="register-consult-grid">
+    <!-- LEFT -->
+    <div class="register-consult-left">
+      <p class="register-consult-quote">
+        Thực hiện tiêm chủng Vắc-xin để bảo vệ bản thân
+        <br />
+        và bảo vệ những người xung quanh !
+      </p>
+
+      <img
+        src="./assets/images/2278 1.png"
+        alt="Vắc-xin và kim tiêm"
+        class="register-consult-left-image"
+      />
+    </div>
+
+    <!-- RIGHT -->
+    <div class="register-consult-right">
+      <img
+        src="./assets/images/Rectangle 6614.png"
+        alt=""
+        class="register-consult-right-bg"
+      />
+
+      <div class="register-consult-card">
+        <div class="register-consult-card-header">
+          <h2>ĐĂNG KÝ TƯ VẤN MIỄN PHÍ</h2>
+          <p>Đặt hẹn ngay để nhận tư vấn và chúng tôi sẽ xếp lịch khám kịp thời!</p>
+        </div>
+
+        <div class="register-consult-card-body">
+          <form class="register-consult-form">
+            <input type="text" placeholder="Họ và tên (*)" />
+            <input type="text" placeholder="Số điện thoại (*)" />
+            <input type="email" placeholder="E-mail" />
+            <textarea placeholder="Nội dung..."></textarea>
+
+            <div class="register-consult-submit-wrap">
+              <button type="submit" class="register-consult-submit">
+                <img src="./assets/images/dangki.png" alt="" />
+                <span>ĐĂNG KÝ TƯ VẤN</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
     
 
     
 
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-gradient-to-r from-sky-400 to-sky-500 py-12 text-white">
-    <div class="mx-auto grid max-w-[1280px] grid-cols-1 gap-10 px-6 md:grid-cols-2 lg:grid-cols-4">
-      <div>
-        <img src="./assets/logo/logo-white.png" alt="Phương Đông" class="h-12 w-auto" />
-        <p class="mt-4 text-sm leading-6 text-white/90">
-          BỆNH VIỆN ĐA KHOA PHƯƠNG ĐÔNG
-        </p>
+  <!-- ================= FOOTER ================= -->
+  <footer class="pd-footer">
+    <div class="pd-footer__inner">
+      <!-- Logo -->
+      <div class="pd-footer__logo-box">
+        <img
+          src="./assets/logo/Logo 1 (1).png"
+          alt="Phương Đông"
+          class="pd-footer__logo"
+        />
       </div>
 
-      <div>
-        <h3 class="text-lg font-semibold">Liên hệ</h3>
-        <p class="mt-4 text-sm text-white/90">Hotline: 1900 1806</p>
-        <p class="mt-2 text-sm text-white/90">Email: contact@example.com</p>
-      </div>
+      <!-- Nội dung -->
+      <div class="pd-footer__grid">
+        <!-- Cột 1 -->
+        <div class="pd-footer__col pd-footer__col--hospital">
+          <h3>BỆNH VIỆN ĐA KHOA PHƯƠNG ĐÔNG</h3>
 
-      <div>
-        <h3 class="text-lg font-semibold">Thời gian làm việc</h3>
-        <p class="mt-4 text-sm text-white/90">Thứ 2 - Chủ nhật</p>
-        <p class="mt-2 text-sm text-white/90">07:30 - 19:00</p>
-      </div>
+          <div class="pd-footer__line">
+            <span class="pd-footer__label">Địa chỉ:</span>
+            <span>Số 9, Phố Viên, P. Cổ Nhuế 2, Q. Bắc Từ Liêm, HN</span>
+          </div>
 
-      <div>
-        <h3 class="text-lg font-semibold">Mạng xã hội</h3>
-        <div class="mt-4 flex gap-3">
-          <div class="h-10 w-10 rounded-full bg-white/20"></div>
-          <div class="h-10 w-10 rounded-full bg-white/20"></div>
-          <div class="h-10 w-10 rounded-full bg-white/20"></div>
+          <div class="pd-footer__line">
+            <span class="pd-footer__label">Email:</span>
+            <span>bvphuongdong@phuongdonghospital.vn</span>
+          </div>
+
+          <div class="pd-footer__line">
+            <span class="pd-footer__label">Hotline:</span>
+            <span>1900 1806</span>
+          </div>
+        </div>
+
+        <!-- Cột 2 -->
+        <div class="pd-footer__col">
+          <h3>Thời gian mở cửa</h3>
+
+          <div class="pd-footer__line">
+            <span class="pd-footer__label">Thứ 2 - Chủ nhật :</span>
+            <span>07:30 - 19:00</span>
+          </div>
+
+          <div class="pd-footer__line">
+            <span class="pd-footer__label">Cấp cứu 24/7:</span>
+            <span>0833 015 115</span>
+          </div>
+        </div>
+
+        <!-- Cột 3 -->
+        <div class="pd-footer__col">
+          <h3>Liên hệ</h3>
+
+          <div class="pd-footer__line">
+            <span class="pd-footer__label">Hotline Tiêm chủng:</span>
+            <span>0911 615 115</span>
+          </div>
+
+          <div class="pd-footer__line">
+            <span class="pd-footer__label">Hotline Khoa sản :</span>
+            <span>0911 615 115</span>
+          </div>
+        </div>
+
+        <!-- Cột 4 -->
+        <div class="pd-footer__col pd-footer__col--social">
+          <h3>Mạng xã hội</h3>
+
+          <div class="pd-footer__socials">
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <img src="./assets/images/fb_trang.png" alt="Facebook" />
+            </a>
+
+            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              <img src="./assets/images/x_trang.png" alt="Twitter" />
+            </a>
+
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <img src="./assets/images/youtube_trang.png" alt="YouTube" />
+            </a>
+
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <img src="./assets/images/ins_trang.png" alt="Instagram" />
+            </a>
+          </div>
         </div>
       </div>
     </div>
