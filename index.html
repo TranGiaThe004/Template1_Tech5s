@@ -1744,62 +1744,83 @@
     </section>
 
     <!-- ================= video khách hàng thăm khám tại bệnh viện Phương Đông ================= -->
-    <section class="customer-video-section">
-    <!-- == BACKGROUND TOP == -->
-    <div class="customer-video-bg"></div>
+<section class="customer-video-section">
+  <div class="customer-video-bg"></div>
 
-    <div class="customer-video-container">
-      <!-- == TITLE == -->
-      <div class="customer-video-heading">
-        <h2>Video khách hàng thăm khám tại Bệnh viện Phương Đông</h2>
-        <span class="customer-video-line"></span>
-      </div>
+  <div class="customer-video-container">
+    <div class="customer-video-heading">
+      <h2>Video khách hàng thăm khám tại Bệnh viện Phương Đông</h2>
+      <span class="customer-video-line"></span>
+    </div>
 
-      <!-- == SLIDER WRAP == -->
-      <div class="customer-video-slider-wrap">
-        <!-- == ARROW LEFT == -->
-        <button
-          type="button"
-          class="video-arrow video-arrow-prev"
-          aria-label="Video trước"
-        >
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M15 6L9 12L15 18"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.4"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
-          </svg>
-        </button>
+    <div class="customer-video-slider-wrap">
+      <!-- Arrow left -->
+      <button
+        type="button"
+        class="video-arrow video-arrow-prev"
+        aria-label="Video trước"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M15 6L9 12L15 18"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></path>
+        </svg>
+      </button>
 
-        <!-- == ARROW RIGHT == -->
-        <button
-          type="button"
-          class="video-arrow video-arrow-next"
-          aria-label="Video sau"
-        >
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M9 6L15 12L9 18"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.4"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
-          </svg>
-        </button>
+      <!-- Arrow right -->
+      <button
+        type="button"
+        class="video-arrow video-arrow-next"
+        aria-label="Video sau"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M9 6L15 12L9 18"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></path>
+        </svg>
+      </button>
 
-        <!-- == SWIPER == -->
-        <div class="swiper customer-video-swiper">
-          <div class="swiper-wrapper" id="customerVideoWrapper"></div>
-        </div>
+      <!-- Swiper -->
+      <div class="swiper customer-video-swiper">
+        <div class="swiper-wrapper" id="customerVideoWrapper"></div>
       </div>
     </div>
-  </section>
+  </div>
+
+  <!-- ================= MODAL XEM ẢNH ================= -->
+  <div
+    class="video-preview-modal"
+    id="videoPreviewModal"
+    aria-hidden="true"
+  >
+    <div class="video-preview-overlay" data-close-modal></div>
+
+    <div class="video-preview-dialog" role="dialog" aria-modal="true" aria-label="Xem nội dung video">
+      <button
+        type="button"
+        class="video-preview-close"
+        id="videoPreviewClose"
+        aria-label="Đóng"
+      >
+        ×
+      </button>
+
+      <div class="video-preview-media">
+        <img id="videoPreviewImage" src="" alt="Nội dung xem trước" />
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- ================= Chương trình ưu đãi đặc biệt dành cho gói Tư vấn & Tiêm chủng Vắc-xin ================= -->
     <section class="promo-vaccine-section">

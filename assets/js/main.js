@@ -908,48 +908,41 @@ setActiveLink(window.location.hash || "#gioithieu");
   document.addEventListener('DOMContentLoaded', initGallerySwiper);
 
 /* ================= Video khách hàng thăm khám tại bệnh viện Phương Đông ================= */
-  /* =========================================================
-    == DATA VIDEO ==
-    ========================================================= */
+(function () {
   const customerVideos = [
     {
       image: './assets/images/Mask group (3).jpg',
       title: 'Diễn viên Mạnh Trường trải nghiệm dịch vụ Tư vấn & Tiêm chủng Vắc-xin',
       date: '22/07/2022',
-      views: '149 người đã xem',
-      url: '#'
+      views: '149 người đã xem'
     },
     {
       image: './assets/images/Mask group (1).png',
       title: 'Diễn viên Mạnh Trường trải nghiệm dịch vụ Tư vấn & Tiêm chủng Vắc-xin',
       date: '22/07/2022',
-      views: '149 người đã xem',
-      url: '#'
+      views: '149 người đã xem'
     },
     {
       image: './assets/images/Mask group (2).png',
       title: 'Diễn viên Mạnh Trường trải nghiệm dịch vụ Tư vấn & Tiêm chủng Vắc-xin',
       date: '22/07/2022',
-      views: '149 người đã xem',
-      url: '#'
+      views: '149 người đã xem'
     },
     {
       image: './assets/images/Mask group (3).jpg',
       title: 'Diễn viên Mạnh Trường trải nghiệm dịch vụ Tư vấn & Tiêm chủng Vắc-xin',
       date: '22/07/2022',
-      views: '149 người đã xem',
-      url: '#'
+      views: '149 người đã xem'
     }
   ];
 
-  /* =========================================================
-    == DOM ==
-    ========================================================= */
   const customerVideoWrapper = document.getElementById('customerVideoWrapper');
+  const modal = document.getElementById('videoPreviewModal');
+  const modalImage = document.getElementById('videoPreviewImage');
+  const modalClose = document.getElementById('videoPreviewClose');
 
-  /* =========================================================
-    == ICON SVG ==
-    ========================================================= */
+  if (!customerVideoWrapper) return;
+
   const calendarIcon = `
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <g fill="none" stroke="#9B9B9B" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
@@ -970,19 +963,19 @@ setActiveLink(window.location.hash || "#gioithieu");
     </svg>
   `;
 
-  /* =========================================================
-    == RENDER SLIDE ==
-    ========================================================= */
   function renderCustomerVideos() {
-    if (!customerVideoWrapper) return;
-
     let html = '';
 
-    customerVideos.forEach((item) => {
+    customerVideos.forEach((item, index) => {
       html += `
         <div class="swiper-slide">
           <article class="video-card">
-            <a href="${item.url}" class="video-thumb" aria-label="${item.title}">
+            <a
+              href="#"
+              class="video-thumb js-open-video-preview"
+              data-index="${index}"
+              aria-label="${item.title}"
+            >
               <img src="${item.image}" alt="${item.title}" />
 
               <div class="video-play-btn" aria-hidden="true">
@@ -1013,9 +1006,52 @@ setActiveLink(window.location.hash || "#gioithieu");
     customerVideoWrapper.innerHTML = html;
   }
 
-  /* =========================================================
-    == INIT SWIPER ==
-    ========================================================= */
+  function openModal(imageSrc, imageAlt) {
+    if (!modal || !modalImage) return;
+
+    modalImage.src = imageSrc;
+    modalImage.alt = imageAlt || 'Nội dung xem trước';
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    if (!modal || !modalImage) return;
+
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+
+    setTimeout(() => {
+      modalImage.src = '';
+    }, 200);
+  }
+
+  function bindModalEvents() {
+    document.addEventListener('click', (e) => {
+      const trigger = e.target.closest('.js-open-video-preview');
+      if (trigger) {
+        e.preventDefault();
+        const index = Number(trigger.dataset.index);
+        const item = customerVideos[index];
+        if (!item) return;
+        openModal(item.image, item.title);
+        return;
+      }
+
+      if (e.target.closest('[data-close-modal]') || e.target.closest('#videoPreviewClose')) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal?.classList.contains('is-open')) {
+        closeModal();
+      }
+    });
+  }
+
   function initCustomerVideoSwiper() {
     renderCustomerVideos();
 
@@ -1023,8 +1059,6 @@ setActiveLink(window.location.hash || "#gioithieu");
       loop: true,
       speed: 850,
       grabCursor: true,
-      slidesPerView: 3,
-      spaceBetween: 28,
       navigation: {
         prevEl: '.video-arrow-prev',
         nextEl: '.video-arrow-next'
@@ -1032,28 +1066,37 @@ setActiveLink(window.location.hash || "#gioithieu");
       breakpoints: {
         0: {
           slidesPerView: 1,
-          spaceBetween: 16
+          spaceBetween: 14,
+          centeredSlides: true
         },
-        640: {
+        641: {
           slidesPerView: 1.2,
-          spaceBetween: 18
+          spaceBetween: 18,
+          centeredSlides: false
         },
         768: {
           slidesPerView: 2,
-          spaceBetween: 20
+          spaceBetween: 20,
+          centeredSlides: false
         },
         1200: {
           slidesPerView: 3,
-          spaceBetween: 28
+          spaceBetween: 28,
+          centeredSlides: false
         }
       }
     });
   }
 
-  /* =========================================================
-    == START ==
-    ========================================================= */
-  document.addEventListener('DOMContentLoaded', initCustomerVideoSwiper);
+  document.addEventListener('DOMContentLoaded', () => {
+    initCustomerVideoSwiper();
+    bindModalEvents();
+
+    if (modalClose) {
+      modalClose.addEventListener('click', closeModal);
+    }
+  });
+})();
 
 
 /* ================= Chương trình ưu đãi đặc biệt dành cho gói Tư vấn & Tiêm chủng Vắc-xin ================= */
