@@ -127,97 +127,7 @@
     })();
 
 
-/* ================= Quyền lợi khách hàng ================= */  
-  (function () {
-      const slides = document.querySelectorAll('.table-slide');
-      const dots = document.querySelectorAll('.table-dot');
-      const slider = document.getElementById('tableSlider');
 
-      let currentIndex = 0;
-      let startX = 0;
-      let startY = 0;
-      let isPointerDown = false;
-
-      function showSlide(index) {
-        currentIndex = Math.max(0, Math.min(index, slides.length - 1));
-
-        slides.forEach((slide, i) => {
-          slide.classList.toggle('hidden', i !== currentIndex);
-        });
-
-        dots.forEach((dot, i) => {
-          if (i === currentIndex) {
-            dot.classList.remove('bg-slate-300', 'w-[16px]');
-            dot.classList.add('bg-[#F79433]', 'w-[24px]');
-          } else {
-            dot.classList.remove('bg-[#F79433]', 'w-[24px]');
-            dot.classList.add('bg-slate-300', 'w-[16px]');
-          }
-        });
-      }
-
-      dots.forEach((dot) => {
-        dot.addEventListener('click', () => {
-          showSlide(Number(dot.dataset.slide));
-        });
-      });
-
-      function handleStart(x, y) {
-        startX = x;
-        startY = y;
-        isPointerDown = true;
-      }
-
-      function handleEnd(x, y) {
-        if (!isPointerDown) return;
-        isPointerDown = false;
-
-        const diffX = x - startX;
-        const diffY = y - startY;
-
-        if (Math.abs(diffX) > 50 && Math.abs(diffX) > Math.abs(diffY)) {
-          if (diffX < 0) {
-            showSlide(currentIndex + 1);
-          } else {
-            showSlide(currentIndex - 1);
-          }
-        }
-      }
-
-      slider.addEventListener(
-        'touchstart',
-        (e) => {
-          const touch = e.changedTouches[0];
-          handleStart(touch.clientX, touch.clientY);
-        },
-        { passive: true }
-      );
-
-      slider.addEventListener(
-        'touchend',
-        (e) => {
-          const touch = e.changedTouches[0];
-          handleEnd(touch.clientX, touch.clientY);
-        },
-        { passive: true }
-      );
-
-      slider.addEventListener('mousedown', (e) => {
-        handleStart(e.clientX, e.clientY);
-      });
-
-      slider.addEventListener('mouseup', (e) => {
-        handleEnd(e.clientX, e.clientY);
-      });
-
-      slider.addEventListener('mouseleave', (e) => {
-        if (isPointerDown) {
-          handleEnd(e.clientX, e.clientY);
-        }
-      });
-
-      showSlide(0);
-    })();
 
 /* ================= Cảm nhận của khách hàng sau khi sử dụng ================= */
   (function () {
@@ -670,77 +580,138 @@
 
 
 /* ================= menu nav ================= */
-  const menuBtn = document.getElementById("menuBtn");
-  const closeMenuBtn = document.getElementById("closeMenuBtn");
-  const mobileMenu = document.getElementById("mobileMenu");
-  const mobileBackdrop = document.getElementById("mobileBackdrop");
+const menuBtn = document.getElementById("menuBtn");
+const closeMenuBtn = document.getElementById("closeMenuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+const mobileBackdrop = document.getElementById("mobileBackdrop");
 
-  const desktopLinks = document.querySelectorAll(".nav-link");
-  const mobileLinks = document.querySelectorAll(".mobile-nav-link");
+const desktopLinks = document.querySelectorAll(".nav-link");
+const mobileLinks = document.querySelectorAll(".mobile-nav-link");
 
-  function openMenu() {
-    document.body.classList.add("menu-open");
+/* ===== mobile menu ===== */
+function openMenu() {
+  document.body.classList.add("menu-open");
 
-    mobileBackdrop.classList.remove("opacity-0", "pointer-events-none");
-    mobileBackdrop.classList.add("opacity-100", "pointer-events-auto");
+  mobileBackdrop.classList.remove("opacity-0", "pointer-events-none");
+  mobileBackdrop.classList.add("opacity-100", "pointer-events-auto");
 
-    mobileMenu.classList.remove("-translate-x-full");
-    mobileMenu.classList.add("translate-x-0");
-
-    if (menuBtn) {
-      menuBtn.setAttribute("aria-expanded", "true");
-    }
-  }
-
-  function closeMenu() {
-    document.body.classList.remove("menu-open");
-
-    mobileBackdrop.classList.remove("opacity-100", "pointer-events-auto");
-    mobileBackdrop.classList.add("opacity-0", "pointer-events-none");
-
-    mobileMenu.classList.remove("translate-x-0");
-    mobileMenu.classList.add("-translate-x-full");
-
-    if (menuBtn) {
-      menuBtn.setAttribute("aria-expanded", "false");
-    }
-  }
-
-  function setActiveLink(hash) {
-    desktopLinks.forEach((link) => {
-      if (link.getAttribute("href") === hash) {
-        link.classList.add("nav-link-active");
-      } else {
-        link.classList.remove("nav-link-active");
-      }
-    });
-  }
+  mobileMenu.classList.remove("-translate-x-full");
+  mobileMenu.classList.add("translate-x-0");
 
   if (menuBtn) {
-    menuBtn.addEventListener("click", openMenu);
+    menuBtn.setAttribute("aria-expanded", "true");
   }
+}
 
-  if (closeMenuBtn) {
-    closeMenuBtn.addEventListener("click", closeMenu);
+function closeMenu() {
+  document.body.classList.remove("menu-open");
+
+  mobileBackdrop.classList.remove("opacity-100", "pointer-events-auto");
+  mobileBackdrop.classList.add("opacity-0", "pointer-events-none");
+
+  mobileMenu.classList.remove("translate-x-0");
+  mobileMenu.classList.add("-translate-x-full");
+
+  if (menuBtn) {
+    menuBtn.setAttribute("aria-expanded", "false");
   }
+}
 
-  if (mobileBackdrop) {
-    mobileBackdrop.addEventListener("click", closeMenu);
-  }
-
-  [...desktopLinks, ...mobileLinks].forEach((link) => {
-    link.addEventListener("click", () => {
-      const hash = link.getAttribute("href");
-      setActiveLink(hash);
-      closeMenu();
-    });
+/* ===== desktop active nav ===== */
+function setActiveDesktopLink(hash) {
+  desktopLinks.forEach((link) => {
+    if (link.getAttribute("href") === hash) {
+      link.classList.add("nav-link-active");
+    } else {
+      link.classList.remove("nav-link-active");
+    }
   });
+}
 
-  window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeMenu();
+/* mobile link active nếu bạn cần giữ highlight mobile */
+function setActiveMobileLink(hash) {
+  mobileLinks.forEach((link) => {
+    if (link.getAttribute("href") === hash) {
+      link.classList.add("text-[#2497e3]");
+    } else {
+      link.classList.remove("text-[#2497e3]");
+    }
   });
+}
 
-  setActiveLink(window.location.hash || "#gioithieu");
+function setActiveLink(hash) {
+  setActiveDesktopLink(hash);
+  setActiveMobileLink(hash);
+}
+
+/* ===== events mở / đóng menu ===== */
+if (menuBtn) {
+  menuBtn.addEventListener("click", openMenu);
+}
+
+if (closeMenuBtn) {
+  closeMenuBtn.addEventListener("click", closeMenu);
+}
+
+if (mobileBackdrop) {
+  mobileBackdrop.addEventListener("click", closeMenu);
+}
+
+window.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeMenu();
+});
+
+/* ===== click nav ===== */
+[...desktopLinks, ...mobileLinks].forEach((link) => {
+  link.addEventListener("click", () => {
+    const hash = link.getAttribute("href");
+    setActiveLink(hash);
+    closeMenu();
+  });
+});
+
+/* ===== tự đổi active theo section khi cuộn ===== */
+const sectionIds = [
+  "#gioithieu",
+  "#doituong",
+  "#quytrinh",
+  "#banggia",
+  "#camnhan",
+  "#doingu",
+  "#hinhanhvideo",
+];
+
+const sections = sectionIds
+  .map((id) => document.querySelector(id))
+  .filter(Boolean);
+
+if (sections.length) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      let visibleSection = null;
+
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          visibleSection = "#" + entry.target.id;
+        }
+      });
+
+      if (visibleSection) {
+        setActiveDesktopLink(visibleSection);
+      }
+    },
+    {
+      root: null,
+      rootMargin: "-120px 0px -45% 0px",
+      threshold: 0.2,
+    }
+  );
+
+  sections.forEach((section) => observer.observe(section));
+}
+
+/* ===== active ban đầu ===== */
+setActiveLink(window.location.hash || "#gioithieu");
 
 /* ================= Hình ảnh của khách hàng khi sử dụng gói dịch vụ Tiêm chủng Vắc-xin ================= */
   /* =========================================================
@@ -1324,4 +1295,461 @@
   });
 
 
-/* ================= Đăng kí tư vấn ================= */
+/* ================= Quyền lợi khách hàng ================= */
+(function () {
+  const rightsTableData = [
+    {
+      titleTop: "GÓI VẮC XIN CHO TRẺ EM",
+      titleBottom: "DANH MỤC GÓI VẮC XIN 0 - 6 THÁNG",
+      headers: [
+        "STT",
+        "Phòng bệnh",
+        "Tên Vắc xin",
+        "Nước sản xuất",
+        "Gói 1",
+        "Gói 2",
+        "Gói 3",
+        "Gói 4"
+      ],
+      rows: [
+        {
+          cells: [
+            "1",
+            { text: "Lao", align: "left" },
+            "BCG",
+            "Việt Nam",
+            "1",
+            "1",
+            "1",
+            ""
+          ],
+          striped: true
+        },
+        {
+          cells: [
+            { text: "2", rowspan: 3 },
+            { text: "Tiêu chảy do Rota virus", rowspan: 3, align: "left" },
+            "Rotarix",
+            "Bỉ",
+            "2",
+            "",
+            "",
+            "2"
+          ]
+        },
+        {
+          cells: [
+            "Rotavin",
+            "Việt Nam",
+            "",
+            "2",
+            "",
+            ""
+          ]
+        },
+        {
+          cells: [
+            "Rotateq",
+            "Mỹ",
+            "",
+            "",
+            "3",
+            ""
+          ]
+        },
+        {
+          cells: [
+            "3",
+            {
+              text: "Ho gà, Bạch hầu, Uốn ván, Bại liệt, Viêm màng não mủ, Viêm họng, Viêm phổi do HIB (5 in 1)",
+              align: "left"
+            },
+            "Pentaxim",
+            "Pháp",
+            "",
+            "3",
+            "",
+            ""
+          ],
+          striped: true
+        },
+        {
+          cells: [
+            "4",
+            { text: "Viêm gan B", align: "left" },
+            "Engerix B 0,5 ml",
+            "Bỉ",
+            "",
+            "3",
+            "",
+            ""
+          ]
+        },
+        {
+          cells: [
+            { text: "5", rowspan: 2 },
+            {
+              text: "Ho gà, Bạch hầu, Uốn ván, Bại liệt, Viêm màng não mủ, Viêm họng, Viêm phổi do HIB, Viêm gan B (6 in 1)",
+              rowspan: 2,
+              align: "left"
+            },
+            "InfanrixHexa",
+            "Bỉ",
+            "3",
+            "",
+            "",
+            "3"
+          ],
+          striped: true
+        },
+        {
+          cells: [
+            "Hexaxim",
+            "Pháp",
+            "",
+            "",
+            "3",
+            ""
+          ]
+        },
+        {
+          cells: [
+            { text: "6", rowspan: 2 },
+            {
+              text: "Hội chứng nhiễm trùng viêm màng não, viêm phổi, nhiễm khuẩn huyết, viêm tai giữa do phế cầu",
+              rowspan: 2,
+              align: "left"
+            },
+            "Prevenar 13",
+            "Anh",
+            "",
+            "",
+            "3",
+            "3"
+          ]
+        },
+        {
+          cells: [
+            "Synflorix",
+            "Bỉ",
+            "3",
+            "3",
+            "",
+            ""
+          ],
+          striped: true
+        },
+        {
+          cells: [
+            {
+              text: "Tổng số (liều)",
+              colspan: 4,
+              bold: true
+            },
+            "9",
+            "12",
+            "10",
+            "8"
+          ],
+          striped: true,
+          bold: true
+        },
+        {
+          cells: [
+            {
+              text: "Giá gói (VNĐ)",
+              colspan: 4,
+              bold: true
+            },
+            "9,546,000",
+            "8,598,000",
+            "10,842,000",
+            "10,278,000"
+          ],
+          bold: true,
+          textColor: "text-sky-700"
+        }
+      ]
+    },
+
+    {
+      titleTop: "GÓI VẮC XIN CHO TRẺ EM",
+      titleBottom: "DANH MỤC GÓI VẮC XIN 6 - 12 THÁNG",
+      headers: [
+        "STT",
+        "Phòng bệnh",
+        "Tên Vắc xin",
+        "Nước sản xuất",
+        "Gói A",
+        "Gói B",
+        "Gói C",
+        "Gói D"
+      ],
+      rows: [
+        {
+          cells: [
+            "1",
+            { text: "Cúm mùa", align: "left" },
+            "Vaxigrip Tetra",
+            "Pháp",
+            "1",
+            "1",
+            "",
+            ""
+          ],
+          striped: true
+        },
+        {
+          cells: [
+            "2",
+            { text: "Sởi - Quai bị - Rubella", align: "left" },
+            "MMR II",
+            "Mỹ",
+            "",
+            "1",
+            "1",
+            ""
+          ]
+        },
+        {
+          cells: [
+            "3",
+            { text: "Thủy đậu", align: "left" },
+            "Varivax",
+            "Mỹ",
+            "1",
+            "",
+            "1",
+            "1"
+          ],
+          striped: true
+        },
+        {
+          cells: [
+            {
+              text: "Tổng số (liều)",
+              colspan: 4,
+              bold: true
+            },
+            "2",
+            "2",
+            "2",
+            "1"
+          ],
+          striped: true,
+          bold: true
+        },
+        {
+          cells: [
+            {
+              text: "Giá gói (VNĐ)",
+              colspan: 4,
+              bold: true
+            },
+            "3,200,000",
+            "3,850,000",
+            "4,150,000",
+            "2,600,000"
+          ],
+          bold: true,
+          textColor: "text-sky-700"
+        }
+      ]
+    },
+
+    {
+      titleTop: "GÓI VẮC XIN CHO TRẺ EM",
+      titleBottom: "DANH MỤC GÓI VẮC XIN 12 - 24 THÁNG",
+      headers: [
+        "STT",
+        "Phòng bệnh",
+        "Tên Vắc xin",
+        "Nước sản xuất",
+        "Gói X",
+        "Gói Y",
+        "Gói Z",
+        "Gói VIP"
+      ],
+      rows: [
+        {
+          cells: [
+            "1",
+            { text: "Viêm não Nhật Bản", align: "left" },
+            "Imojev",
+            "Pháp",
+            "2",
+            "",
+            "2",
+            "2"
+          ],
+          striped: true
+        },
+        {
+          cells: [
+            "2",
+            { text: "Viêm màng não mô cầu", align: "left" },
+            "Bexsero",
+            "Ý",
+            "",
+            "2",
+            "2",
+            "2"
+          ]
+        },
+        {
+          cells: [
+            "3",
+            { text: "Viêm gan A", align: "left" },
+            "Havrix 720",
+            "Bỉ",
+            "2",
+            "2",
+            "",
+            "2"
+          ],
+          striped: true
+        },
+        {
+          cells: [
+            {
+              text: "Tổng số (liều)",
+              colspan: 4,
+              bold: true
+            },
+            "4",
+            "4",
+            "4",
+            "6"
+          ],
+          striped: true,
+          bold: true
+        },
+        {
+          cells: [
+            {
+              text: "Giá gói (VNĐ)",
+              colspan: 4,
+              bold: true
+            },
+            "6,800,000",
+            "7,400,000",
+            "7,150,000",
+            "9,900,000"
+          ],
+          bold: true,
+          textColor: "text-sky-700"
+        }
+      ]
+    }
+  ];
+
+  const wrapper = document.getElementById("rightsTableWrapper");
+  if (!wrapper) return;
+
+  function escapeHtml(text) {
+    return String(text)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+
+  function renderCell(cell, tag = "td") {
+    const isObject = typeof cell === "object" && cell !== null;
+    const text = isObject ? cell.text ?? "" : cell;
+    const rowspan = isObject && cell.rowspan ? ` rowspan="${cell.rowspan}"` : "";
+    const colspan = isObject && cell.colspan ? ` colspan="${cell.colspan}"` : "";
+    const alignClass = isObject && cell.align === "left" ? " text-left" : "";
+    const fontClass = isObject && cell.bold ? " font-semibold" : "";
+
+    return `
+      <${tag}${rowspan}${colspan}
+        class="border border-slate-300 px-2 py-2${alignClass}${fontClass}">
+        ${escapeHtml(text)}
+      </${tag}>
+    `;
+  }
+
+  function renderHeader(headers) {
+    return `
+      <thead>
+        <tr class="bg-[#0F7FC6] text-white">
+          ${headers.map((header) => `
+            <th class="border border-slate-300 px-2 py-2">
+              ${escapeHtml(header)}
+            </th>
+          `).join("")}
+        </tr>
+      </thead>
+    `;
+  }
+
+  function renderRows(rows) {
+    return rows.map((row) => {
+      const bgClass = row.striped ? "bg-sky-50" : "";
+      const fontClass = row.bold ? " font-semibold" : "";
+      const textColor = row.textColor ? ` ${row.textColor}` : " text-slate-700";
+
+      return `
+        <tr class="${bgClass}${fontClass}${textColor}">
+          ${row.cells.map((cell) => renderCell(cell)).join("")}
+        </tr>
+      `;
+    }).join("");
+  }
+
+  function renderSlide(table) {
+    return `
+      <div class="swiper-slide">
+        <div class="overflow-x-auto rounded-[12px] border border-slate-200">
+          <div class="min-w-[460px] bg-white">
+            <div class="flex items-start justify-between px-6 pt-5">
+              <div class="flex items-center gap-3">
+                <img src="./assets/logo/logo.png" alt="logo" class="h-12 w-auto" />
+              </div>
+
+              <div class="text-right">
+                <h3 class="text-[17px] font-extrabold uppercase leading-tight text-sky-600">
+                  ${escapeHtml(table.titleTop)}
+                </h3>
+                <p class="text-[17px] font-extrabold uppercase leading-tight text-sky-600">
+                  ${escapeHtml(table.titleBottom)}
+                </p>
+              </div>
+            </div>
+
+            <table class="mt-5 w-full border-collapse text-center text-[11px] text-slate-700">
+              ${renderHeader(table.headers)}
+              <tbody>
+                ${renderRows(table.rows)}
+              </tbody>
+            </table>
+
+            <div class="flex items-center justify-between px-6 py-4 text-[12px] font-bold text-sky-600">
+              <span>BỆNH VIỆN ĐA KHOA PHƯƠNG ĐÔNG</span>
+              <span>1900 1806</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  rightsTableData.forEach((table) => {
+    wrapper.insertAdjacentHTML("beforeend", renderSlide(table));
+  });
+
+  new Swiper(".rights-table-swiper", {
+    slidesPerView: 1,
+    spaceBetween: 16,
+    speed: 700,
+    grabCursor: true,
+    autoHeight: true,
+    resistanceRatio: 0.85,
+    pagination: {
+      el: "#rightsTablePagination",
+      clickable: true
+    }
+  });
+})();
