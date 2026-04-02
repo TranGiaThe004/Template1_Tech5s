@@ -408,7 +408,7 @@
   }
 
   #doctorTrackMobile .doctor-mobile-bottom {
-    min-height: 332px;
+    min-height: 280px;
   }
 
   #doctorTrackMobile .doctor-mobile-name {
@@ -2899,5 +2899,522 @@ button {
   .pd-footer__socials img {
     width: 28px;
     height: 28px;
+  }
+}
+
+
+
+/* ================= THẮC MẮC KHÁCH HÀNG ================= */
+.faq-service-section {
+  position: relative;
+  overflow: hidden;
+  font-family: 'Lato', sans-serif;
+  background: #eaf3fb;
+  min-height: 1320px;
+}
+
+.faq-service-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("../images/blurred-abstract-background-interior-view-looking-out-toward-empty-office-lobby-entrance-doors-glass-curtain-wall-with-frame 1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 1;
+  z-index: 0;
+}
+
+.faq-service-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(240, 247, 253, 0.58);
+  z-index: 1;
+}
+
+.faq-service-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 42px 24px 64px;
+}
+
+.faq-service-heading {
+  text-align: center;
+}
+
+.faq-service-heading h2 {
+  margin: 0;
+  color: #252525;
+  font-size: 36px;
+  line-height: 1.16;
+  font-weight: 700;
+}
+
+.faq-service-line {
+  display: block;
+  width: 116px;
+  height: 4px;
+  margin: 26px auto 0;
+  border-radius: 999px;
+  background: #25a9f5;
+}
+
+/* danh sách có scroll bên trong nếu nhiều block */
+.faq-service-list {
+  margin-top: 62px;
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+  height: 1140px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(37, 169, 245, 0.55) transparent;
+}
+
+.faq-service-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.faq-service-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.faq-service-list::-webkit-scrollbar-thumb {
+  background: rgba(37, 169, 245, 0.45);
+  border-radius: 999px;
+}
+
+/* ===== Mỗi block hỏi đáp ===== */
+.faq-flow {
+  position: relative;
+  min-height: 540px;
+  flex: 0 0 auto;
+}
+
+/* ===== Trục giữa ===== */
+.faq-center-axis {
+  /* position: absolute;
+  left: 50%;
+  top: 14px;
+  bottom: 30px;
+  width: 8px;
+  transform: translateX(-50%);
+  background: #ffffff;
+  border-radius: 999px; */
+  display: none;
+}
+.faq-service-list {
+  margin-top: 62px;
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+  height: 1140px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(37, 169, 245, 0.55) transparent;
+  position: relative;
+}
+
+.faq-service-list::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: var(--faq-line-top, 14px);
+  height: var(--faq-line-height, 0px);
+  width: 8px;
+  transform: translateX(-50%);
+  background: #ffffff;
+  border-radius: 999px;
+  z-index: 0;
+}
+
+.faq-flow {
+  position: relative;
+  min-height: 540px;
+  flex: 0 0 auto;
+  z-index: 1;
+}
+
+.faq-center-axis {
+  display: none;
+}
+
+.faq-center-dot {
+  position: absolute;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.faq-center-dot.top {
+  top: 138px;
+}
+
+.faq-center-dot.bottom {
+  top: 458px;
+}
+
+.faq-connector {
+  position: absolute;
+  height: 6px;
+  background: #ffffff;
+  border-radius: 999px;
+}
+
+.faq-connector.top-left {
+  top: 150px;
+  left: calc(50% - 290px);
+  width: 260px;
+}
+
+.faq-connector.top-right {
+  top: 150px;
+  left: calc(50% + 15px);
+  width: 150px;
+}
+
+.faq-connector.bottom-left {
+  top: 470px;
+  left: calc(52% - 160px);
+  width: 130px;
+}
+
+.faq-connector.bottom-right {
+  top: 470px;
+  left: calc(50% + 15px);
+  width: 120px;
+}
+
+/* ===== Card chung ===== */
+.faq-card {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 12px 28px rgba(31, 56, 88, 0.08);
+  backdrop-filter: blur(1px);
+}
+
+/* ===== Question card ===== */
+.faq-question-card {
+  top: 15px;
+  left: 75px;
+  width: 580px;
+  min-height: 292px;
+  border-radius: 22px;
+  padding: 22px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.faq-question-image {
+  flex: 0 0 212px;
+  width: 212px;
+  height: 212px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #dfe8ef;
+}
+
+.faq-question-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.faq-question-content {
+  flex: 1;
+  padding-top: 2px;
+}
+
+.faq-question-title {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.22;
+  font-weight: 700;
+  color: #2a2a2a;
+}
+
+.faq-question-text {
+  margin: 16px 0 0;
+  font-size: 14px;
+  line-height: 1.36;
+  color: #5d5d5d;
+}
+
+/* ===== Mũi nhọn phải của question ===== */
+.faq-question-card::after {
+  content: "";
+  position: absolute;
+  top: 95px;
+  right: -44px;
+  width: 0;
+  height: 0;
+  border-top: 44px solid transparent;
+  border-bottom: 44px solid transparent;
+  border-left: 44px solid rgba(255, 255, 255, 0.96);
+}
+
+/* ===== Người hỏi ===== */
+.faq-asker-card {
+  top: 96px;
+  right: 280px;
+  width: 300px;
+  min-height: 102px;
+  border-radius: 18px;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.faq-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex: 0 0 64px;
+}
+
+.faq-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.faq-person-name {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #2d2d2d;
+}
+
+.faq-person-meta {
+  margin: 7px 0 0;
+  font-size: 12px;
+  line-height: 1.25;
+  color: #8b8b8b;
+}
+
+/* ===== Bác sĩ ===== */
+.faq-doctor-card {
+  top: 418px;
+  left: 280px;
+  width: 292px;
+  min-height: 102px;
+  border-radius: 18px;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* ===== Answer card ===== */
+.faq-answer-card {
+  top: 335px;
+  right: 35px;
+  width: 610px;
+  min-height: 260px;
+  border-radius: 22px;
+  padding: 24px 26px 26px;
+}
+
+.faq-answer-card::before {
+  content: "";
+  position: absolute;
+  top: 84px;
+  left: -52px;
+  width: 0;
+  height: 0;
+  border-top: 52px solid transparent;
+  border-bottom: 52px solid transparent;
+  border-right: 52px solid rgba(255, 255, 255, 0.96);
+}
+
+.faq-answer-title {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.28;
+  font-weight: 700;
+  color: #2d2d2d;
+}
+
+.faq-answer-text {
+  margin: 16px 0 0;
+  font-size: 14px;
+  line-height: 1.36;
+  color: #5d5d5d;
+}
+
+.faq-answer-text p {
+  margin: 0 0 12px;
+}
+
+.faq-answer-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1400px) {
+  .faq-question-card {
+    left: 20px;
+    width: 540px;
+  }
+
+  .faq-answer-card {
+    right: 30px;
+    width: 560px;
+  }
+
+  .faq-asker-card {
+    right: 120px;
+  }
+
+  .faq-doctor-card {
+    left: 240px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .faq-service-section {
+    min-height: auto;
+  }
+
+  .faq-service-heading h2 {
+    font-size: 32px;
+  }
+
+  .faq-service-list {
+    height: auto;
+    overflow: visible;
+    padding-right: 0;
+  }
+
+  .faq-flow {
+    min-height: auto;
+    padding-top: 10px;
+  }
+
+  .faq-center-axis,
+  .faq-center-dot,
+  .faq-connector {
+    display: none;
+  }
+
+  .faq-question-card,
+  .faq-asker-card,
+  .faq-doctor-card,
+  .faq-answer-card {
+    position: static;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .faq-question-card,
+  .faq-asker-card,
+  .faq-doctor-card,
+  .faq-answer-card {
+    margin: 0 auto;
+  }
+
+  .faq-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .faq-question-card::after,
+  .faq-answer-card::before {
+    display: none;
+  }
+
+  .faq-question-card,
+  .faq-answer-card {
+    min-height: unset;
+  }
+}
+
+@media (max-width: 767px) {
+  .faq-service-container {
+    padding: 34px 16px 46px;
+  }
+
+  .faq-service-heading h2 {
+    font-size: 26px;
+    line-height: 1.25;
+  }
+
+  .faq-service-line {
+    width: 92px;
+    margin-top: 18px;
+  }
+
+  .faq-service-list {
+    margin-top: 34px;
+    gap: 40px;
+  }
+
+  .faq-question-card {
+    padding: 16px;
+    border-radius: 20px;
+    gap: 14px;
+    flex-direction: column;
+  }
+
+  .faq-question-image {
+    width: 100%;
+    height: 210px;
+    flex: 0 0 auto;
+    border-radius: 18px;
+  }
+
+  .faq-question-title {
+    font-size: 18px;
+  }
+
+  .faq-question-text,
+  .faq-answer-text {
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  .faq-asker-card,
+  .faq-doctor-card {
+    min-height: unset;
+    border-radius: 18px;
+    padding: 14px 16px;
+  }
+
+  .faq-avatar {
+    width: 58px;
+    height: 58px;
+    flex-basis: 58px;
+  }
+
+  .faq-person-name {
+    font-size: 17px;
+  }
+
+  .faq-person-meta {
+    font-size: 12px;
+  }
+
+  .faq-answer-card {
+    padding: 20px 18px 22px;
+    border-radius: 20px;
+  }
+
+  .faq-answer-title {
+    font-size: 18px;
+    line-height: 1.35;
   }
 }

@@ -1796,3 +1796,180 @@ setActiveLink(window.location.hash || "#gioithieu");
     }
   });
 })();
+
+
+/* ================= THẮC MẮC KHÁCH HÀNG ================= */
+(function () {
+  const qaData = [
+    {
+      questionImage: "./assets/images/Rectangle 6403.jpg",
+      questionTitle: "Bệnh viện Phương Đông có tiêm phòng trước khi mang thai không?",
+      questionText:
+        "Xin chào bệnh viện, em chưa có kinh nghiệm về thai sản và sắp tới em có dự tính có em bé, em muốn hỏi bên bệnh viện mình có xét nghiệm và tiêm phòng trước khi mang thai không ạ và em mới bị COVID-19 hiện tại đã khỏi lúc có ảnh hưởng gì đến việc tiêm phòng không? Nếu có thì phải chờ bao lâu mới được tiêm phòng và chi phí các mũi tiêm là như thế nào ạ? Cảm ơn quý bệnh viện.",
+
+      askerAvatar: "./assets/images/Ellipse 1054.png",
+      askerName: "Nguyễn Minh Ánh",
+      askerMeta: "Đã hỏi: Ngày 25/07/2022",
+
+      doctorAvatar: "./assets/images/image 884.png",
+      doctorName: "Bác sĩ Nguyễn Huy Bạo",
+      doctorMeta: "Đã trả lời: Ngày 25/07/2022",
+
+      answerTitle:
+        "Cảm ơn quý khách đã đặt câu hỏi cho chuyên mục Hỏi đáp chuyên gia của Bệnh viện Đa khoa Phương Đông",
+      answerParagraphs: [
+        "Bệnh viện Đa khoa Phương Đông hiện cung cấp đa dạng các dịch vụ xét nghiệm tổng quát và tiêm chủng chất lượng cao dành cho phụ nữ dự định mang thai với quy trình khoa học, an toàn, hiệu quả, thực hiện bởi đội ngũ cán bộ y tế giỏi chuyên môn, giàu kinh nghiệm cùng hệ thống máy móc hiện đại.",
+        "Nếu bạn từng mắc COVID-19 và đã khỏi, sau khi hết thời gian cách ly và xét nghiệm cho kết quả âm tính thì có thể tiêm các vắc-xin dành cho phụ nữ sắp mang thai. Tuy nhiên nếu còn cảm thấy mệt, chưa hồi phục sức khỏe hoặc trong gia đình còn người đang cách ly thì bạn nên trì hoãn đến khi cơ thể đảm bảo đủ sức khỏe và những người trong nhà đều đã âm tính mới nên tiêm ngừa vắc-xin."
+      ]
+    },
+
+    {
+      questionImage: "./assets/images/Rectangle 6403.jpg",
+      questionTitle: "Sau khi tiêm vắc-xin cần theo dõi trong bao lâu?",
+      questionText:
+        "Em muốn hỏi sau khi tiêm tại bệnh viện thì cần ở lại theo dõi trong bao lâu, có cần kiêng ăn uống gì không và nếu bị sốt nhẹ sau tiêm thì nên xử lý như thế nào để an toàn?",
+
+      askerAvatar: "./assets/images/Ellipse 1054.png",
+      askerName: "Lê Thu Hà",
+      askerMeta: "Đã hỏi: Ngày 27/07/2022",
+
+      doctorAvatar: "./assets/images/Ellipse 1054 (1) copy.png",
+      doctorName: "Bác sĩ Nguyễn Huy Bạo",
+      doctorMeta: "Đã trả lời: Ngày 27/07/2022",
+
+      answerTitle:
+        "Bệnh viện xin giải đáp về thời gian theo dõi và chăm sóc sau tiêm",
+      answerParagraphs: [
+        "Sau khi tiêm, khách hàng thường được theo dõi tối thiểu 30 phút tại cơ sở y tế để kịp thời phát hiện và xử trí các phản ứng bất thường nếu có.",
+        "Khi về nhà, bạn nên tiếp tục theo dõi sức khỏe trong 24 đến 48 giờ đầu, nghỉ ngơi hợp lý, uống đủ nước và liên hệ nhân viên y tế nếu có dấu hiệu bất thường kéo dài."
+      ]
+    },
+
+    {
+      questionImage: "./assets/images/Rectangle 6403.jpg",
+      questionTitle: "Bệnh viện có hỗ trợ đặt lịch tiêm chủng online không?",
+      questionText:
+        "Tôi muốn đăng ký tiêm cho gia đình vào cuối tuần, bệnh viện có hỗ trợ đặt lịch trước qua website hoặc hotline không và khi đến có cần mang theo giấy tờ gì?",
+
+      askerAvatar: "./assets/images/Ellipse 1054.png",
+      askerName: "Phạm Hoài Nam",
+      askerMeta: "Đã hỏi: Ngày 30/07/2022",
+
+      doctorAvatar: "./assets/images/Ellipse 1054 (2) copy.png",
+      doctorName: "Bác sĩ Nguyễn Huy Bạo",
+      doctorMeta: "Đã trả lời: Ngày 30/07/2022",
+
+      answerTitle:
+        "Thông tin về hình thức đặt lịch tiêm chủng tại Bệnh viện Đa khoa Phương Đông",
+      answerParagraphs: [
+        "Bệnh viện hỗ trợ khách hàng đặt lịch trước qua các kênh trực tuyến và hotline để chủ động thời gian thăm khám, tư vấn và tiêm chủng.",
+        "Khi đến bệnh viện, bạn nên mang theo giấy tờ tùy thân và các hồ sơ tiêm chủng liên quan nếu đã từng tiêm trước đó để bác sĩ dễ theo dõi."
+      ]
+    }
+  ];
+
+  const faqServiceList = document.getElementById("faqServiceList");
+  if (!faqServiceList) return;
+  function getOffsetTopRelativeToParent(element, parent) {
+  let top = 0;
+  let current = element;
+
+  while (current && current !== parent) {
+    top += current.offsetTop;
+    current = current.offsetParent;
+  }
+
+  return top;
+}
+
+function updateFaqTimelineHeight() {
+  const bottomDots = faqServiceList.querySelectorAll(".faq-center-dot.bottom");
+  if (!bottomDots.length) return;
+
+  const lastBottomDot = bottomDots[bottomDots.length - 1];
+  const lineTop = 14;
+  const lastBottomDotCenter =
+    getOffsetTopRelativeToParent(lastBottomDot, faqServiceList) +
+    lastBottomDot.offsetHeight / 2;
+
+  faqServiceList.style.setProperty("--faq-line-top", `${lineTop}px`);
+  faqServiceList.style.setProperty(
+    "--faq-line-height",
+    `${Math.max(0, lastBottomDotCenter - lineTop)}px`
+  );
+}
+
+  function renderAnswerParagraphs(paragraphs) {
+    return paragraphs.map((text) => `<p>${text}</p>`).join("");
+  }
+
+  function createQaItem(item) {
+    const block = document.createElement("div");
+    block.className = "faq-flow";
+
+    block.innerHTML = `
+      <div class="faq-center-axis"></div>
+      <div class="faq-center-dot top"></div>
+      <div class="faq-center-dot bottom"></div>
+
+      <div class="faq-connector top-left"></div>
+      <div class="faq-connector top-right"></div>
+      <div class="faq-connector bottom-left"></div>
+      <div class="faq-connector bottom-right"></div>
+
+      <article class="faq-card faq-question-card">
+        <div class="faq-question-image">
+          <img src="${item.questionImage}" alt="Câu hỏi khách hàng" />
+        </div>
+
+        <div class="faq-question-content">
+          <h3 class="faq-question-title">${item.questionTitle}</h3>
+          <p class="faq-question-text">${item.questionText}</p>
+        </div>
+      </article>
+
+      <article class="faq-card faq-asker-card">
+        <div class="faq-avatar">
+          <img src="${item.askerAvatar}" alt="${item.askerName}" />
+        </div>
+
+        <div class="faq-person-content">
+          <h4 class="faq-person-name">${item.askerName}</h4>
+          <p class="faq-person-meta">${item.askerMeta}</p>
+        </div>
+      </article>
+
+      <article class="faq-card faq-doctor-card">
+        <div class="faq-avatar">
+          <img src="${item.doctorAvatar}" alt="${item.doctorName}" />
+        </div>
+
+        <div class="faq-person-content">
+          <h4 class="faq-person-name">${item.doctorName}</h4>
+          <p class="faq-person-meta">${item.doctorMeta}</p>
+        </div>
+      </article>
+
+      <article class="faq-card faq-answer-card">
+        <h3 class="faq-answer-title">${item.answerTitle}</h3>
+        <div class="faq-answer-text">
+          ${renderAnswerParagraphs(item.answerParagraphs)}
+        </div>
+      </article>
+    `;
+
+    return block;
+  }
+
+  function renderFaqService() {
+  faqServiceList.innerHTML = "";
+  qaData.forEach((item) => {
+    faqServiceList.appendChild(createQaItem(item));
+  });
+
+  updateFaqTimelineHeight();
+}
+
+  renderFaqService();
+  window.addEventListener("resize", updateFaqTimelineHeight);
+})();
