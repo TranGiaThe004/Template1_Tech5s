@@ -1,3 +1,10 @@
+@media (max-width: 1023px) {
+  .camnhan-shape-right {
+    display: none !important;
+  }
+}
+
+
 .nav-link {
     position: relative;
   }
@@ -211,154 +218,211 @@
 /* ================= Đội ngũ bác sĩ ================= */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
 
-  .font-lato {
-    font-family: 'Lato', sans-serif;
+.font-lato {
+  font-family: 'Lato', sans-serif;
+}
+
+#doingu {
+  position: relative;
+}
+
+#doctorSection .doctor-card,
+#doctorTrackMobile .doctor-card-mobile {
+  background: #edf3f5;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* ================= Desktop ================= */
+#doctorSection .doctor-card {
+  position: relative;
+  width: 328px;
+  height: 474px;
+  flex: 0 0 328px;
+  box-shadow: 0 14px 34px rgba(50, 74, 98, 0.06);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+#doctorSection .doctor-card.is-expanded {
+  box-shadow: 0 20px 44px rgba(50, 74, 98, 0.10);
+  transform: translateY(-2px);
+}
+
+#doctorSection .doctor-top {
+  position: absolute;
+  inset: 0;
+  background: #edf3f5;
+}
+
+#doctorSection .doctor-top img {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: auto !important;
+  max-width: none !important;
+  height: 93% !important;
+  object-fit: contain;
+  object-position: bottom center;
+  pointer-events: none;
+  user-select: none;
+}
+
+#doctorSection .doctor-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 96px;
+  background: #ffffff;
+  padding: 22px 22px 16px;
+  transition: height 0.35s ease, padding 0.35s ease;
+}
+
+#doctorSection .doctor-card.is-expanded .doctor-bottom {
+  height: 236px;
+  padding: 18px 24px 14px;
+}
+
+#doctorSection .doctor-brief,
+#doctorSection .doctor-detail {
+  transition: opacity 0.25s ease;
+}
+
+#doctorSection .doctor-detail {
+  display: none;
+}
+
+#doctorSection .doctor-card.is-expanded .doctor-brief {
+  display: none;
+}
+
+#doctorSection .doctor-card.is-expanded .doctor-detail {
+  display: block;
+}
+
+#doctorSection .doctor-stars {
+  letter-spacing: 2px;
+}
+
+#doctorSection .doctor-dot {
+  height: 8px;
+  width: 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.95);
+  transition: all 0.25s ease;
+}
+
+#doctorSection .doctor-dot.is-active {
+  width: 62px;
+  background: #f08a17;
+}
+
+/* ================= Mobile ================= */
+#doctorTrackMobile {
+  scrollbar-width: none;
+  align-items: stretch;
+}
+
+#doctorTrackMobile::-webkit-scrollbar {
+  display: none;
+}
+
+#doctorTrackMobile .doctor-card-mobile {
+  width: 290px;
+  min-width: 290px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 14px 34px rgba(50, 74, 98, 0.08);
+}
+
+#doctorTrackMobile .doctor-mobile-top {
+  position: relative;
+  height: 250px;
+  flex: 0 0 250px;
+  background: #edf3f5;
+}
+
+#doctorTrackMobile .doctor-mobile-top img {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  object-fit: contain;
+  object-position: bottom center;
+  width: auto;
+  height: 94%;
+  pointer-events: none;
+  user-select: none;
+}
+
+#doctorTrackMobile .doctor-mobile-bottom {
+  background: #ffffff;
+  padding: 20px 18px 18px;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+#doctorTrackMobile .doctor-mobile-name {
+  min-height: 42px;
+}
+
+#doctorTrackMobile .doctor-mobile-title {
+  min-height: 34px;
+}
+
+#doctorTrackMobile .doctor-mobile-bio {
+  min-height: 98px;
+}
+
+#doctorTrackMobile .doctor-mobile-rating {
+  margin-top: auto;
+}
+
+#doctorDotsMobile .doctor-dot-mobile {
+  height: 8px;
+  width: 18px;
+  border-radius: 999px;
+  background: rgba(39, 168, 244, 0.22);
+  transition: all 0.25s ease;
+}
+
+#doctorDotsMobile .doctor-dot-mobile.is-active {
+  width: 54px;
+  background: #f08a17;
+}
+
+/* ================= Responsive text tweak ================= */
+@media (max-width: 640px) {
+  #doingu h2 {
+    font-size: 28px !important;
+    line-height: 1.2 !important;
   }
 
-  #doctorSection .doctor-card,
   #doctorTrackMobile .doctor-card-mobile {
-    background: #edf3f5;
-    border-radius: 20px;
-    overflow: hidden;
-  }
-
-  #doctorSection .doctor-card {
-    position: relative;
-    width: 328px;
-    height: 474px;
-    flex: 0 0 328px;
-    box-shadow: 0 14px 34px rgba(50, 74, 98, 0.06);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-    cursor: pointer;
-  }
-
-  #doctorSection .doctor-card.is-expanded {
-    box-shadow: 0 20px 44px rgba(50, 74, 98, 0.10);
-    transform: translateY(-2px);
-  }
-
-  /* Ảnh đứng yên */
-  #doctorSection .doctor-top {
-    position: absolute;
-    inset: 0;
-    background: #edf3f5;
-  }
-
-  #doctorSection .doctor-top img {
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    width: auto !important;
-    max-width: none !important;
-    height: 93% !important;
-    object-fit: contain;
-    object-position: bottom center;
-    pointer-events: none;
-    user-select: none;
-  }
-
-  /* Khung trắng mặc định */
-  #doctorSection .doctor-bottom {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 96px;
-    background: #ffffff;
-    padding: 22px 22px 16px;
-    transition: height 0.35s ease, padding 0.35s ease;
-  }
-
-  /* Khi mở chỉ khung trắng cao lên */
-  #doctorSection .doctor-card.is-expanded .doctor-bottom {
-    height: 236px;
-    padding: 18px 24px 14px;
-  }
-
-  #doctorSection .doctor-brief,
-  #doctorSection .doctor-detail {
-    transition: opacity 0.25s ease;
-  }
-
-  #doctorSection .doctor-detail {
-    display: none;
-  }
-
-  #doctorSection .doctor-card.is-expanded .doctor-brief {
-    display: none;
-  }
-
-  #doctorSection .doctor-card.is-expanded .doctor-detail {
-    display: block;
-  }
-
-  #doctorSection .doctor-stars {
-    letter-spacing: 2px;
-  }
-
-  #doctorSection .doctor-dot {
-    height: 8px;
-    width: 18px;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.95);
-    transition: all 0.25s ease;
-  }
-
-  #doctorSection .doctor-dot.is-active {
-    width: 62px;
-    background: #f08a17;
-  }
-
-  #doctorTrackMobile {
-    scrollbar-width: none;
-  }
-
-  #doctorTrackMobile::-webkit-scrollbar {
-    display: none;
-  }
-
-  #doctorTrackMobile .doctor-card-mobile {
-    width: 290px;
-    min-width: 290px;
-    box-shadow: 0 14px 34px rgba(50, 74, 98, 0.08);
-  }
-
-  #doctorTrackMobile .doctor-mobile-top {
-    position: relative;
-    height: 250px;
-    background: #edf3f5;
-  }
-
-  #doctorTrackMobile .doctor-mobile-top img {
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    object-fit: contain;
-    object-position: bottom center;
-    width: auto;
-    height: 94%;
+    width: 285px;
+    min-width: 285px;
   }
 
   #doctorTrackMobile .doctor-mobile-bottom {
-    background: white;
-    padding: 20px 18px 18px;
+    min-height: 332px;
   }
 
-  #doctorDotsMobile .doctor-dot-mobile {
-    height: 8px;
-    width: 18px;
-    border-radius: 999px;
-    background: rgba(39, 168, 244, 0.22);
-    transition: all 0.25s ease;
+  #doctorTrackMobile .doctor-mobile-name {
+    min-height: 46px;
   }
 
-  #doctorDotsMobile .doctor-dot-mobile.is-active {
-    width: 54px;
-    background: #f08a17;
+  #doctorTrackMobile .doctor-mobile-title {
+    min-height: 38px;
   }
 
+  #doctorTrackMobile .doctor-mobile-bio {
+    min-height: 108px;
+  }
+}
 
   /* ================= Hình ảnh của khách hàng khi sử dụng gói dịch vụ Tiêm chủng Vắc-xin ================= */
 /* =========================================================
