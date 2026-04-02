@@ -2442,11 +2442,16 @@ button {
 
   .doctor-visual {
     width: 210px;
-    bottom: 64px;
+    bottom: -10px;
   }
 
   .article-logo-box {
     width: 250px;
+  }
+  .article-logo-box .logo-plate {
+    right: -80px;
+    width: 1200px;
+    bottom: -90px;
   }
 
   .article-logo {
@@ -3417,4 +3422,10 @@ button {
     font-size: 18px;
     line-height: 1.35;
   }
+}
+@media (max-width: 1199px) {
+  .faq-question-card { order: 2; }
+  .faq-asker-card { order: 1; }
+  .faq-doctor-card { order: 3; }
+  .faq-answer-card { order: 4; }
 }
